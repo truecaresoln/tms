@@ -1,0 +1,31 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2021-06-05 14:27:31.127122",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "THS",
+ "modified": "2022-04-29 17:32:20.590227",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Ongoing Projects",
+ "owner": "Administrator",
+ "prepared_report": 1,
+ "query": "",
+ "ref_doctype": "Project",
+ "report_name": "Ongoing Projects",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Ongoing Projects Report"
+  },
+  {
+   "role": "Administrator"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "autoname": "field:user",
+ "creation": "2021-10-07 16:58:18.830695",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "financial_active_section",
+  "is_financially_active",
+  "pm_allocator_section",
+  "is_pm_allocator",
+  "team_lead_allocator_section",
+  "is_teamlead_allocator",
+  "employee_access_capability_section",
+  "is_all_employee_access",
+  "total_planned_hours_in_pud_section",
+  "total_planned_hour",
+  "budgeted_hour_section",
+  "budgeted_hour"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_financially_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Financially Active"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_pm_allocator",
+   "fieldtype": "Check",
+   "label": "Is PM Allocator"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_teamlead_allocator",
+   "fieldtype": "Check",
+   "label": "Is TeamLead Allocator"
+  },
+  {
+   "fieldname": "financial_active_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Active"
+  },
+  {
+   "fieldname": "pm_allocator_section",
+   "fieldtype": "Section Break",
+   "label": "PM Allocator"
+  },
+  {
+   "fieldname": "team_lead_allocator_section",
+   "fieldtype": "Section Break",
+   "label": "Team Lead Allocator"
+  },
+  {
+   "fieldname": "employee_access_capability_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Access Capability"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_all_employee_access",
+   "fieldtype": "Check",
+   "label": "Is All Employee Access"
+  },
+  {
+   "fieldname": "total_planned_hours_in_pud_section",
+   "fieldtype": "Section Break",
+   "label": "Total Planned Hours in PUD"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_planned_hour",
+   "fieldtype": "Check",
+   "label": "Total Planned Hour"
+  },
+  {
+   "fieldname": "budgeted_hour_section",
+   "fieldtype": "Section Break",
+   "label": "Budgeted Hour"
+  },
+  {
+   "default": "0",
+   "fieldname": "budgeted_hour",
+   "fieldtype": "Check",
+   "label": "budgeted Hour"
+  }
+ ],
+ "links": [],
+ "modified": "2022-07-15 15:36:46.194118",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Financially Active",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project",
+ "creation": "2021-06-17 11:07:33.736852",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "section_break_3",
+  "technical_proposed_date",
+  "section_break_2",
+  "project_data",
+  "section_break_4",
+  "financial_data",
+  "wrap_up_calls_section",
+  "wrap_up_calls",
+  "wrap_up_call_fixed",
+  "is_wrap_up_call_fixed",
+  "column_break_12",
+  "wrap_call_date",
+  "column_break_13",
+  "time",
+  "section_break_17",
+  "final_draft_link",
+  "section_break_16",
+  "remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_data",
+   "fieldtype": "Table",
+   "label": "Technical Update",
+   "options": "Project Update Data"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "financial_data",
+   "fieldtype": "Table",
+   "label": "Financial Update",
+   "options": "Financial Update Data"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "technical_proposed_date",
+   "fieldtype": "Table",
+   "label": "Technical Proposed Date",
+   "options": "Project Proposed Date Data"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project New Update",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "wrap_up_calls_section",
+   "fieldtype": "Section Break",
+   "label": "Wrap Up Calls Updates"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "wrap_up_calls",
+   "fieldtype": "Table",
+   "label": "Wrap Up Calls Updates",
+   "options": "Wrap Up Calls"
+  },
+  {
+   "fieldname": "wrap_up_call_fixed",
+   "fieldtype": "Section Break",
+   "label": "Wrap up call fixed with Client "
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "is_wrap_up_call_fixed",
+   "fieldtype": "Select",
+   "label": "Is Wrap up call fixed",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\"",
+   "fieldname": "wrap_call_date",
+   "fieldtype": "Date",
+   "label": "Wrap up call date",
+   "mandatory_depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\""
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\"",
+   "fieldname": "final_draft_link",
+   "fieldtype": "Small Text",
+   "label": "Final draft link",
+   "mandatory_depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\"",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "mandatory_depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.is_wrap_up_call_fixed == \"Yes\"",
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-04 13:19:26.485326",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project New Update",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

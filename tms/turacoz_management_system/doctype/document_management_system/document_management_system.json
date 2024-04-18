@@ -1,0 +1,432 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-08-10 17:50:15.631295",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "naming_series",
+  "session",
+  "document_title",
+  "version",
+  "classification",
+  "department",
+  "department_name",
+  "sub_category",
+  "posting_date",
+  "column_break_8",
+  "company",
+  "document_type",
+  "file_type",
+  "shared_with_client",
+  "category",
+  "task_allocated",
+  "document_attachment",
+  "sharable_link_section",
+  "file_link",
+  "sharable_link_hidden",
+  "medical_services_section",
+  "project_code",
+  "deliverables",
+  "region",
+  "customer",
+  "account_manager",
+  "project_manager",
+  "column_break_22",
+  "services",
+  "therapeutic_area",
+  "project_related_to",
+  "client_poc",
+  "bd_poc",
+  "viatris_section",
+  "viatris_region",
+  "project_brands",
+  "column_break_31",
+  "project_category",
+  "any_event_or_training_section",
+  "event_name",
+  "coordinator",
+  "date_from",
+  "column_break_37",
+  "location",
+  "trainers_or_speakers",
+  "date_to",
+  "amended_from",
+  "meetings_section",
+  "meeting_number",
+  "column_break_50",
+  "organizer",
+  "meeting_participants_section",
+  "participants"
+ ],
+ "fields": [
+  {
+   "default": "2023-24",
+   "fieldname": "session",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Session",
+   "options": "2014-15\n2015-16\n2016-17\n2017-18\n2018-19\n2019-20\n2020-21\n2021-22\n2022-23\n2023-24\n2024-25\n2025-26",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "document_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "label": "Classification",
+   "options": "Internal\nExternal"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "DMS Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Turacoz Healthcare Solutions Pvt Ltd",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "DMS Document Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "file_type",
+   "fieldtype": "Link",
+   "label": "File Type",
+   "options": "DMS File Type",
+   "read_only": 1
+  },
+  {
+   "default": "No",
+   "fieldname": "shared_with_client",
+   "fieldtype": "Select",
+   "label": "Shared With Client",
+   "options": "Yes\nNo"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sub_category",
+   "fieldtype": "Link",
+   "label": "Sub Category",
+   "options": "DMS Sub Category"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "DMS Department",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services' || doc.department=='Business Development'",
+   "fieldname": "medical_services_section",
+   "fieldtype": "Section Break",
+   "label": "Medical Services"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project Code",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project_code.deliverable",
+   "fieldname": "deliverables",
+   "fieldtype": "Table MultiSelect",
+   "label": "Deliverables",
+   "options": "Project Deliverable"
+  },
+  {
+   "fetch_from": "project_code.region",
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Regions"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fetch_from": "project_code.customer",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fetch_from": "project_code.account_manager",
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fetch_from": "project_code.project_manager",
+   "fieldname": "project_manager",
+   "fieldtype": "Data",
+   "label": "Project Manager"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fetch_from": "project_code.services",
+   "fieldname": "services",
+   "fieldtype": "Link",
+   "label": "Services",
+   "options": "Services"
+  },
+  {
+   "fetch_from": "project_code.therapeutic_area",
+   "fieldname": "therapeutic_area",
+   "fieldtype": "Link",
+   "label": "Therapeutic Area",
+   "options": "Therapeutic Area"
+  },
+  {
+   "fetch_from": "project_code.project_related_to",
+   "fieldname": "project_related_to",
+   "fieldtype": "Select",
+   "label": "Project Related To",
+   "options": "\nPharma\nDoctor\nTraining"
+  },
+  {
+   "depends_on": "eval:doc.department=='Medical Services'",
+   "fetch_from": "project_code.contact_person",
+   "fieldname": "client_poc",
+   "fieldtype": "Data",
+   "label": "Client PoC"
+  },
+  {
+   "fetch_from": "project_code.bd_person",
+   "fieldname": "bd_poc",
+   "fieldtype": "Link",
+   "label": "BD PoC",
+   "options": "User"
+  },
+  {
+   "depends_on": "eval:doc.customer=='Viatris Centre of Excellence'",
+   "fieldname": "viatris_section",
+   "fieldtype": "Section Break",
+   "label": "Viatris"
+  },
+  {
+   "fetch_from": "project_code.viatris_team",
+   "fieldname": "viatris_region",
+   "fieldtype": "Data",
+   "label": "Viatris Region"
+  },
+  {
+   "fetch_from": "project_code.project_brands",
+   "fieldname": "project_brands",
+   "fieldtype": "Data",
+   "label": "Project Brands"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "project_code.viatris_project_category",
+   "fieldname": "project_category",
+   "fieldtype": "Data",
+   "label": "Project Category"
+  },
+  {
+   "depends_on": "eval:doc.department==' Training and Developments' || doc.department=='Turacoz Events'",
+   "fieldname": "any_event_or_training_section",
+   "fieldtype": "Section Break",
+   "label": "Any Event or Training"
+  },
+  {
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "label": "Event Name"
+  },
+  {
+   "fieldname": "coordinator",
+   "fieldtype": "Data",
+   "label": "Coordinator"
+  },
+  {
+   "fieldname": "date_from",
+   "fieldtype": "Date",
+   "label": "Date From"
+  },
+  {
+   "fieldname": "column_break_37",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "trainers_or_speakers",
+   "fieldtype": "Data",
+   "label": "Trainers or Speakers"
+  },
+  {
+   "fieldname": "date_to",
+   "fieldtype": "Date",
+   "label": "Date To"
+  },
+  {
+   "default": "DOC-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "DOC-.YYYY.-.####"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Document Management System",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.workflow_state!='Approved'",
+   "fieldname": "document_attachment",
+   "fieldtype": "Attach",
+   "label": "Document Attachment"
+  },
+  {
+   "fieldname": "file_link",
+   "fieldtype": "Small Text",
+   "label": "Sharable Link",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sharable_link_section",
+   "fieldtype": "Section Break",
+   "label": "Sharable Link"
+  },
+  {
+   "fieldname": "sharable_link_hidden",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Sharable Link Hidden"
+  },
+  {
+   "fieldname": "task_allocated",
+   "fieldtype": "Link",
+   "label": "Task Allocated",
+   "options": "ToDo"
+  },
+  {
+   "depends_on": "eval:doc.category=='Administration-Meetings'",
+   "fieldname": "meetings_section",
+   "fieldtype": "Section Break",
+   "label": "Meetings"
+  },
+  {
+   "fieldname": "organizer",
+   "fieldtype": "Link",
+   "label": "Organizer",
+   "options": "User"
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Meeting Internal Participants"
+  },
+  {
+   "fieldname": "meeting_number",
+   "fieldtype": "Select",
+   "label": "Meeting Number",
+   "options": "\nWeek 01\nWeek 02\nWeek 03\nWeek 04\nWeek 05\nWeek 06\nWeek 07\nWeek 08\nWeek 09\nWeek 10\nWeek 11\nWeek 12\nWeek 13\nWeek 14\nWeek 15\nWeek 16\nWeek 17\nWeek 18\nWeek 19\nWeek 20\nWeek 21\nWeek 22\nWeek 23\nWeek 24\nWeek 25\nWeek 26\nWeek 27\nWeek 28\nWeek 29\nWeek 30\nWeek 31\nWeek 32\nWeek 33\nWeek 34\nWeek 35\nWeek 36\nWeek 37\nWeek 38\nWeek 39\nWeek 40\nWeek 41\nWeek 42\nWeek 43\nWeek 44\nWeek 45\nWeek 46\nWeek 47\nWeek 48\nWeek 49\nWeek 50\nWeek 51\nWeek 52\nMonth 01\nMonth 02\nMonth 03\nMonth 04\nMonth 05\nMonth 06\nMonth 07\nMonth 08\nMonth 09\nMonth 10\nMonth 11\nMonth 12\nQuarter 01\nQuarter 02\nQuarter 03\nQuarter 04"
+  },
+  {
+   "fieldname": "column_break_50",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.category=='Administration-Meetings'",
+   "fieldname": "meeting_participants_section",
+   "fieldtype": "Section Break",
+   "label": "Meeting Participants"
+  },
+  {
+   "fetch_from": "department.department_name",
+   "fieldname": "department_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Department Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-03-21 17:07:57.853229",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Document Management System",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

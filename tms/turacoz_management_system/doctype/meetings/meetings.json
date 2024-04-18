@@ -1,0 +1,360 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2022-02-02 12:16:54.299705",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "meeting_type",
+  "customer",
+  "column_break_3",
+  "meeting_title",
+  "meeting_category",
+  "column_break_6",
+  "organizer",
+  "naming_series",
+  "project",
+  "turacoz_representatives",
+  "section_break_10",
+  "from_time",
+  "column_break_12",
+  "to_time",
+  "section_break_7",
+  "participants",
+  "column_break_11",
+  "other_participants",
+  "section_break_13",
+  "agenda",
+  "minutes",
+  "projectcall_brief_and_understandings_section",
+  "projectcall_brief_and_understandings",
+  "queries_to_the_client_section",
+  "queries_to_the_client",
+  "client_response_section",
+  "client_response",
+  "client_queries_section",
+  "client_queries",
+  "turacoz_response_section",
+  "turacoz_response",
+  "information_to_be_provided_to_the_client_section",
+  "information_to_be_provided_to_the_client",
+  "information_to_be_provided_by_the_client_section",
+  "information_to_be_provided_by_the_client",
+  "timeline_section",
+  "timeline",
+  "section_break_16",
+  "mom_attachment",
+  "column_break_19",
+  "attach_web_link",
+  "column_break_20",
+  "recording_attachment",
+  "letter_head",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "MTNG-.YYYY.-.MM.-.DD.-"
+  },
+  {
+   "fieldname": "meeting_type",
+   "fieldtype": "Link",
+   "label": "Meeting Type",
+   "options": "Meeting Types"
+  },
+  {
+   "fieldname": "meeting_category",
+   "fieldtype": "Link",
+   "label": "Meeting Category",
+   "options": "Meeting Category"
+  },
+  {
+   "fieldname": "organizer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Organizer",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "This is use for inside of our organization",
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "Meeting Internal Participants"
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Type Email ID and Name of participant (outside of our organization)",
+   "fieldname": "other_participants",
+   "fieldtype": "Table",
+   "label": "Other Participants",
+   "options": "Meeting Other Participants"
+  },
+  {
+   "fieldname": "meeting_title",
+   "fieldtype": "Data",
+   "label": "Meeting Title",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "agenda",
+   "fieldtype": "Table",
+   "label": "Meeting Agenda",
+   "options": "Meeting Agenda",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "minutes",
+   "fieldtype": "Table",
+   "label": "Minutes",
+   "options": "Meeting Minutes"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "mom_attachment",
+   "fieldtype": "Attach",
+   "label": "MoM Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "attach_web_link",
+   "fieldtype": "Attach",
+   "label": "Attach Web Link (if any )"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "recording_attachment",
+   "fieldtype": "Attach",
+   "label": "Recording Attachment "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Meetings",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Participants"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Agenda and Minutes"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "projectcall_brief_and_understandings_section",
+   "fieldtype": "Section Break",
+   "label": "Project/Call Brief and Understandings"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "projectcall_brief_and_understandings",
+   "fieldtype": "Text Editor",
+   "label": "Project/Call Brief and Understandings"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "client_response_section",
+   "fieldtype": "Section Break",
+   "label": "Client Response"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "client_response",
+   "fieldtype": "Text Editor",
+   "label": "Client Response"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "information_to_be_provided_to_the_client_section",
+   "fieldtype": "Section Break",
+   "label": "Information to be provided to the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "information_to_be_provided_to_the_client",
+   "fieldtype": "Text Editor",
+   "label": "Information to be provided to the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "collapsible": 1,
+   "fieldname": "queries_to_the_client_section",
+   "fieldtype": "Section Break",
+   "label": "Queries to the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "queries_to_the_client",
+   "fieldtype": "Text Editor",
+   "label": "Queries to the client"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "timeline_section",
+   "fieldtype": "Section Break",
+   "label": "Timeline"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "timeline",
+   "fieldtype": "Text Editor",
+   "label": "Timeline"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "Letter Head MoM",
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "turacoz_representatives",
+   "fieldtype": "Data",
+   "label": "Turacoz Representatives (Outside our Organizaation)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "information_to_be_provided_by_the_client_section",
+   "fieldtype": "Section Break",
+   "label": "Information to be provided by the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "information_to_be_provided_by_the_client",
+   "fieldtype": "Text Editor",
+   "label": "Information to be Provided by the Client"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "client_queries_section",
+   "fieldtype": "Section Break",
+   "label": "Client Queries"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "client_queries",
+   "fieldtype": "Text Editor",
+   "label": "Client Queries"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "turacoz_response_section",
+   "fieldtype": "Section Break",
+   "label": "Turacoz Response"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "turacoz_response",
+   "fieldtype": "Text Editor",
+   "label": "Turacoz Response"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-05 13:09:23.844153",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Meetings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

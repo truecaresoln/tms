@@ -1,0 +1,56 @@
+{
+ "creation": "2021-03-15 11:13:20.346991",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tax_head",
+  "tax_name",
+  "tax_rate",
+  "tax_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "tax_head",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tax Head",
+   "options": "Payment Requested Tax",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fetch_from": "tax_head.rate",
+   "fieldname": "tax_rate",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Tax Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_amount",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Tax Amount",
+   "options": "currency"
+  },
+  {
+   "fetch_from": "tax_head.tax_name",
+   "fieldname": "tax_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Tax Name"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-10-12 12:57:35.285370",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Custom Invoice Taxes",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

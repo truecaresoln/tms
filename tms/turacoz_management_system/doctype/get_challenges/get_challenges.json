@@ -1,0 +1,43 @@
+{
+ "creation": "2021-10-26 12:13:19.357157",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "challenges_and_commitments",
+  "description_of_challenge",
+  "date"
+ ],
+ "fields": [
+  {
+   "fieldname": "challenges_and_commitments",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Challenges and Commitments",
+   "options": "Challenges and Commitments"
+  },
+  {
+   "fieldname": "description_of_challenge",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description of Challenge"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-10-26 12:17:29.535033",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Get Challenges",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

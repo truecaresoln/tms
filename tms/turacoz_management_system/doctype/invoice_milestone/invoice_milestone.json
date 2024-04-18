@@ -1,0 +1,67 @@
+{
+ "creation": "2021-02-17 15:47:49.856650",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "select_payment_term",
+  "milestone",
+  "description",
+  "percentage",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Milestone",
+   "options": "Custom Milestone",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "select_payment_term.description",
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "select_payment_term.invoice_portion",
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "select_payment_term.payment_amount",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "select_payment_term",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Select Payment Term",
+   "options": "Payment Schedule",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-02-18 15:28:29.113044",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Invoice Milestone",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

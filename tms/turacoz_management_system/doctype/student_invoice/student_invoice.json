@@ -1,0 +1,396 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "STD-INV-.####.",
+ "creation": "2021-05-14 17:25:38.501598",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student_detail_section",
+  "training_data",
+  "address",
+  "column_break_4",
+  "student_name",
+  "invoice_date",
+  "contact_number",
+  "email_id",
+  "course_and_fees_detail_section",
+  "course_name",
+  "currency",
+  "discount",
+  "column_break_10",
+  "course_fees",
+  "total_fees",
+  "total_fees_inr",
+  "particular_section",
+  "particular",
+  "section_break_17",
+  "net_total",
+  "tax_calculation_section",
+  "tax_calculation",
+  "section_break_21",
+  "igst",
+  "cgst",
+  "total_taxes",
+  "column_break_24",
+  "sgst",
+  "grand_total",
+  "rounded_total",
+  "company_detail_section",
+  "company",
+  "comp_address",
+  "company_address",
+  "city",
+  "state",
+  "country",
+  "postal_code",
+  "column_break_14",
+  "state_code",
+  "gstin",
+  "pan",
+  "lut_number",
+  "contact_email",
+  "cin",
+  "hsn_code",
+  "letter_head",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "training_data.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "fetch_from": "training_data.address",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "default": "Turacoz Healthcare Solutions Pvt Ltd",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "comp_address.address_line1",
+   "fieldname": "company_address",
+   "fieldtype": "Read Only",
+   "label": "Company Address"
+  },
+  {
+   "default": "Gurugram Office-Billing",
+   "fieldname": "comp_address",
+   "fieldtype": "Link",
+   "label": "Comp Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "comp_address.city",
+   "fieldname": "city",
+   "fieldtype": "Read Only",
+   "label": "City"
+  },
+  {
+   "fetch_from": "comp_address.state",
+   "fieldname": "state",
+   "fieldtype": "Read Only",
+   "label": "State"
+  },
+  {
+   "fetch_from": "comp_address.country",
+   "fieldname": "country",
+   "fieldtype": "Read Only",
+   "label": "Country"
+  },
+  {
+   "fetch_from": "comp_address.pincode",
+   "fieldname": "postal_code",
+   "fieldtype": "Read Only",
+   "label": "Postal Code"
+  },
+  {
+   "fetch_from": "comp_address.gst_state_number",
+   "fieldname": "state_code",
+   "fieldtype": "Read Only",
+   "label": "State Code"
+  },
+  {
+   "fetch_from": "comp_address.gstin",
+   "fieldname": "gstin",
+   "fieldtype": "Read Only",
+   "label": "GSTIN"
+  },
+  {
+   "fetch_from": "comp_address.pan",
+   "fieldname": "pan",
+   "fieldtype": "Read Only",
+   "label": "PAN"
+  },
+  {
+   "fetch_from": "comp_address.lut_no",
+   "fieldname": "lut_number",
+   "fieldtype": "Read Only",
+   "label": "LUT Number"
+  },
+  {
+   "fetch_from": "comp_address.email_id",
+   "fieldname": "contact_email",
+   "fieldtype": "Read Only",
+   "label": "Contact Email"
+  },
+  {
+   "fetch_from": "comp_address.cin",
+   "fieldname": "cin",
+   "fieldtype": "Read Only",
+   "label": "CIN"
+  },
+  {
+   "fieldname": "student_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Student Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "company_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Company Detail"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "training_data.phone_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "course_and_fees_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Course and Fees Detail"
+  },
+  {
+   "fetch_from": "training_data.course_name",
+   "fieldname": "course_name",
+   "fieldtype": "Read Only",
+   "label": "Course Name"
+  },
+  {
+   "fetch_from": "training_data.course_fees",
+   "fieldname": "course_fees",
+   "fieldtype": "Currency",
+   "label": "Course Fees",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "training_data.discount",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "training_data.total_fees",
+   "fieldname": "total_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Fees",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "training_data.currency",
+   "fieldname": "currency",
+   "fieldtype": "Data",
+   "label": "Currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "training_data.stud_name",
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Student Name"
+  },
+  {
+   "fetch_from": "comp_address.sac_code",
+   "fieldname": "hsn_code",
+   "fieldtype": "Data",
+   "label": "HSN/SAC",
+   "read_only": 1
+  },
+  {
+   "fieldname": "particular_section",
+   "fieldtype": "Section Break",
+   "label": "Invoice Particular"
+  },
+  {
+   "fieldname": "particular",
+   "fieldtype": "Table",
+   "label": "Particular",
+   "options": "Student Invoice Particular",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tax_calculation",
+   "fieldtype": "Table",
+   "label": "Tax Calculation",
+   "options": "Custom Invoice Taxes"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tax_calculation_section",
+   "fieldtype": "Section Break",
+   "label": "Tax Calculation"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "igst",
+   "fieldtype": "Currency",
+   "label": "IGST @18%",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "cgst",
+   "fieldtype": "Currency",
+   "label": "CGST @9%",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "sgst",
+   "fieldtype": "Currency",
+   "label": "SGST @9%",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "total_taxes",
+   "fieldtype": "Currency",
+   "label": "Total Taxes",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Student Invoice",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "training_data",
+   "fieldtype": "Link",
+   "label": "Student ID",
+   "options": "Training Data"
+  },
+  {
+   "default": "Today",
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "training_data.total_fees_inr",
+   "fieldname": "total_fees_inr",
+   "fieldtype": "Currency",
+   "label": "Total Fees (INR)"
+  },
+  {
+   "fieldname": "rounded_total",
+   "fieldtype": "Currency",
+   "label": "Rounded Total",
+   "options": "currency"
+  },
+  {
+   "default": "THS",
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Letter Head",
+   "options": "Letter Head",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-09 13:09:37.623255",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Student Invoice",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

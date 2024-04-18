@@ -1,0 +1,297 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_code",
+ "creation": "2022-11-21 15:17:42.819734",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "to_be_filled_by_the_user_at_the_time_of_issuing_a_laptop_section",
+  "employee_code",
+  "department",
+  "column_break_5",
+  "employee_name",
+  "purpose",
+  "item_details_issued_section",
+  "date_of_issue",
+  "adaptor1",
+  "bag1",
+  "mouse1",
+  "column_break_11",
+  "laptop1",
+  "laptop_model_details1",
+  "headphone1",
+  "item_details_received_section",
+  "date_of_receive",
+  "adaptor",
+  "bag",
+  "headphone",
+  "column_break_20",
+  "laptop",
+  "laptop_model_details",
+  "mouse",
+  "declaration_cum_undertaking_section",
+  "declaration_cum_undertaking",
+  "section_break_27",
+  "user_signature_preview",
+  "user_signature",
+  "column_break_30",
+  "it_manager_signature_preview",
+  "it_manager_sinature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "to_be_filled_by_the_user_at_the_time_of_issuing_a_laptop_section",
+   "fieldtype": "Section Break",
+   "label": "To be filled by the user at the time of issuing/ Receiving a laptop"
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee_code.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_code.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Data",
+   "label": "Purpose",
+   "reqd": 1
+  },
+  {
+   "description": "To be filled by the IT department after the laptop is received ",
+   "fieldname": "item_details_issued_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details Issued"
+  },
+  {
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Issue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adaptor1",
+   "fieldtype": "Select",
+   "label": "Adaptor",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bag1",
+   "fieldtype": "Select",
+   "label": "Bag",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mouse1",
+   "fieldtype": "Select",
+   "label": "Mouse",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "laptop1",
+   "fieldtype": "Select",
+   "label": "Laptop",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.laptop1 == \"Yes\"",
+   "fieldname": "laptop_model_details1",
+   "fieldtype": "Data",
+   "label": "Laptop Model Details",
+   "mandatory_depends_on": "eval:doc.laptop1 == \"Yes\""
+  },
+  {
+   "fieldname": "headphone1",
+   "fieldtype": "Select",
+   "label": "Headphone",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "description": "To be filled by the user at the time of issuing a laptop",
+   "fieldname": "item_details_received_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details Received"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date_of_receive",
+   "fieldtype": "Date",
+   "label": "Date of Receive"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "adaptor",
+   "fieldtype": "Select",
+   "label": "Adaptor",
+   "options": "\nYes\nNo"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "bag",
+   "fieldtype": "Select",
+   "label": "Bag",
+   "options": "\nYes\nNo"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "headphone",
+   "fieldtype": "Select",
+   "label": "Headphone",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "laptop",
+   "fieldtype": "Select",
+   "label": "Laptop",
+   "options": "\nYes\nNo"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.laptop == \"Yes\"",
+   "fieldname": "laptop_model_details",
+   "fieldtype": "Data",
+   "label": "Laptop Model Details",
+   "mandatory_depends_on": "eval:doc.laptop == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "mouse",
+   "fieldtype": "Select",
+   "label": "Mouse",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "declaration_cum_undertaking_section",
+   "fieldtype": "Section Break",
+   "label": "DECLARATION CUM UNDERTAKING"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "declaration_cum_undertaking",
+   "fieldtype": "Text Editor",
+   "label": "DECLARATION CUM UNDERTAKING"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "user_signature_preview",
+   "fieldtype": "Image",
+   "label": "User Signature Preview",
+   "options": "user_signature"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "user_signature",
+   "fieldtype": "Attach Image",
+   "label": "User Signature"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_manager_signature_preview",
+   "fieldtype": "Image",
+   "label": "IT Manager Signature Preview",
+   "options": "it_manager_sinature"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_manager_sinature",
+   "fieldtype": "Attach Image",
+   "label": "IT Manager Signature"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Laptop Requisition Form",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-21 12:58:07.103956",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Laptop Requisition Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

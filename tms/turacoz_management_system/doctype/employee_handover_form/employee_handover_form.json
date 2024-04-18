@@ -1,0 +1,313 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_code",
+ "creation": "2022-11-30 12:04:37.527518",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "employee_code",
+  "employee_name",
+  "designation",
+  "department",
+  "column_break_7",
+  "date_of_joining",
+  "department_head",
+  "column_break_8",
+  "reporting_manager_id",
+  "reporting_manager",
+  "location",
+  "handover_checklist_section",
+  "checklist_item_1",
+  "checklist_item_2",
+  "checklist_item_3",
+  "checklist_item_4",
+  "checklist_item_5",
+  "column_break_18",
+  "checklist_item_6",
+  "checklist_item_7",
+  "checklist_item_8",
+  "checklist_item_9",
+  "section_break_23",
+  "address",
+  "employee_signature_section",
+  "contact_number",
+  "signature_of_the_employee",
+  "date",
+  "accountant_signature_section",
+  "accountant_date",
+  "accountant_signature",
+  "it_manager_signature_section",
+  "it_date",
+  "it_manager_signature",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "Employee Code",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee_code.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "employee_code.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_code.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "employee_code.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "reporting_manager",
+   "fieldtype": "Data",
+   "label": "Reporting Manager Name"
+  },
+  {
+   "fieldname": "department_head",
+   "fieldtype": "Data",
+   "label": "Department Head"
+  },
+  {
+   "fieldname": "handover_checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Handover Checklist"
+  },
+  {
+   "fieldname": "checklist_item_1",
+   "fieldtype": "Select",
+   "label": "Process related documents (Paper / Electronic) provided",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_2",
+   "fieldtype": "Select",
+   "label": "Training record file submitted",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_3",
+   "fieldtype": "Select",
+   "label": "IT Assets (PC/Laptop/Pen drive/USB Drive, etc.) submitted",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_4",
+   "fieldtype": "Select",
+   "label": "User login password disabled",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_5",
+   "fieldtype": "Select",
+   "label": "E-mail archived and transferred to handover recipient",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_6",
+   "fieldtype": "Select",
+   "label": "Client(s) notified",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_7",
+   "fieldtype": "Select",
+   "label": "Database(s) access deactivated ",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_8",
+   "fieldtype": "Select",
+   "label": "Accounts (Outstanding loans/Advances, Travel Advance etc.) ",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checklist_item_9",
+   "fieldtype": "Select",
+   "label": "HR (ID Card, Office key, Visiting card, Drawer key, Mobile handset, Sim, HR software access)",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address for Communication (For all future correspondence i.e. Full & Final Cheques, Relieving letter, Experience Letter etc.)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Handover Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee_code.user_id",
+   "fieldname": "reporting_manager_id",
+   "fieldtype": "Link",
+   "label": "Reporting Manager ID",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_signature_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Signature"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signature_of_the_employee",
+   "fieldtype": "Attach Image",
+   "label": "Signature of the Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accountant_signature_section",
+   "fieldtype": "Section Break",
+   "label": "Accountant Signature "
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "accountant_date",
+   "fieldtype": "Date",
+   "label": "Accountant Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "accountant_signature",
+   "fieldtype": "Attach Image",
+   "label": "Accountant Signature "
+  },
+  {
+   "fieldname": "it_manager_signature_section",
+   "fieldtype": "Section Break",
+   "label": "IT Manager Signature"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_date",
+   "fieldtype": "Date",
+   "label": "IT Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_manager_signature",
+   "fieldtype": "Attach Image",
+   "label": "IT Manager Signature"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-23 15:13:01.019690",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Handover Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

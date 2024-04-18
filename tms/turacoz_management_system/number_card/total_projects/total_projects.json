@@ -1,0 +1,22 @@
+{
+ "creation": "2022-09-30 12:46:12.089259",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{\"from_date\":\"2022-09-01\",\"to_date\":\"2022-09-30\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Total Projects",
+ "modified": "2022-09-30 12:46:12.142266",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Total Projects",
+ "owner": "Administrator",
+ "report_field": "project_count",
+ "report_function": "Sum",
+ "report_name": "Project and Workflow Status",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

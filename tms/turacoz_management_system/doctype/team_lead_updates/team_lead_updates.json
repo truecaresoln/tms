@@ -1,0 +1,126 @@
+{
+ "autoname": "field:project",
+ "creation": "2021-12-22 13:18:24.689308",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "section_break_2",
+  "last_deliverable",
+  "project_status_according_tl",
+  "column_break_5",
+  "last_deliverable_sent_date",
+  "next_deliverable_detail_section",
+  "next_deliverable_to_be_sent",
+  "column_break_9",
+  "next_deliverable_sent_date",
+  "section_break_11",
+  "remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Last Deliverable Detail"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "last_deliverable",
+   "fieldtype": "Data",
+   "label": "Last Deliverable"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "last_deliverable_sent_date",
+   "fieldtype": "Date",
+   "label": "Last Deliverable Sent Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_status_according_tl",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Status According to TLs",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "next_deliverable_to_be_sent",
+   "fieldtype": "Data",
+   "label": "Next Deliverable to be Sent"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "next_deliverable_sent_date",
+   "fieldtype": "Date",
+   "label": "Next Deliverable to be Sent Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Team Lead Updates",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_deliverable_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Next Deliverable Detail"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Any Other Remark"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-12-23 14:33:31.693342",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Team Lead Updates",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

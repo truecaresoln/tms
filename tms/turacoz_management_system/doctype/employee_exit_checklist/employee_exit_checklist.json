@@ -1,0 +1,414 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_code",
+ "creation": "2022-11-21 15:53:13.344988",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "employee_code",
+  "department",
+  "reporting_to",
+  "location",
+  "column_break_6",
+  "employee_name",
+  "designation",
+  "contact",
+  "access_checklist_section",
+  "disabled_system_credentials",
+  "reset_email_id_password",
+  "disabled_skype_id",
+  "removed_email_account_from_mobile",
+  "removed_from_o365_dl",
+  "column_break_16",
+  "backup_outlook_and_user_data",
+  "biomatrix_disabled",
+  "email_forwarded_to_management_team",
+  "remove_data_from_laptop_desktop",
+  "software_checklist_section",
+  "office_365",
+  "symantec_av",
+  "others",
+  "column_break_25",
+  "endnote_x9",
+  "kreato",
+  "hardware_checklist_section",
+  "laptop_asset_tag_no",
+  "laptop_charger_tag_no",
+  "mouse_asset_tag_no",
+  "update_assets_in_erp",
+  "column_break_33",
+  "laptop_bag",
+  "headphone_tag_no",
+  "desktop_tag_no",
+  "other",
+  "section_break_38",
+  "it_sign_preview",
+  "it_sign",
+  "column_break_41",
+  "it_manager_name",
+  "it_date",
+  "section_break_46",
+  "employee_sign_preview",
+  "employee_sign",
+  "column_break_47",
+  "employee_date",
+  "section_break_49",
+  "comments",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reporting_to",
+   "fieldtype": "Data",
+   "label": "Reporting To",
+   "read_only": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "access_checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Access Checklist"
+  },
+  {
+   "fieldname": "disabled_system_credentials",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Disabled System Credentials",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reset_email_id_password",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Reset Email ID password",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "disabled_skype_id",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Disabled Skype id",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "removed_email_account_from_mobile",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Removed Email Account from Mobile",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "removed_from_o365_dl",
+   "fieldtype": "Select",
+   "label": "Removed from O365 DL",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "backup_outlook_and_user_data",
+   "fieldtype": "Select",
+   "label": "Backup Outlook and User Data",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "biomatrix_disabled",
+   "fieldtype": "Select",
+   "label": "Biomatrix disabled",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_forwarded_to_management_team",
+   "fieldtype": "Select",
+   "label": "Email forwarded to Management Team",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remove_data_from_laptop_desktop",
+   "fieldtype": "Select",
+   "label": "Remove Data from Laptop/ Desktop",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "software_checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Software Checklist"
+  },
+  {
+   "fieldname": "office_365",
+   "fieldtype": "Select",
+   "label": "Office 365",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "symantec_av",
+   "fieldtype": "Select",
+   "label": "Symantec AV",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Select",
+   "label": "Others",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "endnote_x9",
+   "fieldtype": "Select",
+   "label": "Endnote X9",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "kreato",
+   "fieldtype": "Select",
+   "label": "Kreato",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hardware_checklist_section",
+   "fieldtype": "Section Break",
+   "label": "Hardware Checklist"
+  },
+  {
+   "fieldname": "laptop_asset_tag_no",
+   "fieldtype": "Data",
+   "label": "Laptop (Asset Tag No)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "laptop_charger_tag_no",
+   "fieldtype": "Data",
+   "label": "Laptop Charger (Tag No)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mouse_asset_tag_no",
+   "fieldtype": "Data",
+   "label": "Mouse (Asset Tag No)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "update_assets_in_erp",
+   "fieldtype": "Data",
+   "label": "Update Assets in ERP",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "laptop_bag",
+   "fieldtype": "Data",
+   "label": "Laptop Bag",
+   "reqd": 1
+  },
+  {
+   "fieldname": "headphone_tag_no",
+   "fieldtype": "Data",
+   "label": "Headphone (Tag No)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "desktop_tag_no",
+   "fieldtype": "Data",
+   "label": "Desktop (Tag No)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break",
+   "label": "IT Signatures"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_sign_preview",
+   "fieldtype": "Image",
+   "label": "IT Sign Preview",
+   "options": "it_sign"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_sign",
+   "fieldtype": "Attach Image",
+   "label": "IT Sign"
+  },
+  {
+   "fieldname": "column_break_41",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "it_manager_name",
+   "fieldtype": "Data",
+   "label": "IT Manager Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Today",
+   "fieldname": "it_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_46",
+   "fieldtype": "Section Break",
+   "label": "Employee Signature"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "employee_sign_preview",
+   "fieldtype": "Image",
+   "label": "Employee Sign Preview",
+   "options": "employee_sign"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "employee_sign",
+   "fieldtype": "Attach Image",
+   "label": "Employee Sign"
+  },
+  {
+   "fieldname": "column_break_47",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Today",
+   "fieldname": "employee_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Exit Checklist",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-21 12:52:34.371073",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Exit Checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

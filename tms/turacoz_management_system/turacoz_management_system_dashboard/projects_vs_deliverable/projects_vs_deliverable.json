@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Project Vs Deliverable",
+   "width": "Full"
+  },
+  {
+   "chart": "Project Vs Team",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-09-30 12:39:35.432059",
+ "dashboard_name": "Projects vs Deliverable",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-09-30 13:44:14.516694",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Projects vs Deliverable",
+ "owner": "Administrator"
+}

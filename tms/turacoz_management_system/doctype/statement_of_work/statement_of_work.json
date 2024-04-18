@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:sow_number",
+ "creation": "2022-08-22 15:00:46.746120",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "sow_date",
+  "type",
+  "column_break_3",
+  "sow_number",
+  "sow_change_order",
+  "section_break_5",
+  "status",
+  "currency",
+  "amount",
+  "column_break_9",
+  "entry_date",
+  "customer",
+  "sowchange_order_percentage",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sow_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "SOW/Change Order Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0% Consumed",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\n0% Consumed\n50% Consumed\n75% Consumed\n100% Consumed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sow_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "SOW Date",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "entry_date",
+   "fieldtype": "Date",
+   "label": "Entry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Statement of Work",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Statement of Work/Change Order number and validity",
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nSOW\nChange Order",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.type==\"Change Order\"",
+   "fieldname": "sow_change_order",
+   "fieldtype": "Link",
+   "label": "Select SOW Number",
+   "mandatory_depends_on": "eval:doc.type==\"Change Order\"",
+   "options": "Statement of Work"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0.0",
+   "fieldname": "sowchange_order_percentage",
+   "fieldtype": "Percent",
+   "label": "SOW/Change Order Used Percentage",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-08 13:51:52.610633",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Statement of Work",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

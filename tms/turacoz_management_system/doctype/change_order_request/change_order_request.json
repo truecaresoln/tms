@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-09-02 12:13:53.871928",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "statement_of_work",
+  "section_break_2",
+  "initiated_date",
+  "currency",
+  "column_break_6",
+  "status",
+  "amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "CO-.YYYY.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "statement_of_work",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "SOW",
+   "options": "Statement of Work",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "initiated_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Initiated Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "In Process",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nIn Process\nReceived",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Change Order Request",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-09-14 13:25:12.957093",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Change Order Request",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

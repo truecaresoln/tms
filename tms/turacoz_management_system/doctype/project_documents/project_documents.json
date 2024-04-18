@@ -1,0 +1,113 @@
+{
+ "autoname": "format:{project}-{name_of_document}",
+ "creation": "2021-05-26 14:11:41.275858",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_detail_section",
+  "project",
+  "date_of_received",
+  "draft_sent_date",
+  "column_break_3",
+  "name_of_document",
+  "attach_document",
+  "share_point_link_section",
+  "share_point_link",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project ",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "name_of_document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Name of document ",
+   "options": "Project Document Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_received",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Received Date (if document received from client)"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach Document",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Documents",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Document Detail"
+  },
+  {
+   "fieldname": "draft_sent_date",
+   "fieldtype": "Date",
+   "label": "Sent Date (if document sent by Turacoz)"
+  },
+  {
+   "fieldname": "share_point_link_section",
+   "fieldtype": "Section Break",
+   "label": "Share Point Detail"
+  },
+  {
+   "fieldname": "share_point_link",
+   "fieldtype": "Small Text",
+   "label": "Share Point Link"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-11-11 11:17:28.680321",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Documents",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

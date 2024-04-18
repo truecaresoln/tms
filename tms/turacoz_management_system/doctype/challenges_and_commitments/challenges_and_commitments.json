@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "autoname": "format:CHALLENGE-{YYYY}-{type}-{###}",
+ "creation": "2022-08-03 15:15:03.795864",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "challenges_section",
+  "challenge_related_to",
+  "committed_date",
+  "customer",
+  "project",
+  "description_of_challenge",
+  "date_of_solution",
+  "remark",
+  "column_break_8",
+  "date",
+  "type",
+  "type_of_challenge",
+  "challenge_status",
+  "solutions",
+  "section_break_15",
+  "create_todo",
+  "column_break_17",
+  "task_owner",
+  "task_owner_name",
+  "section_break_19",
+  "approver",
+  "creator",
+  "email_sent",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "challenges_section",
+   "fieldtype": "Section Break",
+   "label": "Challenges and Commitments"
+  },
+  {
+   "fieldname": "challenge_related_to",
+   "fieldtype": "Select",
+   "label": "Challenge Related To",
+   "options": "\nProject\nCustomer\nTraining Related\nOthers",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "committed_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Committed Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "description_of_challenge",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description of Challenge",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date_of_solution",
+   "fieldtype": "Date",
+   "label": "Date of Solution "
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Remark"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nInternal\nExternal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_of_challenge",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Type of Challenge",
+   "options": "\nTechnical\nFinancial\nOther",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Active",
+   "fieldname": "challenge_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Challenge Status",
+   "options": "\nActive\nClose",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.challenge_status == \"Close\"",
+   "fieldname": "solutions",
+   "fieldtype": "Small Text",
+   "label": "Solutions",
+   "mandatory_depends_on": "eval:doc.challenge_status == \"Close\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "creator",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Creator",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Int",
+   "label": "Email Sent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Challenges and Commitments",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "create_todo",
+   "fieldtype": "Select",
+   "label": "Do you want create ToDo ?",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.create_todo == \"Yes\"",
+   "fieldname": "task_owner",
+   "fieldtype": "Link",
+   "label": "Select Task Owner",
+   "mandatory_depends_on": "eval:doc.create_todo == \"Yes\"",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "task_owner.full_name",
+   "fieldname": "task_owner_name",
+   "fieldtype": "Data",
+   "label": "Task Owner Name",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-10-07 17:52:28.784658",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Challenges and Commitments",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Management Associate",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Medical Writer",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Dashboard",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "description_of_challenge",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "autoname": "format:TECHNICALL-QUERY-{###}-{bd_poc_name}",
+ "creation": "2021-07-14 12:51:38.414369",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "bd_poc",
+  "response_by",
+  "service",
+  "customer",
+  "query_status",
+  "column_break_4",
+  "bd_poc_name",
+  "for_response_name",
+  "service_types",
+  "contact",
+  "query_received_from_client_section",
+  "query_recevied",
+  "response_from_technical_team_section",
+  "technical_team_response",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "bd_poc",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Creator",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client (Company)",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Client PoC",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "query_received_from_client_section",
+   "fieldtype": "Section Break",
+   "label": "Query Received"
+  },
+  {
+   "fieldname": "query_recevied",
+   "fieldtype": "Small Text",
+   "label": "Query Recieved",
+   "reqd": 1
+  },
+  {
+   "fieldname": "response_from_technical_team_section",
+   "fieldtype": "Section Break",
+   "label": "Response From Technical Team"
+  },
+  {
+   "fieldname": "technical_team_response",
+   "fieldtype": "Small Text",
+   "label": "Response Received from Technical Team (Content)"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Responder",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "query_status",
+   "fieldtype": "Select",
+   "label": "Query Status",
+   "options": "\nDraft\nRespond"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Services"
+  },
+  {
+   "fieldname": "service_types",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Service ",
+   "options": "Service Types",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Response Bank on Technical Queries",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bd_poc.full_name",
+   "fieldname": "bd_poc_name",
+   "fieldtype": "Data",
+   "label": "Creator Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "response_by.full_name",
+   "fieldname": "for_response_name",
+   "fieldtype": "Data",
+   "label": "Responder Name",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-06 14:06:55.159967",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Response Bank on Technical Queries",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Medical Writer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Development Associate",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

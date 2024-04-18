@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{month}-{year}-{project_manager}",
+ "creation": "2023-05-23 15:01:56.504024",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "project_manager",
+  "column_break_3",
+  "year",
+  "manager_name",
+  "section_break_5",
+  "total_amount_due",
+  "amount_received_till_date",
+  "column_break_8",
+  "total_amount_decided",
+  "section_break_11",
+  "description_of_amount_received"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\n01\n02\n03\n04\n05\n06\n07\n08\n09\n10\n11\n12"
+  },
+  {
+   "default": "2023",
+   "fieldname": "year",
+   "fieldtype": "Select",
+   "label": "Year",
+   "options": "\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030\n2031\n2032"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "User"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_amount_due",
+   "fieldtype": "Data",
+   "label": "Total Amount Due"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "total_amount_decided",
+   "fieldtype": "Data",
+   "label": "Total Amount Decided"
+  },
+  {
+   "default": "0.0",
+   "fieldname": "amount_received_till_date",
+   "fieldtype": "Data",
+   "label": "Amount Received Till Date"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "=project_manager.full_name",
+   "fieldname": "manager_name",
+   "fieldtype": "Data",
+   "label": "Manager Name"
+  },
+  {
+   "fieldname": "description_of_amount_received",
+   "fieldtype": "Small Text",
+   "label": "Description of Amount Received"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-23 21:33:03.547174",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Monthly Analysis PM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

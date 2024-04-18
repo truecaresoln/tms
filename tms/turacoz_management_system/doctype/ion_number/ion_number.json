@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "autoname": "format:{project}-{ion_number}-{###}",
+ "creation": "2021-10-11 15:30:36.083374",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "create_date",
+  "column_break_2",
+  "ion_request_date",
+  "section_break_2",
+  "project",
+  "statement_of_work",
+  "column_break_4",
+  "project_cost",
+  "sow_date",
+  "section_break_10",
+  "ion_number",
+  "column_break_12",
+  "ion_received_date",
+  "section_break_14",
+  "sales_invoice_status",
+  "column_break_16",
+  "sales_invoice",
+  "section_break_18",
+  "payment_request_status",
+  "column_break_20",
+  "payment_request"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ion_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ION Number"
+  },
+  {
+   "default": "Today",
+   "fieldname": "create_date",
+   "fieldtype": "Date",
+   "label": "Create Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ion_received_date",
+   "fieldtype": "Date",
+   "label": "ION Received Date"
+  },
+  {
+   "fieldname": "statement_of_work",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "SOW/Change Order",
+   "options": "Statement of Work",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "statement_of_work.sow_date",
+   "fieldname": "sow_date",
+   "fieldtype": "Date",
+   "label": "SOW/Change Order Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ion_request_date",
+   "fieldtype": "Date",
+   "label": "ION Request Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_cost",
+   "fieldtype": "Float",
+   "label": "Project Cost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Not Generated",
+   "fieldname": "sales_invoice_status",
+   "fieldtype": "Select",
+   "label": "Sales Invoice Status",
+   "options": "\nNot Generated\nGenerated"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Not Generated",
+   "fieldname": "payment_request_status",
+   "fieldtype": "Select",
+   "label": "Payment Request Status",
+   "options": "\nNot Generated\nGenerated"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Request",
+   "options": "Payment Request"
+  }
+ ],
+ "links": [],
+ "modified": "2023-01-09 10:49:34.602908",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "ION Number",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,114 @@
+{
+ "autoname": "format:BATCH-{year_of_batch}-{batch}-{course_name}",
+ "creation": "2021-09-09 17:13:18.448123",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "training_vertical_of_turacoz_group_section",
+  "year_of_batch",
+  "batch",
+  "column_break_3",
+  "course_name",
+  "course_data_link",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "year_of_batch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Year of Batch",
+   "options": "Years",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Batch",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "course_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Course Name",
+   "options": "Course Name",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "course_data_link",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Course Data Link",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training vertical of Turacoz Group",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "training_vertical_of_turacoz_group_section",
+   "fieldtype": "Section Break",
+   "label": "Training Vertical of Turacoz Group"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-09-13 17:05:33.066397",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Training vertical of Turacoz Group",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

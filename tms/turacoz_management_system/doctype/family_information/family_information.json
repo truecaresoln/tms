@@ -1,0 +1,58 @@
+{
+ "creation": "2021-12-20 16:34:03.832359",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "spouse",
+  "child",
+  "father",
+  "mother",
+  "sblings"
+ ],
+ "fields": [
+  {
+   "fieldname": "spouse",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Spouse"
+  },
+  {
+   "fieldname": "child",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Child"
+  },
+  {
+   "fieldname": "father",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Father",
+   "options": "\nRetired\nWorking"
+  },
+  {
+   "fieldname": "mother",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mother",
+   "options": "\nRetired\nWorking\nHousewife"
+  },
+  {
+   "fieldname": "sblings",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sblings"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-12-20 18:20:53.312904",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Family Information",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

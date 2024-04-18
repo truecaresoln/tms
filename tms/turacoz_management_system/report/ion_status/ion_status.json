@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-09-28 10:45:17.770171",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-10-06 13:35:55.183587",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "ION Status",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "ION Number",
+ "report_name": "ION Status",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Statement of Work"
+  }
+ ]
+}

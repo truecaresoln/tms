@@ -1,0 +1,141 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2022-02-04 18:45:26.491297",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "deliverable",
+  "column_break_3",
+  "customer",
+  "bd_person",
+  "column_break_4",
+  "project_manager",
+  "naming_series",
+  "section_break_5",
+  "client_feedback",
+  "section_break_7",
+  "involve_team",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project Manager",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CLT-APR-.YYYY.-."
+  },
+  {
+   "fieldname": "client_feedback",
+   "fieldtype": "Small Text",
+   "label": "Client Feedback",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Appreciation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "involve_team",
+   "fieldtype": "Table",
+   "label": "Involve Team",
+   "options": "Appreciation Involve Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deliverable",
+   "fieldtype": "Data",
+   "label": "Deliverable"
+  },
+  {
+   "fieldname": "bd_person",
+   "fieldtype": "Link",
+   "label": "BD Person",
+   "options": "User",
+   "reqd": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2022-02-18 14:41:22.316753",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Appreciation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Management Associate",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

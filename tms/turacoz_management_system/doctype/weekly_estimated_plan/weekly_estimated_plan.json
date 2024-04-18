@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "creation": "2022-02-24 12:51:53.653333",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "creation_date",
+  "todo_id",
+  "todo_name",
+  "project",
+  "employee_user_id",
+  "priority",
+  "role",
+  "column_break_4",
+  "week_date",
+  "week_day",
+  "estimated_hour_for_wee",
+  "spent_hour",
+  "employee_name",
+  "status",
+  "section_break_8",
+  "task_description",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "todo_id",
+   "fieldtype": "Int",
+   "label": "ToDo ID"
+  },
+  {
+   "fieldname": "todo_name",
+   "fieldtype": "Link",
+   "label": "ToDo Name",
+   "options": "ToDo"
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Small Text",
+   "label": "Task Description "
+  },
+  {
+   "fieldname": "week_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Week Date"
+  },
+  {
+   "fieldname": "week_day",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Week Day",
+   "options": "\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
+  },
+  {
+   "fieldname": "estimated_hour_for_wee",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Estimated Hours for Week"
+  },
+  {
+   "default": "Today",
+   "fieldname": "creation_date",
+   "fieldtype": "Read Only",
+   "label": "Creation Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_user_id",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee User ID",
+   "options": "User"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nHigh\nMedium\nLow"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Task Status",
+   "options": "\nOpen\nClosed\nOverdue\nCancelled\nDisable"
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "label": "Role",
+   "options": "Project Role"
+  },
+  {
+   "fieldname": "spent_hour",
+   "fieldtype": "Float",
+   "label": "Spent Hour"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-22 10:51:31.346851",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Weekly Estimated Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

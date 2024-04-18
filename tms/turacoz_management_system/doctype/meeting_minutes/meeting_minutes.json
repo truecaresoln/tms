@@ -1,0 +1,44 @@
+{
+ "creation": "2022-02-02 12:53:51.509107",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "minutes",
+  "column_break_2",
+  "responsible_person"
+ ],
+ "fields": [
+  {
+   "fieldname": "minutes",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Minutes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "responsible_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Responsible person",
+   "options": "User",
+   "width": "100px;"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-02 17:16:50.645831",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Meeting Minutes",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

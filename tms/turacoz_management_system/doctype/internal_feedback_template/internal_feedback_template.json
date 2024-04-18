@@ -1,0 +1,57 @@
+{
+ "autoname": "field:template",
+ "creation": "2021-06-14 12:49:39.121096",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template",
+  "parameters_section",
+  "internal_feedback_parameters"
+ ],
+ "fields": [
+  {
+   "fieldname": "template",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "parameters_section",
+   "fieldtype": "Section Break",
+   "label": "Parameters"
+  },
+  {
+   "columns": 7,
+   "fieldname": "internal_feedback_parameters",
+   "fieldtype": "Table",
+   "label": "Internal Feedback Parameters",
+   "options": "Internal Feedback Template Parameter"
+  }
+ ],
+ "modified": "2021-06-14 14:19:40.173259",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Internal Feedback Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

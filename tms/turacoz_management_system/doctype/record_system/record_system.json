@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{type}-{report_name}",
+ "creation": "2023-02-10 15:05:07.925812",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "report_name",
+  "description",
+  "frequency",
+  "trigger",
+  "time",
+  "day",
+  "month",
+  "users",
+  "roles",
+  "field_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Report\nAlert"
+  },
+  {
+   "fieldname": "report_name",
+   "fieldtype": "Data",
+   "label": "Report / Alert Name"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "\nAdHoc\nDaily\nWeekly\nMonthly\nQuarterly\nHalf Yearly\nYearly"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Daily\"",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Weekly\"",
+   "fieldname": "day",
+   "fieldtype": "Table",
+   "label": "Day",
+   "options": "Weekly Child Record"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Monthly\" || doc.frequency == \"Quarterly\" || doc.frequency == \"Half Yearly\" || doc.frequency == \"Yearly\"",
+   "fieldname": "month",
+   "fieldtype": "Table",
+   "label": "Month",
+   "options": "Monthly Child Record"
+  },
+  {
+   "fieldname": "users",
+   "fieldtype": "Table",
+   "label": "Users",
+   "options": "Users"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"AdHoc\"",
+   "fieldname": "trigger",
+   "fieldtype": "Data",
+   "label": "Trigger"
+  },
+  {
+   "fieldname": "roles",
+   "fieldtype": "Table",
+   "label": "Roles",
+   "options": "Record System Roles"
+  },
+  {
+   "fieldname": "field_name",
+   "fieldtype": "Table",
+   "label": "Field name",
+   "options": "Record System Field Name"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-17 11:06:09.694345",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Record System",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

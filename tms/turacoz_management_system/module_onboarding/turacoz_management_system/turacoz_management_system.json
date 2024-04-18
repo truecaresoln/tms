@@ -1,0 +1,26 @@
+{
+ "allow_roles": [
+  {
+   "role": "Medical Writer"
+  }
+ ],
+ "creation": "2022-02-21 16:54:10.536372",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "hi",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2022-02-21 16:54:10.536372",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Turacoz Management System",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "HR"
+  }
+ ],
+ "subtitle": "TMS",
+ "success_message": "hello",
+ "title": "Turacoz Management System"
+}

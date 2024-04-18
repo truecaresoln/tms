@@ -1,0 +1,46 @@
+{
+ "creation": "2022-02-07 11:32:07.716678",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "involve_team_member",
+  "employee_name",
+  "email_sent"
+ ],
+ "fields": [
+  {
+   "fieldname": "involve_team_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Involve Team Member",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "involve_team_member.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Employee Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Int",
+   "label": "Email Sent",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-07 12:10:12.262861",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Appreciation Involve Team",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

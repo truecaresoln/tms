@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-12 13:21:38.760387",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "allocated_to",
+  "allocated_to_full_name",
+  "allocated_hours",
+  "spent_hours",
+  "column_break_5",
+  "role",
+  "todo",
+  "task",
+  "todo_id",
+  "status"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "allocated_to",
+   "fieldtype": "Link",
+   "label": "Allocated To",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "allocated_to_full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Allocated To Full Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "allocated_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Allocated Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "spent_hours",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Spent Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Project Role"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "todo",
+   "fieldtype": "Link",
+   "label": "ToDo",
+   "options": "ToDo",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "label": "Task",
+   "options": "Task",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "todo_id",
+   "fieldtype": "Int",
+   "label": "ToDo ID",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClosed\nCancelled\nOverdue\nDisable",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-22 15:48:42.567025",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Team Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

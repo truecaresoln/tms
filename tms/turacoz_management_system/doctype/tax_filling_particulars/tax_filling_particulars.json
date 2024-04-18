@@ -1,0 +1,49 @@
+{
+ "creation": "2021-05-21 13:28:16.988453",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_particulars",
+  "document_id",
+  "document_amount",
+  "tax_value"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_particulars",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Particulars"
+  },
+  {
+   "fieldname": "document_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document ID"
+  },
+  {
+   "fieldname": "document_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Document Amount"
+  },
+  {
+   "fieldname": "tax_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Tax Value"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-05-21 16:57:05.207355",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Tax Filling Particulars",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

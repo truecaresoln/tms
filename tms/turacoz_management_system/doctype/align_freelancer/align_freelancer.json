@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "creation": "2021-11-29 11:10:49.820566",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "freelancer",
+  "freelancer_name",
+  "role",
+  "type_of_document",
+  "description",
+  "status",
+  "column_break_6",
+  "start_date",
+  "close_date",
+  "actual_close_date",
+  "rating",
+  "rating_remark",
+  "freelancer_project_detail_name"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "freelancer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Freelancer",
+   "options": "Freelancer",
+   "reqd": 1,
+   "width": "100PX"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "freelancer.freelancer_name",
+   "fieldname": "freelancer_name",
+   "fieldtype": "Data",
+   "label": "Freelancer Name",
+   "read_only": 1,
+   "width": "100PX"
+  },
+  {
+   "columns": 1,
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "\nDrafter\nReviewer\nQCer\nDesigner\nStatistician",
+   "reqd": 1,
+   "width": "50px"
+  },
+  {
+   "fieldname": "type_of_document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Document",
+   "options": "Deliverable",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "close_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Close Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating for This Task "
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "rating_remark",
+   "fieldtype": "Small Text",
+   "label": "Rating Remark"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freelancer_project_detail_name",
+   "fieldtype": "Read Only",
+   "label": "Freelancer Project Detail Name"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nClosed\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "actual_close_date",
+   "fieldtype": "Date",
+   "label": "Actual Close Date"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-13 11:55:11.841895",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Align Freelancer",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

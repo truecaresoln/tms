@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "autoname": "format:PUD-TECH-INPUT-{YYYY}-{####}",
+ "creation": "2021-11-11 15:57:02.572338",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "project_detail_template",
+  "section_break_3",
+  "customer",
+  "column_break_4",
+  "project",
+  "section_break_6",
+  "objective_of_the_project",
+  "detailed_scope_of_the_project_section",
+  "detailed_scope_of_the_project",
+  "section_break_10",
+  "details_of_table_of_contents",
+  "section_break_12",
+  "target_audience",
+  "target_journal_if_publication",
+  "column_break_15",
+  "authors",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "objective_of_the_project",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Objective of the Project",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "target_audience",
+   "fieldtype": "Table MultiSelect",
+   "label": "Target audience for the deliverable",
+   "options": "PUD Target Audience"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "detailed_scope_of_the_project",
+   "fieldtype": "Text Editor",
+   "label": "Detailed scope of the project",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "details_of_table_of_contents",
+   "fieldtype": "Small Text",
+   "label": "Details of table of contents"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "target_journal_if_publication",
+   "fieldtype": "Table MultiSelect",
+   "label": "Target journal if publication ",
+   "options": "PUD Target Journal"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "authors",
+   "fieldtype": "Data",
+   "label": "Authors"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "project_detail_template",
+   "fieldtype": "Link",
+   "label": "Project Detail Template",
+   "options": "Project Detail Template"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Objective of the Project"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "detailed_scope_of_the_project_section",
+   "fieldtype": "Section Break",
+   "label": "Detailed scope of the project"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Details of table of contents"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "PUD Technical Input",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-22 12:31:57.400609",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "PUD Technical Input",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

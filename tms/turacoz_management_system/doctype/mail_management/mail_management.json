@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{date}-{####}",
+ "creation": "2023-01-18 12:56:27.256315",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_2",
+  "status",
+  "bd_data_section",
+  "turacoz_poc",
+  "department",
+  "customer_data_section",
+  "customer",
+  "email",
+  "column_break_6",
+  "client_poc",
+  "mobile_no",
+  "section_break_9",
+  "message",
+  "comment",
+  "create_todo",
+  "todo_section",
+  "start_date",
+  "description",
+  "column_break_20",
+  "end_date",
+  "section_break_22",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "turacoz_poc",
+   "fieldtype": "Link",
+   "label": "Turacoz PoC",
+   "options": "User"
+  },
+  {
+   "fieldname": "client_poc",
+   "fieldtype": "Data",
+   "label": "Client PoC"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile no"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text Editor",
+   "label": "Message"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Select",
+   "label": "Comment",
+   "options": "\nPositive\nNegative\nFuture Prospect"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClose"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "Inner Mail"
+  },
+  {
+   "fieldname": "bd_data_section",
+   "fieldtype": "Section Break",
+   "label": "BD Data"
+  },
+  {
+   "fieldname": "customer_data_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Data"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "create_todo",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Do you want create ToDo ?",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fetch_from": "turacoz_poc.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "depends_on": "eval:doc.create_todo == \"Yes\"",
+   "fieldname": "todo_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "ToDO"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-10 12:22:31.639195",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Mail management",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

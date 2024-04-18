@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:invoice_number",
+ "creation": "2023-02-21 11:26:02.957532",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "invoice_number",
+  "invoice_date",
+  "vendor_supplier",
+  "currency",
+  "column_break_5",
+  "net_total",
+  "gst",
+  "grand_total",
+  "adjustable_gst"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Read Only",
+   "label": "Date"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "label": "Invoice Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vendor_supplier",
+   "fieldtype": "Data",
+   "label": "vendor/Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Total",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "0.0",
+   "fieldname": "gst",
+   "fieldtype": "Currency",
+   "label": "GST",
+   "options": "currency"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Read Only",
+   "label": "Grand Total",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "adjustable_gst",
+   "fieldtype": "Check",
+   "label": "Adjustable GST"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-21 12:48:52.685925",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Purchase Invoice and Receipt",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

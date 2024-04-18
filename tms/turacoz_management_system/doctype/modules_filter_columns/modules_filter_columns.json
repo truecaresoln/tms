@@ -1,0 +1,52 @@
+{
+ "creation": "2021-06-02 16:20:41.623191",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "table_name",
+  "column_name",
+  "column_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_name",
+   "fieldtype": "Data",
+   "label": "Column Name"
+  },
+  {
+   "fieldname": "column_type",
+   "fieldtype": "Data",
+   "label": "Column Type"
+  },
+  {
+   "fieldname": "table_name",
+   "fieldtype": "Link",
+   "label": "Table Name",
+   "options": "Modules Filter"
+  }
+ ],
+ "modified": "2021-06-02 16:45:41.359404",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Modules Filter Columns",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

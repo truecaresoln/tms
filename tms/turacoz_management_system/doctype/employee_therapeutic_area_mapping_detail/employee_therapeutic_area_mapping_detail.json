@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-12-20 16:53:41.132239",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "therapeutic_area",
+  "description",
+  "proficiency",
+  "evaluate_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "therapeutic_area",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Therapeutic Area",
+   "options": "Therapeutic Area",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "proficiency",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Proficiency"
+  },
+  {
+   "default": "Today",
+   "fieldname": "evaluate_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Evaluate Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-12-20 16:55:00.214379",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Therapeutic Area Mapping Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

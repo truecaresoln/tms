@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "autoname": "format:{deliverable} - {#####}",
+ "creation": "2021-04-01 15:15:03.055729",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deliverable",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "deliverable",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Deliverable",
+   "options": "Deliverable"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Deliverable",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2024-03-21 17:08:02.550097",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Deliverable",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

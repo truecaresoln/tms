@@ -1,0 +1,148 @@
+{
+ "creation": "2021-08-20 14:53:32.019289",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_detail_section",
+  "first_name",
+  "last_name",
+  "column_break_4",
+  "email",
+  "phone_number",
+  "lead_detail_section",
+  "category",
+  "designation",
+  "country",
+  "contact_owner",
+  "linkedin_id",
+  "column_break_13",
+  "contact_type",
+  "department",
+  "opt_out_status",
+  "out_reach_source",
+  "priority_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "unique": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nPharma\nMedtech\nDoctor/Researcher\nBioTech\nMedical Diagnostics\nConsumer Care\nNutrition\nTraining\nCosmetics and Asthetics\nClinical Trials"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country/Region",
+   "options": "Country"
+  },
+  {
+   "fieldname": "contact_owner",
+   "fieldtype": "Link",
+   "label": "Contact Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "linkedin_id",
+   "fieldtype": "Data",
+   "label": "Linkedin ID"
+  },
+  {
+   "fieldname": "contact_type",
+   "fieldtype": "Select",
+   "label": "Contact Type",
+   "options": "\nPrimary\nSecondary"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "\nMedical\nMarketing\nRegulatory\nClinical\nPharmacovigilance\nProcurement\nResearch & Development\nAdministration"
+  },
+  {
+   "fieldname": "opt_out_status",
+   "fieldtype": "Select",
+   "label": "Opt Out Status (S)",
+   "options": "\nOpted Out\nNA"
+  },
+  {
+   "fieldname": "out_reach_source",
+   "fieldtype": "Select",
+   "label": "Out Reach Source (S)",
+   "options": "\nPubmed\nClinical Trail\nLinkedin\nGoogle Search\nCompany Website"
+  },
+  {
+   "fieldname": "priority_data",
+   "fieldtype": "Select",
+   "label": "Priority Data",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "basic_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Detail"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lead_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Detail"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "modified": "2021-08-27 14:30:31.727185",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Hubspot Mater DB",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

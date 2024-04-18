@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "autoname": "format:PLANNER-{######}",
+ "creation": "2021-12-10 14:07:55.487133",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "owner",
+  "allocated_to_name",
+  "status",
+  "column_break_3",
+  "department",
+  "designation",
+  "task_detail_section",
+  "task",
+  "task_brief",
+  "section_break_9",
+  "frequency",
+  "day",
+  "year_date",
+  "month",
+  "month_date",
+  "quarter_date",
+  "start_date",
+  "end_date",
+  "column_break_15",
+  "priority",
+  "checker",
+  "planner_admin",
+  "planner_admin_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation ",
+   "options": "Designation",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "owner",
+   "fieldtype": "Link",
+   "label": "Allocated To",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "owner.full_name",
+   "fieldname": "allocated_to_name",
+   "fieldtype": "Data",
+   "label": "Allocated To Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task",
+   "reqd": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Frequency",
+   "options": "\nDaily\nWeekly\nMonthly\nQuarterly\nYearly\nAd Hoc",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.frequency==\"Weekly\"",
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "label": "Day",
+   "mandatory_depends_on": "eval:doc.frequency==\"Weekly\"",
+   "options": "\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
+  },
+  {
+   "depends_on": "eval:doc.frequency=='Ad Hoc'",
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "mandatory_depends_on": "eval:doc.frequency=='Ad Hoc'"
+  },
+  {
+   "depends_on": "eval:doc.frequency=='Ad Hoc'",
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "mandatory_depends_on": "eval:doc.frequency=='Ad Hoc'"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nHigh\nMedium\nLow"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Enable",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nEnable\nDisable",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "checker",
+   "fieldtype": "Link",
+   "label": "Checker",
+   "options": "User"
+  },
+  {
+   "fieldname": "task_brief",
+   "fieldtype": "Small Text",
+   "label": "Task Brief",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "task_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Task Detail"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Planner",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "rakeshtripathi@turacoz.com",
+   "fieldname": "planner_admin",
+   "fieldtype": "Link",
+   "label": "Planner Admin",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "planner_admin.full_name",
+   "fieldname": "planner_admin_name",
+   "fieldtype": "Data",
+   "label": "Planner Admin Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.frequency==\"Monthly\"",
+   "fieldname": "month_date",
+   "fieldtype": "Select",
+   "label": "Month Date",
+   "mandatory_depends_on": "eval:doc.frequency==\"Monthly\"",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31"
+  },
+  {
+   "depends_on": "eval:doc.frequency==\"Yearly\"",
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "mandatory_depends_on": "eval:doc.frequency==\"Yearly\"",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec"
+  },
+  {
+   "depends_on": "eval:doc.frequency==\"Yearly\"",
+   "fieldname": "year_date",
+   "fieldtype": "Select",
+   "label": "Year Date",
+   "mandatory_depends_on": "eval:doc.frequency==\"Yearly\"",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31"
+  },
+  {
+   "depends_on": "eval:doc.frequency==\"Quarterly\"",
+   "fieldname": "quarter_date",
+   "fieldtype": "Table",
+   "label": "Quarter Date",
+   "mandatory_depends_on": "eval:doc.frequency==\"Quarterly\"",
+   "options": "Planner Quarter"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-12 16:29:03.524739",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Planner",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

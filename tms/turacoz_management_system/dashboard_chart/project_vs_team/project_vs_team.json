@@ -1,0 +1,32 @@
+{
+ "chart_name": "Project Vs Team",
+ "chart_type": "Report",
+ "creation": "2022-09-30 13:43:25.848870",
+ "custom_options": "{\"x_field\": \"team\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"project_count\", \"color\": \"#913296\"}], \"y_fields\": [\"project_count\"], \"colors\": [\"#913296\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{\"from_date\":\"2022-09-01\",\"to_date\":\"2022-09-30\"}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2022-09-30 13:43:25.902467",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Vs Team",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Project Vs Team Dashbaord",
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "team",
+ "y_axis": [
+  {
+   "color": "#913296",
+   "y_field": "project_count"
+  }
+ ]
+}

@@ -1,0 +1,663 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{company_short_name}-PRJTMP-{YYYY}-{####}",
+ "creation": "2021-06-02 12:18:52.502922",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "client_details_section",
+  "sales_order",
+  "company",
+  "company_short_name",
+  "bd_person",
+  "bd_person_name",
+  "region",
+  "column_break_4",
+  "customer",
+  "contact_person",
+  "template_status",
+  "bank_account",
+  "account_number",
+  "section_break_7",
+  "project",
+  "services",
+  "service_type",
+  "therapeutic_area",
+  "target_audience",
+  "project_title",
+  "project_scope",
+  "column_break_14",
+  "deliverable",
+  "quantity",
+  "number_of_meeting",
+  "mode_of_meeting",
+  "number_of_draft",
+  "any_target_journal",
+  "number_of_journal_submission",
+  "number_of_journal_revisions",
+  "timeline_detail_section",
+  "timeline",
+  "hours",
+  "actual_client_hours",
+  "total_planned_hours",
+  "column_break_32",
+  "expected_end_date",
+  "po_number",
+  "profitability_hours",
+  "related_documents_section",
+  "popcd_status",
+  "source_document",
+  "client_brief",
+  "vendor_registration_form",
+  "service_agreement",
+  "cda",
+  "final_rfp",
+  "client_communication_mail",
+  "call_recordings_if_any",
+  "column_break_27",
+  "po_pcd_attachment",
+  "source_document_attachment",
+  "client_brief_attachment",
+  "vendor_registration_attachment",
+  "service_agreement_attachment",
+  "cda_attachment",
+  "final_rfp_attachment",
+  "client_communication_attachment",
+  "call_recording_attachment",
+  "project_manager_and_team_lead_medical_writer_alignment_section",
+  "project_manager",
+  "team_lead_medical_writer",
+  "column_break_63",
+  "pms_ongoing_project_list",
+  "get_tls_ongoing_projects_list",
+  "project_cost_and_payment_detail_section",
+  "project_cost",
+  "currency",
+  "cost_type",
+  "payment_milestones",
+  "column_break_35",
+  "payment_terms",
+  "remark_section",
+  "additional_information_from_client",
+  "email_sent",
+  "amended_from",
+  "approver",
+  "email_sent_2",
+  "email_sent_3",
+  "email_sent_4",
+  "email_sent_5"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Detail Template",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_details_section",
+   "fieldtype": "Section Break",
+   "label": "Client Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Link",
+   "label": "Service Type",
+   "options": "Service Types",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deliverable",
+   "fieldtype": "Link",
+   "label": "Deliverable",
+   "options": "Deliverable"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "target_audience",
+   "fieldtype": "Data",
+   "label": "Target audience"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_title",
+   "fieldtype": "Small Text",
+   "label": "Project Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "number_of_meeting",
+   "fieldtype": "Int",
+   "label": "Number of Meetings"
+  },
+  {
+   "fieldname": "mode_of_meeting",
+   "fieldtype": "Data",
+   "label": "Mode of Meeting /Training"
+  },
+  {
+   "fieldname": "number_of_draft",
+   "fieldtype": "Int",
+   "label": "Number of draft revisions (decided with client)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "any_target_journal",
+   "fieldtype": "Data",
+   "label": "Any target journal (communicated by client)"
+  },
+  {
+   "fieldname": "number_of_journal_submission",
+   "fieldtype": "Int",
+   "label": "Number of journal submission (committed to client)"
+  },
+  {
+   "fieldname": "number_of_journal_revisions",
+   "fieldtype": "Int",
+   "label": "Number of journal revisions (decided with client)"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "timeline_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Timeline Detail"
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Date",
+   "label": "Timeline (communicated to the client at proposal stage)",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "hours",
+   "fieldtype": "Int",
+   "label": "Number of hours for project completion communicated to clients",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected end date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "popcd_status",
+   "fieldtype": "Select",
+   "label": "PO/PCD/SOW status",
+   "options": "\nPending\nReceived\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "service_agreement",
+   "fieldtype": "Select",
+   "label": "Service Agreement",
+   "options": "\nPending\nReceived\nNA"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "cda",
+   "fieldtype": "Select",
+   "label": "CDA",
+   "options": "\nPending\nReceived\nNA"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "project_cost_and_payment_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Project Cost and Payment Detail"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "sales_order.net_total",
+   "fieldname": "project_cost",
+   "fieldtype": "Currency",
+   "label": "Project Cost",
+   "options": "currency",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "payment_milestones",
+   "fieldtype": "Select",
+   "label": "Payment milestones",
+   "options": "\nOne Milestone\nTwo Milestone\nThree Milestone\nFour Milestone\nFive Milestone\nSix Milestone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Small Text",
+   "label": "Payment terms"
+  },
+  {
+   "fieldname": "additional_information_from_client",
+   "fieldtype": "Small Text",
+   "label": "Additional information from client"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark_section",
+   "fieldtype": "Section Break",
+   "label": "Remark"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person (client PoC)",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bd_person.full_name",
+   "fieldname": "bd_person_name",
+   "fieldtype": "Data",
+   "label": "BD Person Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "sales_order.po_no",
+   "fieldname": "po_number",
+   "fieldtype": "Data",
+   "label": "PO/PCD number"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Services",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bd_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Turacoz BD person",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_scope",
+   "fieldtype": "Small Text",
+   "label": "Scope of Project",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Project not Created",
+   "fieldname": "template_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Record Status",
+   "options": "\nProject Created\nProject not Created",
+   "reqd": 1
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Client Region",
+   "options": "Regions",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "source_document",
+   "fieldtype": "Select",
+   "label": "Source Document",
+   "options": "\nPending\nReceived\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "client_brief",
+   "fieldtype": "Select",
+   "label": "Client Brief",
+   "options": "\nPending\nReceived\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Not Attached",
+   "fieldname": "final_rfp",
+   "fieldtype": "Select",
+   "label": "Final RFP (with agreed scope)",
+   "options": "\nAttached\nNot Attached\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Not Attached",
+   "fieldname": "client_communication_mail",
+   "fieldtype": "Select",
+   "label": "Client communication mail (all emails in one trail)",
+   "options": "\nAttached\nNot Attached\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Not Attached",
+   "fieldname": "call_recordings_if_any",
+   "fieldtype": "Select",
+   "label": "Call recordings (if any)",
+   "options": "\nAttached\nNot Attached\nNA",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Not Attached",
+   "fieldname": "vendor_registration_form",
+   "fieldtype": "Select",
+   "label": "Vendor Registration form (if )",
+   "options": "\nAttached\nNot Attached\nNA",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account ",
+   "options": "Bank Account"
+  },
+  {
+   "fetch_from": "bank_account.bank_account_no",
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "company_short_name",
+   "fieldtype": "Data",
+   "label": "Company Short Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "related_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Related Documents"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "po_pcd_attachment",
+   "fieldtype": "Attach",
+   "label": "PO/PCD Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "source_document_attachment",
+   "fieldtype": "Attach",
+   "label": "Source Document Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "client_brief_attachment",
+   "fieldtype": "Attach",
+   "label": "Client Brief Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "vendor_registration_attachment",
+   "fieldtype": "Attach",
+   "label": "Vendor Registration Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "service_agreement_attachment",
+   "fieldtype": "Attach",
+   "label": "Service Agreement Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "cda_attachment",
+   "fieldtype": "Attach",
+   "label": "CDA Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "final_rfp_attachment",
+   "fieldtype": "Attach",
+   "label": "Final RFP Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "client_communication_attachment",
+   "fieldtype": "Attach",
+   "label": "Client Communication Attachment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "call_recording_attachment",
+   "fieldtype": "Attach",
+   "label": "Call Recording Attachment"
+  },
+  {
+   "fieldname": "project_manager_and_team_lead_medical_writer_alignment_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Project Manager and Team Lead (Medical Writer) Alignment"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_manager",
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "options": "User",
+   "remember_last_selected_value": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "team_lead_medical_writer",
+   "fieldtype": "Link",
+   "label": "Team Lead (Technical Team)",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent"
+  },
+  {
+   "default": "shruti.shah@turacoz.com",
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_sent_2",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent 2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "therapeutic_area",
+   "fieldtype": "Link",
+   "label": "Therapeutic Area",
+   "options": "Therapeutic Area"
+  },
+  {
+   "default": "0",
+   "fieldname": "actual_client_hours",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Hours for Technical Team"
+  },
+  {
+   "default": "0",
+   "fieldname": "profitability_hours",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Profitability Hours"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_planned_hours",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Total Planned Hours"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_sent_3",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent 3"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_sent_4",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent 4"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_sent_5",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent 5"
+  },
+  {
+   "fieldname": "column_break_63",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Click to get suggestion of PMs ongoing projects",
+   "fieldname": "pms_ongoing_project_list",
+   "fieldtype": "Button",
+   "label": "Get PMs ongoing projects list"
+  },
+  {
+   "fieldname": "get_tls_ongoing_projects_list",
+   "fieldtype": "Button",
+   "label": "Get TLs ongoing projects list"
+  },
+  {
+   "default": "Total Project Cost",
+   "fieldname": "cost_type",
+   "fieldtype": "Select",
+   "label": "Cost Type",
+   "options": "\nTotal Project Cost\nPer Hour"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-24 11:40:28.338283",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Detail Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

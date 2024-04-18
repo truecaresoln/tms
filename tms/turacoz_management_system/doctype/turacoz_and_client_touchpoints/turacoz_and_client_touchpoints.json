@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "autoname": "format:TOUCHPOINT-{YYYY}-{####}",
+ "creation": "2021-11-11 10:23:28.240680",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "project_detail_template",
+  "section_break_3",
+  "customer",
+  "column_break_3",
+  "project",
+  "touchpoints__calls_with_client_section",
+  "touchpoint_details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_detail_template",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Detail Template",
+   "options": "Project Detail Template"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "touchpoint_details",
+   "fieldtype": "Table",
+   "label": "Touchpoint Details",
+   "options": "Touchpoint Detail"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "touchpoints__calls_with_client_section",
+   "fieldtype": "Section Break",
+   "label": "Touchpoints / Calls with client"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Turacoz and Client Touchpoints",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-01 15:09:40.536457",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Turacoz and Client Touchpoints",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:project_code",
+ "creation": "2023-02-07 10:53:23.256970",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "project_code",
+  "turacoz_poc",
+  "account_manager",
+  "column_break_4",
+  "project_title",
+  "manager_name",
+  "section_break_7",
+  "during_project_duration",
+  "section_break_10",
+  "financial_mails"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project Code",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "project_code.project_title",
+   "fieldname": "project_title",
+   "fieldtype": "Text",
+   "label": "Project Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "during_project_duration",
+   "fieldtype": "Table",
+   "label": "Technical Mails",
+   "options": "Project Logs Details"
+  },
+  {
+   "fetch_from": "project_code.manager_name",
+   "fieldname": "manager_name",
+   "fieldtype": "Data",
+   "label": "Manager Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project_code.bd_name",
+   "fieldname": "turacoz_poc",
+   "fieldtype": "Data",
+   "label": "Turacoz PoC",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "project_code.account_manager_name",
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "financial_mails",
+   "fieldtype": "Table",
+   "label": "Financial Mails",
+   "options": "Project financial mails"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-06-16 16:53:59.033709",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Logs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

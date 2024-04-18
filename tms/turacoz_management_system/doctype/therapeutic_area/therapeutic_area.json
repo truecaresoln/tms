@@ -1,4 +1,6 @@
 {
+ "actions": [],
+ "allow_rename": 1,
  "autoname": "field:therapeutic_area",
  "creation": "2020-12-14 14:15:34.796338",
  "doctype": "DocType",
@@ -27,7 +29,8 @@
    "reqd": 1
   }
  ],
- "modified": "2021-01-11 12:45:55.415826",
+ "links": [],
+ "modified": "2023-01-04 15:50:10.530198",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Therapeutic Area",

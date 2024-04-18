@@ -1,0 +1,22 @@
+{
+ "creation": "2022-09-28 11:24:07.208611",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{\"from_date\":\"2022-09-01\",\"to_date\":\"2022-09-30\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "ION Requested",
+ "modified": "2022-09-28 11:24:07.243232",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "ION Requested-2",
+ "owner": "Administrator",
+ "report_field": "ion_requested",
+ "report_function": "Sum",
+ "report_name": "ION Status",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

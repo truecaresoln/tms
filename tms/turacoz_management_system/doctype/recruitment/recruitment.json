@@ -1,0 +1,478 @@
+{
+ "actions": [],
+ "autoname": "format:REC-{candidate_name}-{####}",
+ "creation": "2021-12-13 16:55:15.171603",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "candidate_name",
+  "contact_number",
+  "location",
+  "status",
+  "column_break_4",
+  "profile",
+  "dob",
+  "source",
+  "email",
+  "job_portals_name",
+  "internal_reference_name",
+  "recruitment_agency_name",
+  "cv",
+  "lms_credentials_generated",
+  "user_id",
+  "password",
+  "assignment_link",
+  "section_break_15",
+  "highest_qualification",
+  "section_break_12",
+  "experience",
+  "relevant_experience",
+  "total_exprience",
+  "current_organization",
+  "current_designation",
+  "notice",
+  "reason_for_change",
+  "skills",
+  "communication_skill",
+  "column_break_22",
+  "ctc",
+  "variable_amount",
+  "amount",
+  "total_ctc_amount",
+  "ectc_percentage",
+  "ectc",
+  "team_handling",
+  "reporting_to_in_last_organization",
+  "assignment_availability_section",
+  "day",
+  "date",
+  "time",
+  "column_break_36",
+  "assignments",
+  "assignment",
+  "section_break_41",
+  "turacoz_feedback",
+  "assignment_feedback",
+  "column_break_44",
+  "technical_feedback",
+  "final_feedback",
+  "turacoz_feedback_section",
+  "offer",
+  "turacoz_offered",
+  "reason_for_decline",
+  "doj",
+  "family_details_section",
+  "family_information",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "highest_qualification",
+   "fieldtype": "Table",
+   "label": "Highest Qualification",
+   "options": "Employee Education",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Small Text",
+   "label": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "profile",
+   "fieldtype": "Link",
+   "label": "Profile",
+   "options": "Designation",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_exprience",
+   "fieldtype": "Float",
+   "label": "Total Number of Experience (In Year)",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "current_organization",
+   "fieldtype": "Data",
+   "label": "Current Organization",
+   "mandatory_depends_on": "eval:doc.experience == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "current_designation",
+   "fieldtype": "Data",
+   "label": "Current Designation",
+   "mandatory_depends_on": "eval:doc.experience == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ctc",
+   "fieldtype": "Select",
+   "label": "CTC",
+   "options": "\nVariable and Fixed\nFixed"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ectc",
+   "fieldtype": "Currency",
+   "label": "ECTC (Total )"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "notice",
+   "fieldtype": "Int",
+   "label": "Notice (in days)",
+   "mandatory_depends_on": "eval:doc.experience == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reason_for_change",
+   "fieldtype": "Data",
+   "label": "Reason for change",
+   "mandatory_depends_on": "eval:doc.experience == \"Yes\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "skills",
+   "fieldtype": "Data",
+   "label": "Skills"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "assignment_availability_section",
+   "fieldtype": "Section Break",
+   "label": "Assignment Availability"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "label": "Day",
+   "mandatory_depends_on": "eval:doc.status == \"Schedule Assignment\"",
+   "options": "\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "mandatory_depends_on": "eval:doc.status == \"Schedule Assignment\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time",
+   "mandatory_depends_on": "eval:doc.status == \"Schedule Assignment\""
+  },
+  {
+   "fieldname": "turacoz_feedback_section",
+   "fieldtype": "Section Break",
+   "label": "Offer Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "turacoz_feedback",
+   "fieldtype": "Small Text",
+   "label": "HR Feedback "
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.offer == \"Accepted\"",
+   "fieldname": "turacoz_offered",
+   "fieldtype": "Currency",
+   "label": "Turacoz Offered",
+   "mandatory_depends_on": "eval:doc.offer == \"Accepted\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.offer == \"Accepted\"",
+   "fieldname": "doj",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "mandatory_depends_on": "eval:doc.offer == \"Accepted\""
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "\nRecruitment Agency\nLinkedIn\nInternal Reference\nJob Portals\nTrainings",
+   "reqd": 1
+  },
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Candidate Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "job_portals_name",
+   "fieldtype": "Data",
+   "label": "Job Portals Name"
+  },
+  {
+   "fieldname": "internal_reference_name",
+   "fieldtype": "Data",
+   "label": "Internal Reference Name"
+  },
+  {
+   "fieldname": "recruitment_agency_name",
+   "fieldtype": "Link",
+   "label": "Recruitment Agency Name",
+   "options": "Recruitment Agencies"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "cv",
+   "fieldtype": "Attach",
+   "label": "CV/Resume",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Experience Detail"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "experience",
+   "fieldtype": "Select",
+   "label": "Experience ",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "relevant_experience",
+   "fieldtype": "Float",
+   "label": "Relevant Experience (In Year)",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "variable_amount",
+   "fieldtype": "Currency",
+   "label": "Variable Amount"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Fixed Amount"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0.0",
+   "fieldname": "total_ctc_amount",
+   "fieldtype": "Currency",
+   "label": "Total CTC Amount",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "ectc_percentage",
+   "fieldtype": "Percent",
+   "label": "ECTC Percentage"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "communication_skill",
+   "fieldtype": "Select",
+   "label": "Communication Skill",
+   "options": "\nExcellent\nDecent\nAverage\nBelow Average"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "team_handling",
+   "fieldtype": "Data",
+   "label": "Team Handling (if any)"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "reporting_to_in_last_organization",
+   "fieldtype": "Data",
+   "label": "Reporting to in last organization"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "offer",
+   "fieldtype": "Select",
+   "label": "Offer ",
+   "options": "\nAccepted\nHold\nDeclined"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.offer == \"Hold\" || doc.offer == \"Declined\"",
+   "fieldname": "reason_for_decline",
+   "fieldtype": "Data",
+   "label": "Reason for Decline/Hold",
+   "mandatory_depends_on": "eval:doc.offer == \"Hold\" || doc.offer == \"Declined\""
+  },
+  {
+   "fieldname": "family_details_section",
+   "fieldtype": "Section Break",
+   "label": "Family Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "family_information",
+   "fieldtype": "Table",
+   "label": "Family Information",
+   "options": "Family Information"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Recruitment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nOpen\nSchedule Assignment\nHired\nDeclined"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "assignments",
+   "fieldtype": "Link",
+   "label": "Select Assignment",
+   "options": "Recruitment Assignments"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "assignment",
+   "fieldtype": "Select",
+   "label": "Assignment ",
+   "options": "\nQualified\nDisqualified"
+  },
+  {
+   "fieldname": "section_break_41",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assignment_feedback",
+   "fieldtype": "Small Text",
+   "label": "Assignment Feedback"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "technical_feedback",
+   "fieldtype": "Small Text",
+   "label": "Technical Feedback"
+  },
+  {
+   "fieldname": "final_feedback",
+   "fieldtype": "Small Text",
+   "label": "Final Feedback"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval:doc.status == \"Schedule Assignment\"",
+   "fieldname": "lms_credentials_generated",
+   "fieldtype": "Check",
+   "label": "LMS Credentials Generated",
+   "mandatory_depends_on": "eval:doc.status == \"Schedule Assignment\""
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.lms_credentials_generated == \"1\"",
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "label": "Password",
+   "mandatory_depends_on": "eval:doc.lms_credentials_generated == \"1\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.lms_credentials_generated == \"1\"",
+   "fieldname": "assignment_link",
+   "fieldtype": "Attach",
+   "label": "Assignment Link",
+   "mandatory_depends_on": "eval:doc.lms_credentials_generated == \"1\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.lms_credentials_generated == \"1\"",
+   "fieldname": "user_id",
+   "fieldtype": "Data",
+   "label": "User ID",
+   "mandatory_depends_on": "eval:doc.lms_credentials_generated == \"1\""
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-06-12 13:00:16.943906",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Recruitment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

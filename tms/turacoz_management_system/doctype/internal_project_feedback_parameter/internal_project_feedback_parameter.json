@@ -1,0 +1,39 @@
+{
+ "creation": "2021-06-14 13:30:53.141231",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "parameter",
+  "value"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "parameter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Parameter",
+   "width": "350px"
+  },
+  {
+   "columns": 2,
+   "fieldname": "value",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Value",
+   "options": "1\n2\n3\n4\n5",
+   "width": "30px"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-06-17 16:24:44.282942",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Internal Project Feedback Parameter",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

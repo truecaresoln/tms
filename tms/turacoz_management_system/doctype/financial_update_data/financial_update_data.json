@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "creation": "2021-06-17 14:25:32.748759",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "deliverable",
+  "shared_with_client",
+  "attach_document",
+  "column_break_4",
+  "received",
+  "payment_received",
+  "remark"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "deliverable",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Deliverable",
+   "options": "Deliverable Finance",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "shared_with_client",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Shared With Client"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "received",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Invoice Approve by Client"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_received",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Received"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 5,
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Attach Document or a link",
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-05 13:27:37.297478",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Financial Update Data",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

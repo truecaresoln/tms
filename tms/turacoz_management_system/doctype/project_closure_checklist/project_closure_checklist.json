@@ -1,0 +1,212 @@
+{
+ "autoname": "field:project",
+ "creation": "2021-06-14 11:25:58.048069",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "technical_aspects_internal_section",
+  "final_draft_delivered_to_client",
+  "inputs_from_client_on_final_draft_addressed_and_delivered",
+  "submission_to_journal",
+  "sample_documents_updated",
+  "column_break_7",
+  "client_folder_updated",
+  "feedback_communication_sent_to_the_client",
+  "feedback_taken_and_communicated_to_the_technical",
+  "financial_aspects_internal_section",
+  "column_break_22",
+  "invoices_generated_and_shared_with_client",
+  "all_financial_documents_invoices_uploaded_on_sp",
+  "technical_aspects_external_section",
+  "final_draft_approved_by_the_client",
+  "feedback_received_from_the_client",
+  "column_break_14",
+  "the_journal_has_accepted_the_manuscript_if_applicable",
+  "financial_aspects_external_section",
+  "po_received",
+  "column_break_18",
+  "payment_received_of_the_all_the_invoices_raised",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "technical_aspects_internal_section",
+   "fieldtype": "Section Break",
+   "label": "Technical Aspects (Internal)"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 2,
+   "default": "0",
+   "fieldname": "final_draft_delivered_to_client",
+   "fieldtype": "Check",
+   "label": "Final draft delivered to client"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "inputs_from_client_on_final_draft_addressed_and_delivered",
+   "fieldtype": "Check",
+   "label": "Inputs from client on final draft addressed and delivered."
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "submission_to_journal",
+   "fieldtype": "Check",
+   "label": "Submission to journal (If applicable)"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "sample_documents_updated",
+   "fieldtype": "Check",
+   "label": "Sample documents updated on Sharepoint/DMS for BD purpose (master data sheet, samples, case studies)"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "client_folder_updated",
+   "fieldtype": "Check",
+   "label": "Client folder updated with all relevant documents related to project"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "feedback_communication_sent_to_the_client",
+   "fieldtype": "Check",
+   "label": "Feedback communication sent to the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "feedback_taken_and_communicated_to_the_technical",
+   "fieldtype": "Check",
+   "label": "Feedback taken and communicated to the technical/BD/PM team"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "technical_aspects_external_section",
+   "fieldtype": "Section Break",
+   "label": "Technical Aspects (External)"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "final_draft_approved_by_the_client",
+   "fieldtype": "Check",
+   "label": "Final draft approved by the client"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "feedback_received_from_the_client",
+   "fieldtype": "Check",
+   "label": "Feedback received from the client"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "the_journal_has_accepted_the_manuscript_if_applicable",
+   "fieldtype": "Check",
+   "label": "The journal has accepted the manuscript (if applicable)"
+  },
+  {
+   "fieldname": "financial_aspects_external_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Aspects (External)"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "po_received",
+   "fieldtype": "Check",
+   "label": "PO received"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "payment_received_of_the_all_the_invoices_raised",
+   "fieldtype": "Check",
+   "label": "Payment received of the all the invoices raised"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "financial_aspects_internal_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Aspects (Internal)"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "invoices_generated_and_shared_with_client",
+   "fieldtype": "Check",
+   "label": "Invoices generated and shared with client"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "all_financial_documents_invoices_uploaded_on_sp",
+   "fieldtype": "Check",
+   "label": "All financial documents (invoices) uploaded on SP"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Closure Checklist",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-09-29 14:06:33.036989",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Closure Checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

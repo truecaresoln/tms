@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee",
+ "creation": "2022-12-20 13:09:42.897855",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "column_break_4",
+  "designation",
+  "designation_name",
+  "capability_section",
+  "employee_capability",
+  "core_therapeutic_area_experience_section",
+  "therapeutic_area"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Read Only",
+   "label": "Employee Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "designation.designation_name",
+   "fieldname": "designation_name",
+   "fieldtype": "Read Only",
+   "label": "Designation"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Designation Link",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "capability_section",
+   "fieldtype": "Section Break",
+   "label": "Capability"
+  },
+  {
+   "fieldname": "employee_capability",
+   "fieldtype": "Table",
+   "label": "Employee Capability",
+   "options": "Employee Capability Mapping Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "core_therapeutic_area_experience_section",
+   "fieldtype": "Section Break",
+   "label": "Core Therapeutic Area Experience"
+  },
+  {
+   "fieldname": "therapeutic_area",
+   "fieldtype": "Table",
+   "label": "Therapeutic Area",
+   "options": "Employee Therapeutic Area Mapping Detail"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-22 17:16:37.448116",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Capability Mapping",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

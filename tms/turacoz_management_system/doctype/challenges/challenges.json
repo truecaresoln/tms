@@ -1,0 +1,252 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CHALLENGES-{YYYY}-{type}-{###}",
+ "creation": "2022-10-22 12:17:58.563749",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "challenge_related_to",
+  "classification",
+  "challenge_status",
+  "committed_date",
+  "customer",
+  "column_break_3",
+  "date",
+  "project",
+  "type",
+  "type_of_challenge",
+  "section_break_6",
+  "description_of_challenge",
+  "solution_of_challenge_section",
+  "date_of_solution",
+  "solutions",
+  "section_break_16",
+  "create_todo",
+  "column_break_18",
+  "task_owner",
+  "task_owner_name",
+  "section_break_12",
+  "remark",
+  "creator",
+  "approver",
+  "email_sent",
+  "escalation_email",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "challenge_related_to",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Challenge Related To",
+   "options": "\nWriter\nReviewer\nQcer\nProject\nCustomer\nTraining Related\nOthers",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Writer\" || doc.challenge_related_to == \"Qcer\" || doc.challenge_related_to == \"Reviewer\"",
+   "fieldname": "classification",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Classification",
+   "mandatory_depends_on": "eval:doc.challenge_related_to == \"Writer\" || doc.challenge_related_to == \"Qcer\" || doc.challenge_related_to == \"Reviewer\"",
+   "options": "Challenge Classification"
+  },
+  {
+   "fieldname": "description_of_challenge",
+   "fieldtype": "Small Text",
+   "label": "Description of Challenge",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.challenge_status==\"Close\"",
+   "fieldname": "solutions",
+   "fieldtype": "Small Text",
+   "label": "Solutions",
+   "mandatory_depends_on": "eval:doc.challenge_status==\"Close\""
+  },
+  {
+   "depends_on": "eval:doc.challenge_status==\"Close\"",
+   "fieldname": "date_of_solution",
+   "fieldtype": "Date",
+   "label": "Date of Solution",
+   "mandatory_depends_on": "eval:doc.challenge_status==\"Close\""
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Any other remark"
+  },
+  {
+   "default": "Active",
+   "fieldname": "challenge_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Challenge Status",
+   "options": "\nActive\nClose",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Writer\" || doc.challenge_related_to == \"Qcer\" || doc.challenge_related_to == \"Reviewer\" ",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "mandatory_depends_on": "eval:doc.challenge_related_to == \"Writer\" || doc.challenge_related_to == \"Qcer\" || doc.challenge_related_to == \"Reviewer\" || doc.challenge_related_to == \"Project\"",
+   "options": "Project"
+  },
+  {
+   "fieldname": "creator",
+   "fieldtype": "Link",
+   "label": "Creator",
+   "options": "User",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Challenges",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "solution_of_challenge_section",
+   "fieldtype": "Section Break",
+   "label": "Solution of challenge"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "fieldname": "committed_date",
+   "fieldtype": "Date",
+   "label": "Committed Date",
+   "mandatory_depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\""
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Customer\" ",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory_depends_on": "eval:doc.challenge_related_to == \"Customer\"",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "mandatory_depends_on": "eval: doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "options": "\nInternal\nExternal"
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "fieldname": "type_of_challenge",
+   "fieldtype": "Select",
+   "label": "Type of Challenge",
+   "mandatory_depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "options": "\nEscalation\nTechnical\nFinancial\nOther"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.challenge_related_to == \"Project\" || doc.challenge_related_to == \"Customer\" || doc.challenge_related_to == \"Others\" || doc.challenge_related_to == \"Training Related\"",
+   "fieldname": "create_todo",
+   "fieldtype": "Select",
+   "label": "Do you want create ToDo ?",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.create_todo == \"Yes\"",
+   "fieldname": "task_owner",
+   "fieldtype": "Link",
+   "label": "Select Task Owner",
+   "mandatory_depends_on": "eval:doc.create_todo == \"Yes\"",
+   "options": "User"
+  },
+  {
+   "fetch_from": "task_owner.full_name",
+   "fieldname": "task_owner_name",
+   "fieldtype": "Data",
+   "label": "Task Owner Name",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Int",
+   "label": "Email Sent",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "escalation_email",
+   "fieldtype": "Int",
+   "label": "Escalation Email",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-08 15:49:48.670991",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Challenges",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

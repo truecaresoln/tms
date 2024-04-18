@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "autoname": "STD-REC-.####.",
+ "creation": "2021-05-18 15:44:48.801393",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student_detail_section",
+  "training_data",
+  "email_id",
+  "receipt_date",
+  "column_break_4",
+  "student_name",
+  "currency",
+  "transaction_detail_section",
+  "total_fees",
+  "received_fees",
+  "transaction_id",
+  "transaction_date",
+  "student_invoice",
+  "column_break_13",
+  "pending_fees",
+  "mode_of_payment",
+  "wired_transfer",
+  "bank",
+  "outstanding_amount",
+  "deduction_detail_section",
+  "deduction_reason",
+  "column_break_15",
+  "deduction_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "training_data.stud_name",
+   "fieldname": "student_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Student Name"
+  },
+  {
+   "fetch_from": "training_data.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Email ID"
+  },
+  {
+   "fetch_from": "training_data.currency",
+   "fieldname": "currency",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Currency"
+  },
+  {
+   "fetch_from": "training_data.total_fees",
+   "fieldname": "total_fees",
+   "fieldtype": "Currency",
+   "label": "Total Fees",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "received_fees",
+   "fieldtype": "Currency",
+   "label": "Received Fees",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Transaction Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "label": "Mode of Payment ",
+   "options": "\nBank\nWired\nCash",
+   "reqd": 1
+  },
+  {
+   "fieldname": "wired_transfer",
+   "fieldtype": "Select",
+   "label": "Wired Transfer",
+   "options": "\nPayPal\nRazor Pay\nCc Avenue"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "student_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Student Detail"
+  },
+  {
+   "fieldname": "deduction_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Deduction Detail"
+  },
+  {
+   "fieldname": "deduction_reason",
+   "fieldtype": "Data",
+   "label": "Deduction Reason"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "deduction_amount",
+   "fieldtype": "Currency",
+   "label": "Deduction Amount (INR)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Transaction Detail"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "training_data.pending_fees",
+   "fieldname": "pending_fees",
+   "fieldtype": "Currency",
+   "label": "Pending Fees (INR)",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount (INR)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "training_data",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Student ID",
+   "options": "Training Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Fees Received",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "student_invoice",
+   "fieldtype": "Link",
+   "label": "Student Invoice",
+   "options": "Student Invoice",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "label": "Receipt Date",
+   "reqd": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-03 14:48:51.258312",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Fees Received",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

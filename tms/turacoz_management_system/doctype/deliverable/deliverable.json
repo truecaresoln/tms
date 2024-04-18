@@ -1,4 +1,6 @@
 {
+ "actions": [],
+ "allow_rename": 1,
  "autoname": "field:deliverable",
  "creation": "2020-12-14 16:02:49.404886",
  "doctype": "DocType",
@@ -7,6 +9,7 @@
  "field_order": [
   "service_type",
   "deliverable",
+  "activity_type",
   "status"
  ],
  "fields": [
@@ -14,6 +17,7 @@
    "fieldname": "service_type",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Service Type",
    "options": "Service Types",
    "reqd": 1
@@ -31,12 +35,23 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Status",
    "options": "Active\nInactive",
    "reqd": 1
+  },
+  {
+   "fieldname": "activity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activity Type",
+   "options": "\nInternal\nExternal",
+   "reqd": 1
   }
  ],
- "modified": "2020-12-14 16:43:01.936815",
+ "links": [],
+ "modified": "2023-02-27 18:45:31.587274",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Deliverable",

@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "autoname": "format:{project}-{task}",
+ "creation": "2021-10-22 11:34:39.306042",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_detail_section",
+  "project",
+  "team_leader",
+  "project_title",
+  "column_break_5",
+  "customer",
+  "project_manager",
+  "project_deadline",
+  "project_stage",
+  "task_detail_section",
+  "task",
+  "reference_type",
+  "reference_name",
+  "assigned_by",
+  "is_viatris_project",
+  "column_break_7",
+  "task_end_date",
+  "task_description",
+  "expected_time",
+  "pud_technical_input",
+  "team_detail_section",
+  "team_detail",
+  "align_freelancer_section",
+  "align_freelancer",
+  "share_point_dms_project_link_section",
+  "dms_project_link",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "task",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Task",
+   "options": "Task",
+   "reqd": 1
+  },
+  {
+   "fieldname": "team_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Team Detail"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "team_detail",
+   "fieldtype": "Table",
+   "label": "Team Detail",
+   "options": "Team Alignment Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Project Detail"
+  },
+  {
+   "fieldname": "task_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Task Detail"
+  },
+  {
+   "fieldname": "reference_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Reference Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "task_description",
+   "fieldtype": "Small Text",
+   "label": "Task Description",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned By",
+   "options": "User",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project.team_leader_medical_writer",
+   "fieldname": "team_leader",
+   "fieldtype": "Read Only",
+   "label": "Team Leader"
+  },
+  {
+   "fetch_from": "project.project_title",
+   "fieldname": "project_title",
+   "fieldtype": "Small Text",
+   "label": "Project Title",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "project.customer",
+   "fieldname": "customer",
+   "fieldtype": "Read Only",
+   "label": "Customer"
+  },
+  {
+   "fetch_from": "project.manager_name",
+   "fieldname": "project_manager",
+   "fieldtype": "Read Only",
+   "label": "Project Manager"
+  },
+  {
+   "fetch_from": "project.expected_end_date",
+   "fieldname": "project_deadline",
+   "fieldtype": "Date",
+   "label": "Project Deadline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Team Alignment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "task.exp_end_date",
+   "fieldname": "task_end_date",
+   "fieldtype": "Data",
+   "label": "Task End Date"
+  },
+  {
+   "fieldname": "align_freelancer_section",
+   "fieldtype": "Section Break",
+   "label": "Align Freelancer"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "align_freelancer",
+   "fieldtype": "Table",
+   "label": "Align Freelancer",
+   "options": "Align Freelancer"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "task.expected_time",
+   "fieldname": "expected_time",
+   "fieldtype": "Float",
+   "label": "Expected Time (in hours)",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "No",
+   "fieldname": "is_viatris_project",
+   "fieldtype": "Select",
+   "label": "Is Viatris Project",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "pud_technical_input",
+   "fieldtype": "Link",
+   "label": "PUD Technical Input",
+   "options": "PUD Technical Input"
+  },
+  {
+   "fetch_from": "task.project_process",
+   "fieldname": "project_stage",
+   "fieldtype": "Data",
+   "label": "Project Stage"
+  },
+  {
+   "fieldname": "share_point_dms_project_link_section",
+   "fieldtype": "Section Break",
+   "label": "Share Point DMS Project Link"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dms_project_link",
+   "fieldtype": "Small Text",
+   "label": "DMS Project Link"
+  }
+ ],
+ "hide_toolbar": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-10-07 11:13:52.159011",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Team Alignment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

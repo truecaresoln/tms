@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PRE-MEET-{YYYY}-{######}",
+ "creation": "2023-07-06 12:16:59.533424",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pdtpud_reference",
+  "who_requested_the_meeting",
+  "reason_for_meeting_request",
+  "what_to_do_section",
+  "source_information",
+  "section_break_6",
+  "references_used",
+  "section_break_8",
+  "intricacies_involved",
+  "section_break_10",
+  "questions_queries",
+  "section_break_12",
+  "any_suggestions",
+  "section_break_14",
+  "challenges",
+  "section_break_16",
+  "creative_strategic",
+  "section_break_18",
+  "project_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "pdtpud_reference",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "PDT/PUD Reference",
+   "options": "Project Detail Template",
+   "reqd": 1
+  },
+  {
+   "fieldname": "who_requested_the_meeting",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Who Requested the Meeting",
+   "options": "\nClient\nTuracoz",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reason_for_meeting_request",
+   "fieldtype": "Small Text",
+   "label": "Reason for Meeting Request"
+  },
+  {
+   "fieldname": "what_to_do_section",
+   "fieldtype": "Section Break",
+   "label": "What do the PM, Lead and the Writer need to know before the meeting?"
+  },
+  {
+   "fieldname": "source_information",
+   "fieldtype": "Text Editor",
+   "label": "Details of all the source information "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Details of all the references "
+  },
+  {
+   "fieldname": "references_used",
+   "fieldtype": "Text Editor",
+   "label": "Details of all the references "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Details of all the intricacies "
+  },
+  {
+   "fieldname": "intricacies_involved",
+   "fieldtype": "Text Editor",
+   "label": "Details of all the intricacies "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "List down Questions/Queries "
+  },
+  {
+   "fieldname": "questions_queries",
+   "fieldtype": "Text Editor",
+   "label": "List down Questions/Queries "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "List down any suggestions related to questions/queries "
+  },
+  {
+   "fieldname": "any_suggestions",
+   "fieldtype": "Text Editor",
+   "label": "List down any suggestions related to questions/queries "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Do you foresee any challenges in the project"
+  },
+  {
+   "fieldname": "challenges",
+   "fieldtype": "Text Editor",
+   "label": "Do you foresee any challenges in the project"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Any creative/strategic/process-related input which can enhance the project delivery?"
+  },
+  {
+   "fieldname": "creative_strategic",
+   "fieldtype": "Text Editor",
+   "label": "Any creative/strategic/process-related input which can enhance the project delivery?"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project_details",
+   "fieldtype": "Link",
+   "label": "Project Details ",
+   "options": "Project"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-06 12:23:27.619231",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Pre Meeting checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

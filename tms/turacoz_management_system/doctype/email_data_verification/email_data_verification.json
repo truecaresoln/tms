@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "autoname": "format:EML-VERI-{#####}",
+ "creation": "2021-10-04 14:02:46.538944",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user_id",
+  "department",
+  "employee",
+  "section_break_2",
+  "email_subject",
+  "date_of_email",
+  "verify",
+  "column_break_6",
+  "client_email",
+  "type_of_email",
+  "purpose_of_email",
+  "verified_by",
+  "section_break_11",
+  "description",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "email_subject",
+   "fieldtype": "Small Text",
+   "label": "Email Subject",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_email",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date of Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verify",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Verify",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_email",
+   "fieldtype": "Select",
+   "label": "Type of Email",
+   "options": "\nIncoming\nOutgoing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_of_email",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Purpose of Email",
+   "options": "\nInformation\nNew Project Details\nProject Update\nChallenges and Commitments"
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Verified by",
+   "options": "User"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Email Data Verification",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "user_id.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "user_id.full_name",
+   "fieldname": "employee",
+   "fieldtype": "Data",
+   "label": "Employee"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "User ID",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_email",
+   "fieldtype": "Data",
+   "label": "Client Email",
+   "reqd": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-09 11:23:46.157734",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Email Data Verification",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

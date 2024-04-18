@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tool_name",
+ "creation": "2022-05-02 11:22:38.336680",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "section_break_1",
+  "tool_link",
+  "column_break_3",
+  "tool_name",
+  "section_break_5",
+  "user_name",
+  "column_break_7",
+  "password",
+  "section_break_9",
+  "subscription_plan",
+  "section_break_11",
+  "currency",
+  "purchase_date",
+  "column_break_13",
+  "amount",
+  "due_date",
+  "section_break_17",
+  "transaction_mode",
+  "column_break_19",
+  "last_digit_debit_credit_card",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tool_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service or Tool Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "tool_link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service or Tool Link"
+  },
+  {
+   "depends_on": "eval:frappe.session.user=='Administrator'",
+   "description": "username or email id to login this tool",
+   "fieldname": "user_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "User Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:frappe.session.user=='Administrator'",
+   "description": "Password to login this tool",
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Password"
+  },
+  {
+   "fieldname": "subscription_plan",
+   "fieldtype": "Select",
+   "label": "Subscription Plan",
+   "options": "\nMonthly\nQuarterly\nHalf Yearly\nAnnually\nOne Time\nFree",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.currency",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Purchase Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.subscription_plan!=\"One Time\"",
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Next Due Date",
+   "mandatory_depends_on": "eval:doc.subscription_plan!=\"One Time\""
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Third Party Tools",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Subscription Plan Details"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transaction_mode",
+   "fieldtype": "Select",
+   "label": "Transaction Mode",
+   "options": "\nCredit Card\nDebit Card\nInternet Banking"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.transaction_mode!=\"Internet Banking\"",
+   "description": "Enter Last Four digit of credit/debit card",
+   "fieldname": "last_digit_debit_credit_card",
+   "fieldtype": "Data",
+   "label": "Credit/Debit Card Last Four Digit",
+   "mandatory_depends_on": "eval:doc.transaction_mode==\"Credit Card\"; doc.transaction_mode==\"Debit Card\""
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-02-07 10:55:58.654960",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Third Party Tools",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

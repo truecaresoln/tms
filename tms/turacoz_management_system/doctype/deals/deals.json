@@ -1,0 +1,227 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:DEAL-{YYYY}-{MM}-{####}",
+ "creation": "2023-01-04 12:40:47.492481",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "owner",
+  "record_id",
+  "turacoz_entity",
+  "client_entity",
+  "column_break_6",
+  "country",
+  "currency",
+  "region",
+  "vendor_registration",
+  "deal_detail_section",
+  "service_type",
+  "therapeutic_areas",
+  "deal_name",
+  "amount",
+  "deal_stage",
+  "associated_company",
+  "new_servicedeliverable_got_first_time",
+  "column_break_17",
+  "pipeline",
+  "close_date",
+  "create_date",
+  "deal_type",
+  "associated_contact",
+  "project_lost_reason",
+  "initial_amount_offered_to_client"
+ ],
+ "fields": [
+  {
+   "fieldname": "owner",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Deal Owner",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "record_id",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Record ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "client_entity",
+   "fieldtype": "Data",
+   "label": "Client Entity"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Regions"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Data",
+   "label": "Service Type"
+  },
+  {
+   "fieldname": "therapeutic_areas",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Therapeutic Areas",
+   "options": "Therapeutic Area"
+  },
+  {
+   "fieldname": "turacoz_entity",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "in_standard_filter": 1,
+   "label": "Turacoz Entity",
+   "options": "Company"
+  },
+  {
+   "fieldname": "vendor_registration",
+   "fieldtype": "Select",
+   "label": "Vendor Registration",
+   "options": "\nExisting Vendor\nNew Vendor"
+  },
+  {
+   "fieldname": "deal_name",
+   "fieldtype": "Data",
+   "label": "Deal Name"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "deal_stage",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Deal Stage",
+   "options": "Deal Stage"
+  },
+  {
+   "fieldname": "pipeline",
+   "fieldtype": "Select",
+   "label": "Pipeline",
+   "options": "\nSales Pipeline (Services)\nSales Pipeline (Training)"
+  },
+  {
+   "fieldname": "close_date",
+   "fieldtype": "Datetime",
+   "label": "Close Date"
+  },
+  {
+   "fieldname": "create_date",
+   "fieldtype": "Datetime",
+   "label": "Create Date"
+  },
+  {
+   "fieldname": "deal_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Deal Type",
+   "options": "\nNew Business\nRepeat Business"
+  },
+  {
+   "fieldname": "associated_contact",
+   "fieldtype": "Data",
+   "label": "Associated Contact"
+  },
+  {
+   "fieldname": "associated_company",
+   "fieldtype": "Data",
+   "label": "Associated Company"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deal_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Deal Detail"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "new_servicedeliverable_got_first_time",
+   "fieldtype": "Data",
+   "label": "New service/deliverable got first time"
+  },
+  {
+   "fieldname": "project_lost_reason",
+   "fieldtype": "Data",
+   "label": "Project Lost Reason"
+  },
+  {
+   "fieldname": "initial_amount_offered_to_client",
+   "fieldtype": "Data",
+   "label": "Initial Amount Offered to Client"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-25 17:55:35.086953",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Deals",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Business Development Associate",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

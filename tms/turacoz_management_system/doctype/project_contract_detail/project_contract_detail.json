@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "creation": "2021-06-17 13:49:42.069775",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_detail",
+  "total_price",
+  "payment_method"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project_detail",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Project Detail"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Price",
+   "options": "currency"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Payment Method "
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-01 18:07:44.078788",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Contract Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,367 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: STUD-TRN-{YYYY}-{####}",
+ "creation": "2021-05-12 15:24:43.149615",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "stud_name",
+  "email_id",
+  "country",
+  "state",
+  "address",
+  "year_of_batch",
+  "batch",
+  "column_break_7",
+  "phone_number",
+  "qualification",
+  "relevant_exp_in_yrs",
+  "batch_start_date",
+  "batch_end_date",
+  "student_status",
+  "course_details_section",
+  "course_name",
+  "currency",
+  "project",
+  "column_break_17",
+  "course_duration",
+  "course_fees",
+  "section_break_19",
+  "discount",
+  "reason_for_discount",
+  "column_break_23",
+  "total_fees",
+  "section_break_31",
+  "payment_mode",
+  "emi_detail",
+  "section_break_28",
+  "net_total",
+  "pending_fees",
+  "column_break_29",
+  "grand_total",
+  "total_fees_inr",
+  "exit_section",
+  "placement__status",
+  "dropout_reason",
+  "column_break_28",
+  "placed_organisation",
+  "dropout_date",
+  "section_break_29",
+  "student_feedback",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "stud_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Detail"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "course_details_section",
+   "fieldtype": "Section Break",
+   "label": "Course & Fees Detail"
+  },
+  {
+   "fieldname": "course_name",
+   "fieldtype": "Link",
+   "label": "Course Name",
+   "options": "Course Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Payment Mode",
+   "options": "\nEMI\nFull Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "course_fees",
+   "fieldtype": "Currency",
+   "label": "Course Fees",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "course_name.course_duration",
+   "fieldname": "course_duration",
+   "fieldtype": "Read Only",
+   "label": "Course Duration ( in months )"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount ( if any )",
+   "options": "currency",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "placement__status",
+   "fieldtype": "Select",
+   "label": "Placement  Status",
+   "options": "\nPlaced\nNot Placed"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "placed_organisation",
+   "fieldtype": "Data",
+   "label": "Placed Organisation"
+  },
+  {
+   "fieldname": "batch",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Batch",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec",
+   "reqd": 1
+  },
+  {
+   "default": "2021",
+   "fieldname": "year_of_batch",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Year of Batch",
+   "options": "Years",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dropout_reason",
+   "fieldtype": "Data",
+   "label": "Dropout Reason"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dropout_date",
+   "fieldtype": "Date",
+   "label": "Dropout Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "student_feedback",
+   "fieldtype": "Long Text",
+   "label": "Student Feedback"
+  },
+  {
+   "fieldname": "qualification",
+   "fieldtype": "Data",
+   "label": "Qualification"
+  },
+  {
+   "fieldname": "relevant_exp_in_yrs",
+   "fieldtype": "Select",
+   "label": "Relevant Exp (In Yrs)",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "exit_section",
+   "fieldtype": "Section Break",
+   "label": "Placement and Dropout Detail"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_start_date",
+   "fieldtype": "Date",
+   "label": "Batch Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Fees",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training Data",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0.00",
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "emi_detail",
+   "fieldtype": "Table",
+   "label": "EMI Detail",
+   "options": "Student EMI Detail"
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_end_date",
+   "fieldtype": "Date",
+   "label": "Batch End Date",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "OnGoing",
+   "fieldname": "student_status",
+   "fieldtype": "Select",
+   "label": "Student Status",
+   "options": "\nOnGoing\nComplete\nHold\nPending\nDropout"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0.00",
+   "fieldname": "pending_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Pending Fees (In Company currency (INR))"
+  },
+  {
+   "fieldname": "reason_for_discount",
+   "fieldtype": "Small Text",
+   "label": "Reason for discount "
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_fees_inr",
+   "fieldtype": "Currency",
+   "label": "Grand Total (INR)"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-09 12:45:56.724780",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Training Data",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

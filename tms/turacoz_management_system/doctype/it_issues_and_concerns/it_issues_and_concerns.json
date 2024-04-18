@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "autoname": "format:ISS-{DD}-{MM}-{YYYY}-{####}",
+ "creation": "2021-10-18 18:16:29.889878",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "subject",
+  "ticket_status",
+  "solution",
+  "column_break_4",
+  "priority",
+  "troubleshooter",
+  "section_break_6",
+  "issue_attachment",
+  "column_break_9",
+  "creator",
+  "creator_name",
+  "section_break_8",
+  "description",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Open",
+   "fieldname": "ticket_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Ticket Status",
+   "options": "\nOpen\nClosed",
+   "reqd": 1
+  },
+  {
+   "default": "High",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority ",
+   "options": "\nHigh\nMedium\nLow",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "it@turacoz.com",
+   "fieldname": "troubleshooter",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Troubleshooter",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "issue_attachment",
+   "fieldtype": "Attach",
+   "label": "Issue Attachment (if any) "
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IT Issues and Concerns",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "creator",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Creator",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "solution",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Solution"
+  },
+  {
+   "fetch_from": "creator.full_name",
+   "fieldname": "creator_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Creator Name",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-11 12:17:06.481017",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "IT Issues and Concerns",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

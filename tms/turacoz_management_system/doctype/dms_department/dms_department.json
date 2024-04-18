@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{department}",
+ "creation": "2023-08-14 12:22:59.362245",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "assign_role",
+  "dept_status",
+  "department_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "assign_role",
+   "fieldtype": "Table",
+   "label": "Assign Role",
+   "options": "DMS Assign Role"
+  },
+  {
+   "default": "Active",
+   "fieldname": "dept_status",
+   "fieldtype": "Select",
+   "label": "Dept Status",
+   "options": "\nActive\nInactive"
+  },
+  {
+   "fieldname": "department_name",
+   "fieldtype": "Link",
+   "label": "Department Name",
+   "options": "Department"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-21 13:55:56.101026",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "DMS Department",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

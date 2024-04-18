@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "autoname": "format:{document}-{document_name}",
+ "creation": "2021-12-07 13:21:25.051518",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "document",
+  "document_name",
+  "status",
+  "section_break_4",
+  "owner",
+  "owner_name",
+  "column_break_7",
+  "employee",
+  "employee_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "document",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document",
+   "options": "DocType",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Document Name",
+   "options": "document",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "owner",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approver",
+   "options": "Email",
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "owner.full_name",
+   "fieldname": "owner_name",
+   "fieldtype": "Data",
+   "label": "Approver Name",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Data",
+   "label": "Employee",
+   "options": "Email",
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "employee.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "set_only_once": 1
+  },
+  {
+   "default": "Draft",
+   "fetch_from": "document_name.workflow_state",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break",
+   "label": "Approver and Employee Details"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Document Details and Status"
+  }
+ ],
+ "links": [],
+ "modified": "2022-08-05 11:50:49.276188",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Approvals",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

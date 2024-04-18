@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{naming}-{###}",
+ "creation": "2021-06-17 10:36:38.320272",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "quotation",
+  "currency",
+  "column_break_3",
+  "naming",
+  "date",
+  "letter_head",
+  "sponsor_name_and_address_section",
+  "party_name",
+  "customer_address",
+  "address_display",
+  "column_break_9",
+  "contact_person",
+  "contact_display",
+  "contact_mobile",
+  "contact_email",
+  "project_detail_section",
+  "project_detail",
+  "scope_of_work_section",
+  "scope",
+  "deliverables_section",
+  "deliverables",
+  "assumptions_section",
+  "assumptions",
+  "exceptions_section",
+  "exceptions",
+  "section_break_17",
+  "project_contract_template",
+  "note",
+  "note1",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "party_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Address",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "quotation.address_display",
+   "fieldname": "address_display",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sponsor_name_and_address_section",
+   "fieldtype": "Section Break",
+   "label": "Sponsor Name and Address"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "quotation.contact_display",
+   "fieldname": "contact_display",
+   "fieldtype": "Data",
+   "label": "Contact Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_mobile",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "project_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Project Detail"
+  },
+  {
+   "fieldname": "project_detail",
+   "fieldtype": "Table",
+   "label": "Project Detail",
+   "options": "Project Contract Detail",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project_contract_template.text_details",
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "Note"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project_contract_template",
+   "fieldtype": "Link",
+   "label": "Project Contract Template",
+   "options": "Project Contract Template",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "naming",
+   "fieldtype": "Data",
+   "label": "Series",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "note1",
+   "fieldtype": "Text Editor",
+   "label": "notes",
+   "reqd": 1
+  },
+  {
+   "default": "PCD Letter Head",
+   "fieldname": "letter_head",
+   "fieldtype": "Data",
+   "label": "Letter Head",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Contract Document",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "scope_of_work_section",
+   "fieldtype": "Section Break",
+   "label": "Scope of work"
+  },
+  {
+   "fieldname": "scope",
+   "fieldtype": "Text Editor",
+   "label": "Scope"
+  },
+  {
+   "fieldname": "deliverables_section",
+   "fieldtype": "Section Break",
+   "label": "Deliverables"
+  },
+  {
+   "fieldname": "deliverables",
+   "fieldtype": "Table",
+   "label": "Deliverables",
+   "options": "PCD Deliverable Detail"
+  },
+  {
+   "fieldname": "assumptions_section",
+   "fieldtype": "Section Break",
+   "label": "Assumptions"
+  },
+  {
+   "fieldname": "assumptions",
+   "fieldtype": "Small Text",
+   "label": "Assumptions"
+  },
+  {
+   "fieldname": "exceptions_section",
+   "fieldtype": "Section Break",
+   "label": "Exceptions"
+  },
+  {
+   "fieldname": "exceptions",
+   "fieldtype": "Small Text",
+   "label": "Exceptions"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-11 14:43:24.782455",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Contract Document",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Contract Document",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

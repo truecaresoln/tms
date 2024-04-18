@@ -1,0 +1,36 @@
+{
+ "creation": "2022-02-02 12:49:21.631557",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "participant_email_id",
+  "participant_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "participant_email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Participant Email ID"
+  },
+  {
+   "fieldname": "participant_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Participant Name",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-14 10:07:18.437139",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Meeting Other Participants",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

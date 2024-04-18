@@ -1,0 +1,71 @@
+{
+ "creation": "2021-11-11 10:29:32.316906",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "call_title",
+  "date",
+  "participants",
+  "discussion",
+  "any_other_remark",
+  "mom_attachment"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1,
+   "width": "60px"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "discussion",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Discussion",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "any_other_remark",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Any Other Remark"
+  },
+  {
+   "fieldname": "call_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Call Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Data",
+   "label": "Participants (Please write comma seprated)",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "mom_attachment",
+   "fieldtype": "Attach",
+   "ignore_user_permissions": 1,
+   "label": "MoM Attachment"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-11-11 17:53:31.876092",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Touchpoint Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

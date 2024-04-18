@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "autoname": "format:POC-{####}",
+ "creation": "2021-05-24 18:43:57.896901",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_detail_section",
+  "company",
+  "full_name",
+  "organisation_of_poc",
+  "column_break_5",
+  "entity",
+  "department_of_poc",
+  "designation_of_poc",
+  "contact_detail_section",
+  "email_id",
+  "contact_number",
+  "address",
+  "column_break_13",
+  "country",
+  "state",
+  "agreement_detail_section",
+  "agreement_if_any",
+  "column_break_18",
+  "attach_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Detail"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Entity",
+   "options": "\nLegal\nFinancial\nConsultant\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organisation_of_poc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Organisation of POC"
+  },
+  {
+   "fieldname": "department_of_poc",
+   "fieldtype": "Data",
+   "label": "Department of POC"
+  },
+  {
+   "fieldname": "designation_of_poc",
+   "fieldtype": "Data",
+   "label": "Designation of POC"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "agreement_if_any",
+   "fieldtype": "Select",
+   "label": "Agreement (if any)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Detail"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agreement_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Agreement Detail"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2022-07-08 13:23:47.359858",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Company PoC",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

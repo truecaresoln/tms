@@ -1,0 +1,382 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:employee_code",
+ "creation": "2022-11-30 11:33:52.806624",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "employee_code",
+  "designation",
+  "date_of_resignation",
+  "reporting_manager",
+  "column_break_6",
+  "employee_name",
+  "date_of_joining",
+  "last_working_day",
+  "hod",
+  "section_break_10",
+  "reason_of_leaving",
+  "comments_1",
+  "section_3",
+  "supervision_1",
+  "supervision_3",
+  "supervision_5",
+  "supervision_7",
+  "supervision_9",
+  "comments_2",
+  "column_break_20",
+  "supervision_2",
+  "supervision_4",
+  "supervision_6",
+  "supervision_8",
+  "supervision_10",
+  "section_4",
+  "conditions_1",
+  "conditions_3",
+  "conditions_5",
+  "conditions_7",
+  "comments_3",
+  "column_break_33",
+  "conditions_2",
+  "conditions_4",
+  "conditions_6",
+  "conditions_8",
+  "section_5",
+  "recommend_1",
+  "circumstances",
+  "best_thing_turacoz",
+  "like_least_turacoz",
+  "comments_4",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee Code",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "employee_code.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_code.resignation_letter_date",
+   "fieldname": "date_of_resignation",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Resignation",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "reporting_manager",
+   "fieldtype": "Data",
+   "label": "Reporting Manager",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_code.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_code.date_of_joining",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee_code.relieving_date",
+   "fieldname": "last_working_day",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Last Working Day",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "hod",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Hand Over Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_of_leaving",
+   "fieldtype": "Select",
+   "label": "Please share the reason of leaving the Organization",
+   "options": "\nDissatisfied with Remuneration and Benefits\nCareer advancement\nTransportation problem\nFamily problems\nDissatisfaction with supervision / leadership\nReceived an employment offer without actively seeking another job\nLack of job security\nDissatisfied with organizational culture\nDissatisfied with working hours\nDissatisfied with job fulfillment\nDissatisfied with training and development opportunities\nRelocation\nAny other reason (Please specify)",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.reason_of_leaving == 'Any other reason (Please specify)'",
+   "fieldname": "comments_1",
+   "fieldtype": "Small Text",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "section_3",
+   "fieldtype": "Section Break",
+   "label": "In this section, please assess supervision in your Department"
+  },
+  {
+   "fieldname": "supervision_1",
+   "fieldtype": "Select",
+   "label": "Provided feedback on my performance.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_3",
+   "fieldtype": "Select",
+   "label": "Led by example.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_5",
+   "fieldtype": "Select",
+   "label": "Was available when I needed help.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_7",
+   "fieldtype": "Select",
+   "label": "Provided positive feedback and recognition.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_9",
+   "fieldtype": "Select",
+   "label": "Represented the position accurately when interviewed.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "comments_2",
+   "fieldtype": "Small Text",
+   "label": "Other Comments:"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supervision_2",
+   "fieldtype": "Select",
+   "label": "Treated me with respect and courtesy.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_4",
+   "fieldtype": "Select",
+   "label": "Helped me solve problems.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_6",
+   "fieldtype": "Select",
+   "label": "Followed policies and practices and applied them fairly.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_8",
+   "fieldtype": "Select",
+   "label": "Resolved complaints and problems.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervision_10",
+   "fieldtype": "Select",
+   "label": "Training opportunities were available inside the department.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_4",
+   "fieldtype": "Section Break",
+   "label": "In this section, please assess your working conditions"
+  },
+  {
+   "fieldname": "conditions_1",
+   "fieldtype": "Select",
+   "label": "My physical work area was appropriate for the work that I did.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_3",
+   "fieldtype": "Select",
+   "label": "My work schedule was convenient.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_5",
+   "fieldtype": "Select",
+   "label": "Relationship with co-workers.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_7",
+   "fieldtype": "Select",
+   "label": "Office atmosphere and morale",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "comments_3",
+   "fieldtype": "Small Text",
+   "label": "Other Comments:"
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "conditions_2",
+   "fieldtype": "Select",
+   "label": "I had adequate materials to do my work (tools, computer, phones, etc).",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_4",
+   "fieldtype": "Select",
+   "label": "Overtime demands were reasonable.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_6",
+   "fieldtype": "Select",
+   "label": "Relationship with client",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conditions_8",
+   "fieldtype": "Select",
+   "label": "Adequate guidance in resolving work-related or personal problems.",
+   "options": "\nExcellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "recommend_1",
+   "fieldtype": "Select",
+   "label": "Would you recommend Turacoz as a good place to work to a friend?",
+   "options": "\nYes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "circumstances",
+   "fieldtype": "Small Text",
+   "label": "Under what circumstances would you have continued working with us?",
+   "reqd": 1
+  },
+  {
+   "fieldname": "best_thing_turacoz",
+   "fieldtype": "Small Text",
+   "label": "What did you like best about working at Turacoz?",
+   "reqd": 1
+  },
+  {
+   "fieldname": "like_least_turacoz",
+   "fieldtype": "Small Text",
+   "label": "What did you like least about working at Turacoz?",
+   "reqd": 1
+  },
+  {
+   "fieldname": "comments_4",
+   "fieldtype": "Small Text",
+   "label": "Any additional comments? We are particularly interested in any suggestions for improving work procedures or the work environment at Turacoz."
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Exit Interview Checklist",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-22 14:44:57.577112",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Exit Interview Checklist",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

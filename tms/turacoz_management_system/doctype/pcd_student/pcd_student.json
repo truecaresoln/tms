@@ -1,0 +1,355 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-07-28 17:07:23.024622",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "training_data",
+  "date",
+  "column_break_2",
+  "naming_series",
+  "company",
+  "basic_details_section",
+  "stud_name",
+  "email_id",
+  "country",
+  "state",
+  "address",
+  "column_break_8",
+  "phone_number",
+  "qualification",
+  "year_of_batch",
+  "batch",
+  "course_and_fee_details_section",
+  "course_name",
+  "course_duration",
+  "project",
+  "column_break_16",
+  "currency",
+  "course_fees",
+  "section_break_19",
+  "payment_mode",
+  "emi_detail",
+  "section_break_22",
+  "payment_terms",
+  "section_break_29",
+  "bank_account",
+  "account_name",
+  "bank_name",
+  "bank_address",
+  "column_break_32",
+  "bank_account_no",
+  "branch_name",
+  "swift_number",
+  "section_break_27",
+  "project_contract_template",
+  "note",
+  "note1",
+  "section_break_28",
+  "letter_head",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fetch_from": "training_data.email_id",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "training_data.country",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "training_data.state",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fetch_from": "training_data.address",
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "training_data.phone_number",
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fetch_from": "training_data.qualification",
+   "fieldname": "qualification",
+   "fieldtype": "Data",
+   "label": "Qualification"
+  },
+  {
+   "fetch_from": "training_data.year_of_batch",
+   "fieldname": "year_of_batch",
+   "fieldtype": "Link",
+   "label": "Year of Batch",
+   "options": "Years"
+  },
+  {
+   "fetch_from": "training_data.batch",
+   "fieldname": "batch",
+   "fieldtype": "Select",
+   "label": "Batch",
+   "options": "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec"
+  },
+  {
+   "fieldname": "course_and_fee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Course and Fee Details"
+  },
+  {
+   "fetch_from": "training_data.course_name",
+   "fieldname": "course_name",
+   "fieldtype": "Link",
+   "label": "Course Name",
+   "options": "Course Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "training_data.course_duration",
+   "fieldname": "course_duration",
+   "fieldtype": "Data",
+   "label": "Course Duration"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "training_data.currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fetch_from": "training_data.course_fees",
+   "fieldname": "course_fees",
+   "fieldtype": "Currency",
+   "label": "Course Fees",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "training_data.payment_mode",
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "label": "Payment Mode",
+   "options": "\nEMI\nFull Payment"
+  },
+  {
+   "fetch_from": "training_data.emi_detail",
+   "fieldname": "emi_detail",
+   "fieldtype": "Table",
+   "label": "EMI Detail",
+   "options": "Student EMI Detail"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Student PCD Template",
+   "fieldname": "project_contract_template",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Project Contract Template",
+   "options": "Project Contract Template"
+  },
+  {
+   "fetch_from": "project_contract_template.text_details",
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "Note"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "PCD Letter Head",
+   "fieldname": "letter_head",
+   "fieldtype": "Link",
+   "label": "Letter Head",
+   "options": "Letter Head",
+   "reqd": 1
+  },
+  {
+   "fieldname": "training_data",
+   "fieldtype": "Link",
+   "label": "Student Registration",
+   "options": "Training Data",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "training_data.stud_name",
+   "fieldname": "stud_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "note1",
+   "fieldtype": "Text Editor",
+   "hidden": 1,
+   "label": "Note"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "PCD Student",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "\n1.\tOverdue accounts of more than 60 days after submitting the invoice will be subject to an additional charge of 2% per month till the time of payment.\n2.\tPayment to be made by Online transfer\n3.\tProject Cost exclusive of applicable taxes.\n4.\t100% Invoice will be raised after signing the PCD.\n5.\tThe rates are for given scope only and any change in the scope is subject to change in the rates.\n6.\tAny addition to the process may result in out-of- scope activity being implemented/executed. Out of-scope activities will be promptly communicated verbally and in writing to the client before or at the start of the out-of-scope activity being implemented/executed, or very early in the process of the out-of-scope activity taking place.\n",
+   "fieldname": "payment_terms",
+   "fieldtype": "Text",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Bank Account",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bank_account.account_name",
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Account Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bank_account.bank_name",
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bank_account.bank_address",
+   "fieldname": "bank_address",
+   "fieldtype": "Data",
+   "label": "Bank Address"
+  },
+  {
+   "fetch_from": "bank_account.bank_account_no",
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bank_account.branch_name",
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "fetch_from": "bank_account.swift_number",
+   "fieldname": "swift_number",
+   "fieldtype": "Data",
+   "label": "Swift Number"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "training_data.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Naming",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1,
+   "set_only_once": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-08-01 17:02:16.029901",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "PCD Student",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

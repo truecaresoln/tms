@@ -1,0 +1,164 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:FEEDBACK-{####}",
+ "creation": "2023-09-11 16:01:37.143950",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "employee",
+  "employee_name",
+  "department",
+  "designation",
+  "column_break_6",
+  "start_date",
+  "end_date",
+  "section_break_9",
+  "performance_rating",
+  "total_score",
+  "reporting_manager_detail_section",
+  "reporting_manager",
+  "email_sent_to_hr",
+  "column_break_14",
+  "reporting_manager_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "description": "Rate them against each area on 0-3 scale, where 0- Poor -1 Average 2- Good 3 \u2013 Excellent with your observations",
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": " 0-3 scale, where 0- Poor -1 Average 2- Good 3 \u2013 Excellent",
+   "fieldname": "performance_rating",
+   "fieldtype": "Table",
+   "label": "Performance Rating",
+   "options": "Employee Performance Feedback Rating"
+  },
+  {
+   "fieldname": "total_score",
+   "fieldtype": "Data",
+   "label": "Total Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reporting_manager_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Reporting Manager Detail"
+  },
+  {
+   "fetch_from": "employee.reporting_manager_id",
+   "fieldname": "reporting_manager",
+   "fieldtype": "Link",
+   "label": "Reporting Manager",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "reporting_manager.full_name",
+   "fieldname": "reporting_manager_name",
+   "fieldtype": "Data",
+   "label": "Reporting Manager Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent_to_hr",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Email Sent To HR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Performance Feedback",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-13 12:07:19.019081",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Performance Feedback",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

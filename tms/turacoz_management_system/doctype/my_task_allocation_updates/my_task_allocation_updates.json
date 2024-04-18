@@ -1,0 +1,40 @@
+{
+ "creation": "2021-12-27 14:32:35.176176",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "update_date",
+  "description"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "update_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-12-27 14:32:48.644859",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "My Task Allocation Updates",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

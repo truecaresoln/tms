@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-12-20 16:41:23.438240",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "description",
+  "no_of_projects",
+  "proficiency",
+  "evaluate_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "Deliverable",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "fieldname": "no_of_projects",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No of Projects",
+   "reqd": 1
+  },
+  {
+   "fieldname": "proficiency",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Proficiency"
+  },
+  {
+   "default": "Today",
+   "fieldname": "evaluate_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Evaluate Date",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-12-22 17:18:24.734176",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Employee Capability Mapping Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

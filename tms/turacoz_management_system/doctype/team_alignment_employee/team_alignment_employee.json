@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "creation": "2021-10-22 14:26:37.390798",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "allocated_to",
+  "role",
+  "start_date",
+  "date",
+  "allocated_hours",
+  "description",
+  "is_working",
+  "allocated_to_full_name",
+  "todo_name",
+  "email_sent"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "allocated_to",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Allocated To",
+   "options": "User",
+   "print_width": "80px",
+   "reqd": 1,
+   "set_only_once": 1,
+   "width": "80px"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 3,
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "print_width": "150px",
+   "reqd": 1,
+   "set_only_once": 1,
+   "width": "150px"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Project Role",
+   "print_width": "30px",
+   "reqd": 1,
+   "width": "30px"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date",
+   "print_width": "40px",
+   "reqd": 1,
+   "width": "40px"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "default": "Open",
+   "fieldname": "is_working",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Is Working",
+   "options": "Open\nClosed\nOverdue\nOn Hold\nDisable",
+   "print_width": "50px",
+   "reqd": 1,
+   "width": "50px"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "todo_name",
+   "fieldtype": "Read Only",
+   "label": "ToDo Name"
+  },
+  {
+   "fetch_from": "allocated_to.full_name",
+   "fieldname": "allocated_to_full_name",
+   "fieldtype": "Read Only",
+   "label": "Allocated To Full Name"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Check",
+   "label": "Email Sent"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "fieldname": "allocated_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Hours",
+   "print_width": "50px",
+   "reqd": 1,
+   "width": "50px"
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-19 11:38:41.953426",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Team Alignment Employee",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

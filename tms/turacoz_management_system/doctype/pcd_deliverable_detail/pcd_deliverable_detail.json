@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "creation": "2022-02-04 12:45:56.266887",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deliverable",
+  "specification",
+  "no_of_revisions",
+  "timeline"
+ ],
+ "fields": [
+  {
+   "fieldname": "deliverable",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Deliverable",
+   "options": "Deliverable",
+   "reqd": 1
+  },
+  {
+   "fieldname": "specification",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Specification",
+   "reqd": 1
+  },
+  {
+   "fieldname": "no_of_revisions",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "No of Revisions",
+   "options": "\n1\n2\n3\n4\n5\n6",
+   "reqd": 1
+  },
+  {
+   "fieldname": "timeline",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Timeline",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-06-29 15:21:34.981490",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "PCD Deliverable Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

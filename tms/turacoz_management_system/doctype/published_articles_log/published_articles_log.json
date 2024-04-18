@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-13 15:17:52.985394",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "journal",
+  "link_of_journal",
+  "login_id",
+  "password",
+  "column_break_5",
+  "date_of_submission",
+  "rejection_date",
+  "status",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "journal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Journal",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "link_of_journal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Link of Journal",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "login_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Login ID"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "password",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Password"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date_of_submission",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Submission"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nSubmitted\nAccepted\nPublished\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "rejection_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Rejection Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-03 13:51:18.835861",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Published Articles Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

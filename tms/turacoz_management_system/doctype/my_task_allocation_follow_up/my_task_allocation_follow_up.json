@@ -1,0 +1,41 @@
+{
+ "creation": "2021-12-22 15:39:11.382369",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "follow_up_date",
+  "description"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Follow Up Date",
+   "read_only": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1,
+   "set_only_once": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-12-22 16:54:23.829491",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "My Task Allocation Follow Up",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

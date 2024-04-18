@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-19 13:03:09.909522",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "module",
+  "project_process_types",
+  "sequence_no",
+  "is_completed",
+  "is_task_generated",
+  "is_team_aligned",
+  "completed_email"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_process_types",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Project Process Types",
+   "options": "Project Process Types",
+   "reqd": 1,
+   "width": "4"
+  },
+  {
+   "fieldname": "sequence_no",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Task Sequence No",
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15",
+   "reqd": 1,
+   "width": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_completed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Completed",
+   "read_only_depends_on": "eval:doc.is_task_generated == 0",
+   "width": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_task_generated",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Task Generated",
+   "read_only": 1,
+   "width": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "completed_email",
+   "fieldtype": "Int",
+   "ignore_user_permissions": 1,
+   "label": "Completed Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_team_aligned",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Team Aligned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "module",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Deliverable",
+   "options": "Document Deliverable",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-28 14:58:50.612314",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Work Process",
+ "owner": "Administrator",
+ "permissions": [],
+ "search_fields": "module,project_process_types",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

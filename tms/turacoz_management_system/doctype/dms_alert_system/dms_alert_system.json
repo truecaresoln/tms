@@ -1,0 +1,225 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{abr}-{heading}-{alert_type}",
+ "creation": "2022-11-19 15:59:19.733399",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "dms_details_section",
+  "department",
+  "alert_type",
+  "column_break_4",
+  "company",
+  "alert_status",
+  "abr",
+  "section_12",
+  "description",
+  "section_break_3",
+  "category",
+  "column_break_5",
+  "sub_category",
+  "secion_13",
+  "heading",
+  "section_break_7",
+  "owner",
+  "column_break_9",
+  "employee_name",
+  "section_break_11",
+  "frequency",
+  "time",
+  "daily",
+  "day",
+  "month",
+  "days_and_months",
+  "project"
+ ],
+ "fields": [
+  {
+   "fieldname": "owner",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Owner",
+   "options": "User"
+  },
+  {
+   "fetch_from": "owner.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Frequency",
+   "options": "\nDaily\nWeekly\nMonthly\nQuarterly\nHalf Yearly\nYearly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dms_details_section",
+   "fieldtype": "Section Break",
+   "label": "DMS Details"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Time"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Weekly\"",
+   "fieldname": "day",
+   "fieldtype": "Table",
+   "label": "Day",
+   "mandatory_depends_on": "eval:doc.frequency == \"Weekly\"",
+   "options": "Weekly Child DMS"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Monthly\"",
+   "fieldname": "month",
+   "fieldtype": "Table",
+   "label": "Month",
+   "mandatory_depends_on": "eval:doc.frequency == \"Monthly\"",
+   "options": "Month Child DMS"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "alert_status",
+   "fieldtype": "Select",
+   "label": "Alert Status",
+   "options": "\nActive\nInactive",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Quarterly\" || doc.frequency == \"Half Yearly\" || doc.frequency == \"Yearly\"",
+   "fieldname": "days_and_months",
+   "fieldtype": "Table",
+   "label": "Days and Months",
+   "mandatory_depends_on": "eval:doc.frequency == \"Quarterly\" || doc.frequency == \"Half Yearly\" || doc.frequency == \"Yearly\"",
+   "options": "Quarterly DMS"
+  },
+  {
+   "fieldname": "heading",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Heading"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "secion_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "DMS Name",
+   "options": "DMS Department"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "DMS Category"
+  },
+  {
+   "fieldname": "sub_category",
+   "fieldtype": "Link",
+   "label": "Sub Category",
+   "options": "DMS Sub Category"
+  },
+  {
+   "default": "Turacoz Healthcare Solutions Pvt Ltd",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "company.abbr",
+   "fieldname": "abr",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Abr"
+  },
+  {
+   "default": "DMS",
+   "fieldname": "alert_type",
+   "fieldtype": "Select",
+   "label": "Alert Type",
+   "options": "\nAuto Task With Reminder\nCompliance\nDMS"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "depends_on": "eval:doc.frequency == \"Daily\"",
+   "fieldname": "daily",
+   "fieldtype": "Table",
+   "label": "Daily",
+   "mandatory_depends_on": "eval:doc.frequency == \"Daily\"",
+   "options": "Daily Child DMS"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-07 11:19:37.937204",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "DMS ALERT SYSTEM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

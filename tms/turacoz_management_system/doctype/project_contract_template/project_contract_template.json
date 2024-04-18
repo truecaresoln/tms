@@ -1,0 +1,46 @@
+{
+ "autoname": "field:template_name",
+ "creation": "2021-06-17 14:16:56.290879",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "text_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "text_details",
+   "fieldtype": "Text Editor",
+   "label": "Text Details"
+  }
+ ],
+ "modified": "2021-06-18 13:24:00.161880",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Project Contract Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "autoname": "field:region_name",
  "creation": "2020-12-22 11:23:22.755762",
  "doctype": "DocType",
@@ -6,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "region_name",
-  "region_short_name"
+  "region_short_name",
+  "status"
  ],
  "fields": [
   {
@@ -23,9 +25,17 @@
    "in_list_view": 1,
    "label": "Region Short Name",
    "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
   }
  ],
- "modified": "2020-12-22 11:23:22.755762",
+ "links": [],
+ "modified": "2023-06-14 17:51:16.957287",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Regions",

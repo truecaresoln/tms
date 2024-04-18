@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{company}-{document_name}",
+ "creation": "2021-05-21 14:00:02.753490",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_basic_detail_section",
+  "company",
+  "approver_authority",
+  "authorised_signatory",
+  "column_break_5",
+  "document_number",
+  "document_name",
+  "approved_date",
+  "document_period_section",
+  "from_date",
+  "column_break_11",
+  "to_date",
+  "document_purpose_section",
+  "document_purpose",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name of Document ",
+   "options": "Registration Document Types",
+   "reqd": 1
+  },
+  {
+   "fieldname": "document_purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose of the Document"
+  },
+  {
+   "fieldname": "document_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document/Registration Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approver_authority",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Approver Authority",
+   "reqd": 1
+  },
+  {
+   "fieldname": "authorised_signatory",
+   "fieldtype": "Data",
+   "label": "Authorised Signatory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "approved_date",
+   "fieldtype": "Date",
+   "label": "Approved Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Company Registration Documents",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_basic_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Document Basic Detail"
+  },
+  {
+   "fieldname": "document_purpose_section",
+   "fieldtype": "Section Break",
+   "label": "Document Purpose"
+  },
+  {
+   "fieldname": "document_period_section",
+   "fieldtype": "Section Break",
+   "label": "Document Period"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-12 13:24:26.717106",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Company Registration Documents",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "document_name",
+ "track_changes": 1
+}

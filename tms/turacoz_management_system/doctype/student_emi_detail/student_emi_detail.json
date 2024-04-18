@@ -1,0 +1,44 @@
+{
+ "creation": "2021-05-14 15:52:11.248613",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "emi_type",
+  "due_date",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "emi_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "EMI Type",
+   "options": "\nFirst Installment\nSecond Installment\nThird Installment"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "currency"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-05-20 16:07:59.815228",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Student EMI Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

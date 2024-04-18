@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:social-media-post-{date}",
+ "creation": "2023-07-31 17:14:31.789153",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "title",
+  "linkedin_link",
+  "facebook_link",
+  "column_break_4",
+  "instagram_link",
+  "twitter_link",
+  "resource_link",
+  "send_notification"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "twitter_link",
+   "fieldtype": "Attach",
+   "label": "Twitter Link"
+  },
+  {
+   "fieldname": "linkedin_link",
+   "fieldtype": "Attach",
+   "label": "Linkedin Link"
+  },
+  {
+   "fieldname": "facebook_link",
+   "fieldtype": "Attach",
+   "label": "Facebook Link"
+  },
+  {
+   "fieldname": "instagram_link",
+   "fieldtype": "Attach",
+   "label": "Instagram Link"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_notification",
+   "fieldtype": "Check",
+   "label": "Send notification"
+  },
+  {
+   "fieldname": "resource_link",
+   "fieldtype": "Attach",
+   "label": "Resource Link"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-14 10:37:03.351717",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Social Media Marketing",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
