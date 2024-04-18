@@ -10,8 +10,8 @@ from frappe.utils import (flt, getdate, get_url, now,
 	nowtime, get_time, today, get_datetime, add_days)
 from erpnext.controllers.queries import get_filters_cond
 from frappe.desk.reportview import get_match_cond
-from erpnext.hr.doctype.daily_work_summary.daily_work_summary import get_users_email
-from erpnext.hr.doctype.holiday_list.holiday_list import is_holiday
+from hrms.hr.doctype.daily_work_summary.daily_work_summary import get_users_email
+from erpnext.setup.doctype.holiday_list.holiday_list import is_holiday
 from frappe.model.document import Document
 import datetime
 import calendar
