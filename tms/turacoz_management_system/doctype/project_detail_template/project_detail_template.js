@@ -40,11 +40,19 @@ frappe.ui.form.on('Project Detail Template', {
 			};
 		});
 
+		cur_frm.set_query("services", function() {
+			return {
+				"filters": {
+			    	"status": ("=", 'Active')
+			   }
+			};
+		});
+
 		//project manager Filter
 		cur_frm.set_query("project_manager", function() {
 			return {
 				"filters": {
-			    	"department": ["in", ["Project Management - THS","Business Development - THS"]]
+			    	"department": ["in", ["Project Management - THS","Business Development - THS","Business Growth Unit - THS","Project Excellence Unit - THS"]]
 			    }
 			};
 		});
@@ -62,7 +70,7 @@ frappe.ui.form.on('Project Detail Template', {
 		cur_frm.set_query("bd_person", function() {
 			return {
 				"filters": {
-			    	"department": ["in", ["Project Management - THS","Business Development - THS"]]
+			    	"department": ["in", ["Project Management - THS","Business Development - THS","Business Growth Unit - THS","Project Excellence Unit - THS"]]
 			    }
 			};
 		});

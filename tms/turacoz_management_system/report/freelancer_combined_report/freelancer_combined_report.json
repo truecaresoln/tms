@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2022-07-01 11:23:23.009033",
+ "modified": "2024-05-02 16:30:33.657325",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Freelancer Combined Report",
@@ -21,9 +21,6 @@
  "roles": [
   {
    "role": "System Manager"
-  },
-  {
-   "role": "Employee Self Service"
   },
   {
    "role": "Project Management Associate"

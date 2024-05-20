@@ -2,7 +2,8 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:employee_code",
- "creation": "2022-11-30 11:33:52.806624",
+ "creation": "2024-05-20 13:55:07.624851",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -87,7 +88,6 @@
    "fieldname": "reporting_manager",
    "fieldtype": "Data",
    "label": "Reporting Manager",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -336,18 +336,29 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Exit Interview Checklist",
+   "options": "Exit Questionnaire",
    "print_hide": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Exit Questionnaire",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-20 13:54:20.332345",
+ "modified": "2024-05-20 14:36:48.545755",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
- "name": "Exit Interview Checklist",
+ "name": "Exit Questionnaire",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -378,6 +389,7 @@
    "write": 1
   }
  ],
+ "search_fields": "employee_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

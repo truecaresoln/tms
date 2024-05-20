@@ -1,7 +1,7 @@
 {
  "add_total_row": 0,
  "columns": [],
- "creation": "2024-02-08 11:20:03.823299",
+ "creation": "2024-05-15 11:14:30.159064",
  "disable_prepared_report": 0,
  "disabled": 0,
  "docstatus": 0,
@@ -10,18 +10,18 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "THS",
- "modified": "2024-05-02 16:41:30.938541",
+ "modified": "2024-05-15 11:14:30.159064",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
- "name": "DMS ToDo Report",
+ "name": "Financial Overdue",
  "owner": "Administrator",
  "prepared_report": 0,
- "ref_doctype": "ToDo",
- "report_name": "DMS ToDo Report",
+ "ref_doctype": "Payment Request",
+ "report_name": "Financial Overdue",
  "report_type": "Script Report",
  "roles": [
   {
-   "role": "DMS Approver"
+   "role": "Administrator"
   }
  ]
 }

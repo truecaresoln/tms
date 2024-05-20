@@ -93,19 +93,20 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Open\nClosed\nCancelled\nOverdue\nDisable",
+   "options": "Open\nClosed\nCancelled\nOverdue\nDisable\nOn Hold",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-01-22 15:48:42.567025",
+ "modified": "2024-05-15 18:12:07.724547",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Project Team Detail",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

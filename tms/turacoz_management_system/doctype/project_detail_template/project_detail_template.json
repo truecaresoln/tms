@@ -7,6 +7,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "client_details_tab",
   "client_details_section",
   "sales_order",
   "company",
@@ -20,6 +21,7 @@
   "template_status",
   "bank_account",
   "account_number",
+  "project_details_tab",
   "section_break_7",
   "project",
   "services",
@@ -37,6 +39,7 @@
   "any_target_journal",
   "number_of_journal_submission",
   "number_of_journal_revisions",
+  "timeline_details_tab",
   "timeline_detail_section",
   "timeline",
   "hours",
@@ -46,6 +49,7 @@
   "expected_end_date",
   "po_number",
   "profitability_hours",
+  "documents_tab",
   "related_documents_section",
   "popcd_status",
   "source_document",
@@ -66,12 +70,14 @@
   "final_rfp_attachment",
   "client_communication_attachment",
   "call_recording_attachment",
+  "project_manager_and_team_lead",
   "project_manager_and_team_lead_medical_writer_alignment_section",
   "project_manager",
   "team_lead_medical_writer",
   "column_break_63",
   "pms_ongoing_project_list",
   "get_tls_ongoing_projects_list",
+  "project_cost_and_payment_detail_tab",
   "project_cost_and_payment_detail_section",
   "project_cost",
   "currency",
@@ -79,6 +85,7 @@
   "payment_milestones",
   "column_break_35",
   "payment_terms",
+  "remark_tab",
   "remark_section",
   "additional_information_from_client",
   "email_sent",
@@ -127,7 +134,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "section_break_7",
    "fieldtype": "Section Break",
    "label": "Project Details"
@@ -198,7 +204,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "timeline_detail_section",
    "fieldtype": "Section Break",
    "label": "Timeline Detail"
@@ -450,7 +455,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
    "fieldname": "related_documents_section",
    "fieldtype": "Section Break",
    "label": "Related Documents"
@@ -634,14 +638,50 @@
    "fieldtype": "Select",
    "label": "Cost Type",
    "options": "\nTotal Project Cost\nPer Hour"
+  },
+  {
+   "fieldname": "client_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Client Details"
+  },
+  {
+   "fieldname": "project_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Details"
+  },
+  {
+   "fieldname": "timeline_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Timeline Details"
+  },
+  {
+   "fieldname": "documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "project_manager_and_team_lead",
+   "fieldtype": "Tab Break",
+   "label": "Project Manager and Team Lead (Medical Writer) Alignment"
+  },
+  {
+   "fieldname": "project_cost_and_payment_detail_tab",
+   "fieldtype": "Tab Break",
+   "label": "Project Cost and Payment Detail"
+  },
+  {
+   "fieldname": "remark_tab",
+   "fieldtype": "Tab Break",
+   "label": "Remark"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-01-24 11:40:28.338283",
+ "modified": "2024-05-03 13:01:28.757768",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Project Detail Template",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -659,5 +699,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

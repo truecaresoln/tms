@@ -56,12 +56,12 @@ class TeamAlignment(Document):
 			if todo_ol_name == 0:					
 				if start_date is None:
 					insert_todo = frappe.db.sql("""Insert into `tabToDo`(name,status,priority,date,owner,description,
-					reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified) 
-					Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified), as_dict=True)
+					reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,allocated_to) 
+					Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,allocated_to), as_dict=True)
 				else:
 					insert_todo = frappe.db.sql("""Insert into `tabToDo`(name,status,priority,date,owner,description,
-					reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,start_date) 
-					Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,start_date), as_dict=True)	
+					reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,start_date,allocated_to) 
+					Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,start_date,allocated_to), as_dict=True)	
 			else:
 				if working_status:
 					update_to_status = frappe.db.sql("""Update `tabToDo` set status='{0}',date='{1}',hours='{2}',role='{3}',modified='{4}',start_date = '{6}' where name = '{5}'""".format(working_status,due_date,allocated_hours,role,todo_name,modified,start_date))
@@ -202,12 +202,12 @@ def todo_after_update(self,method=None):
 		if todo_ol_name == 0:
 			if start_date is None:
 				insert_todo = frappe.db.sql("""Insert into `tabToDo`(name,status,priority,date,owner,description,
-				reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified) 
-				Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified), as_dict=True)
+				reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,allocated_to) 
+				Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,allocated_to), as_dict=True)
 			else:
 				insert_todo = frappe.db.sql("""Insert into `tabToDo`(name,status,priority,date,owner,description,
-				reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,start_date) 
-				Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,start_date), as_dict=True)	
+				reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,hours,creation,modified,start_date,allocated_to) 
+				Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}');""".format(todo_name,status,priority,due_date,allocated_to,description,reference_type,reference_name,project,role,assigned_by,allocated_to_full_name,allocated_hours,creation,modified,start_date,allocated_to), as_dict=True)	
 		else:
 			if working_status:
 				if start_date is None:

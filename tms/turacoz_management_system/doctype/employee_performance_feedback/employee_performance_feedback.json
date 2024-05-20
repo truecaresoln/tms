@@ -1,36 +1,37 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:FEEDBACK-{####}",
- "creation": "2023-09-11 16:01:37.143950",
+ "autoname": "format:HR-PF-{YYYY}-{#####}",
+ "creation": "2022-09-01 01:05:44.869523",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_1",
+  "employee_details_tab",
   "employee",
   "employee_name",
   "department",
   "designation",
+  "company",
   "column_break_6",
-  "start_date",
-  "end_date",
   "section_break_9",
-  "performance_rating",
   "total_score",
   "reporting_manager_detail_section",
-  "reporting_manager",
-  "email_sent_to_hr",
   "column_break_14",
-  "reporting_manager_name",
-  "amended_from"
+  "amended_from",
+  "reviewer",
+  "reviewer_name",
+  "reviewer_designation",
+  "user",
+  "added_on",
+  "appraisal_cycle",
+  "section_break_3",
+  "appraisal",
+  "feedback_ratings",
+  "feedback_tab",
+  "feedback"
  ],
  "fields": [
-  {
-   "description": "Rate them against each area on 0-3 scale, where 0- Poor -1 Average 2- Good 3 \u2013 Excellent with your observations",
-   "fieldname": "section_break_1",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "employee",
    "fieldtype": "Link",
@@ -65,29 +66,8 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "start_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Start Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "End Date",
-   "reqd": 1
-  },
-  {
    "fieldname": "section_break_9",
    "fieldtype": "Section Break"
-  },
-  {
-   "description": " 0-3 scale, where 0- Poor -1 Average 2- Good 3 \u2013 Excellent",
-   "fieldname": "performance_rating",
-   "fieldtype": "Table",
-   "label": "Performance Rating",
-   "options": "Employee Performance Feedback Rating"
   },
   {
    "fieldname": "total_score",
@@ -101,31 +81,8 @@
    "label": "Reporting Manager Detail"
   },
   {
-   "fetch_from": "employee.reporting_manager_id",
-   "fieldname": "reporting_manager",
-   "fieldtype": "Link",
-   "label": "Reporting Manager",
-   "options": "User",
-   "read_only": 1
-  },
-  {
    "fieldname": "column_break_14",
    "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "reporting_manager.full_name",
-   "fieldname": "reporting_manager_name",
-   "fieldtype": "Data",
-   "label": "Reporting Manager Name",
-   "read_only": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "email_sent_to_hr",
-   "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent To HR",
-   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -135,18 +92,120 @@
    "options": "Employee Performance Feedback",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "employee_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Employee Details"
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "reviewer",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "in_standard_filter": 1,
+   "label": "Reviewer",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "reviewer.employee_name",
+   "fieldname": "reviewer_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Reviewer Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reviewer.designation",
+   "fieldname": "reviewer_designation",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "reviewer.user_id",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "added_on",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Added On"
+  },
+  {
+   "fetch_from": "appraisal.appraisal_cycle",
+   "fieldname": "appraisal_cycle",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Appraisal Cycle",
+   "options": "Appraisal Cycle",
+   "read_only": 1
+  },
+  {
+   "depends_on": "employee",
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "appraisal",
+   "fieldtype": "Link",
+   "label": "Appraisal",
+   "options": "Appraisal"
+  },
+  {
+   "fieldname": "feedback_ratings",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Feedback Ratings",
+   "options": "Employee Feedback Rating"
+  },
+  {
+   "fieldname": "feedback_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "Feedback",
+   "options": "Feedback"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Text Editor",
+   "hidden": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-13 12:07:19.019081",
+ "modified": "2024-05-09 12:35:15.501227",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Employee Performance Feedback",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -156,9 +215,48 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1
   }
  ],
- "sort_field": "modified",
- "sort_order": "DESC"
+ "search_fields": "employee_name, reviewer_name, appraisal_cycle",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name"
 }

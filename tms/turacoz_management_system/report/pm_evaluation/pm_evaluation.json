@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "THS",
- "modified": "2023-01-20 12:12:15.705818",
+ "modified": "2024-05-02 16:33:19.927737",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "PM Evaluation",
@@ -24,25 +24,13 @@
    "role": "Projects Manager"
   },
   {
-   "role": "Projects User"
-  },
-  {
    "role": "Project Management Associate"
-  },
-  {
-   "role": "Business Development Associate"
-  },
-  {
-   "role": "Medical Writer"
   },
   {
    "role": "Project Dashboard"
   },
   {
    "role": "Project Details Approver"
-  },
-  {
-   "role": "Employee Self Service"
   }
  ]
 }
