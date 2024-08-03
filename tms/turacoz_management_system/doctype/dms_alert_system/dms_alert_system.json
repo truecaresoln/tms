@@ -23,7 +23,7 @@
   "secion_13",
   "heading",
   "section_break_7",
-  "owner",
+  "owner_name",
   "column_break_9",
   "employee_name",
   "section_break_11",
@@ -36,13 +36,6 @@
   "project"
  ],
  "fields": [
-  {
-   "fieldname": "owner",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Owner",
-   "options": "User"
-  },
   {
    "fetch_from": "owner.full_name",
    "fieldname": "employee_name",
@@ -197,14 +190,22 @@
    "label": "Daily",
    "mandatory_depends_on": "eval:doc.frequency == \"Daily\"",
    "options": "Daily Child DMS"
+  },
+  {
+   "fieldname": "owner_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Owner",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-07 11:19:37.937204",
+ "modified": "2024-08-03 00:03:32.696464",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "DMS ALERT SYSTEM",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -221,5 +222,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

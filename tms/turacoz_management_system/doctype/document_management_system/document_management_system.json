@@ -60,11 +60,12 @@
   "column_break_50",
   "organizer",
   "meeting_participants_section",
-  "participants"
+  "participants",
+  "email_sent"
  ],
  "fields": [
   {
-   "default": "2023-24",
+   "default": "2024-25",
    "fieldname": "session",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -400,15 +401,23 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Department Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "email_sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Email Sent"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-03-21 17:07:57.853229",
+ "modified": "2024-06-28 10:59:32.669674",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Document Management System",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -426,6 +435,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

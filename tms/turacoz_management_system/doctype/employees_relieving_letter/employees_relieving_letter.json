@@ -133,10 +133,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-12-08 17:08:41.620616",
+ "modified": "2024-07-17 14:56:13.339628",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Employees Relieving Letter",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -166,5 +167,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

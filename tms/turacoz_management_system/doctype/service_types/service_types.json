@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "autoname": "field:service_type",
  "creation": "2020-12-14 15:14:54.261687",
  "doctype": "DocType",
@@ -15,6 +16,7 @@
    "fieldname": "service",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Service",
    "options": "Services",
    "reqd": 1
@@ -45,10 +47,12 @@
    "reqd": 1
   }
  ],
- "modified": "2021-01-11 12:51:37.281366",
+ "links": [],
+ "modified": "2024-05-20 16:28:42.306492",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Service Types",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -67,5 +71,6 @@
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

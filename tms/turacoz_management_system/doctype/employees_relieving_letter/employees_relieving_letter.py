@@ -8,8 +8,8 @@ class EmployeesRelievingLetter(Document):
 	
 	def validate(self):
 		self.validate_conditions()
-  # self.validate_open_task()
-  # self.validate_exit_checklist()
+		self.validate_open_task()
+		self.validate_exit_checklist()
 	
 	def validate_open_task(self):
 		empid = self.employee

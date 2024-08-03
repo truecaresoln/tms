@@ -9,7 +9,6 @@ from frappe.permissions import (
 	get_doc_permissions,
 	has_permission,
 	remove_user_permission,
-	set_user_permission_if_allowed,
 )
 from frappe.utils import add_years, cstr, getdate, today, validate_email_address
 from frappe.utils.nestedset import NestedSet
@@ -464,12 +463,12 @@ def insert_todo(owner,todo_name,description,today,reference_type,employee_name,p
 								description,reference_type,
 								reference_name,assigned_by,
 								assigned_by_full_name,
-								allocated_to_full_name,hours) values('{0}','{1}','{2}',
+								allocated_to_full_name,hours,allocated_to) values('{0}','{1}','{2}',
 								'{3}','{4}','{5}','{6}','{7}','{8}',
-								'{9}','{10}','{11}','{12}','{13}','{14}','{15}');""".format(todo_name,creation,modified,allocated_by,allocated_to,status,
+								'{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}');""".format(todo_name,creation,modified,allocated_by,allocated_to,status,
 												priority,start_date,due_date,description,
 												reference_type,reference_name,allocated_by,allocated_by_name,
-												allocated_to_name,hours))	
+												allocated_to_name,hours,allocated_to))	
 	else:
 		modified_by = frappe.session.user
 		data1 = frappe.db.sql("""Update `tabToDo` set status='{1}',modified_by='{2}' where name='{0}';""".format(todo_name,status,modified_by))

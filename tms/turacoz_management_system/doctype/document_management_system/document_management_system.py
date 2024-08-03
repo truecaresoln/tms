@@ -11,14 +11,25 @@ import shutil
 from frappe.utils import add_days, flt, get_datetime, get_time, get_url, nowtime, today
 from frappe import _
 from frappe.model.document import Document
+from tms.utils.approvals import insert_approvals
 
 class DocumentManagementSystem(Document):
 	def validate(self):
 		if self.is_new():
 			self.versioning()
 			self.directories()
-			
-		
+		self.update_approval()		
+	
+	def update_approval(self):
+		document = "Document Management System"
+		employee_name = frappe.db.sql("""select full_name from `tabUser` where name='{0}'""".format(frappe.session.user),as_dict=True)
+		approver = frappe.db.sql("""select thr.parent,usr.full_name from `tabHas Role` thr 
+				left join `tabUser` usr on thr.parent=usr.name
+				where `role` ='DMS Approver' and full_name is not null order by 1 desc limit 1""",as_dict = True)
+		reporting_manager_id = approver[0]['parent']
+		full_name = approver[0]['full_name']
+		insert_approvals(document,self.name,reporting_manager_id,full_name,frappe.session.user,employee_name[0]["full_name"],self.workflow_state)	
+
 	def versioning(self):
 		document_title = self.document_title
 		document_type = self.document_type
@@ -30,7 +41,7 @@ class DocumentManagementSystem(Document):
 		self.version = dataDuplicate[0]['total']
 	
 	def directories(self):
-		path = '/home/ubuntu/frappe-bench/sites/erp.turacoz.com/public/files/'
+		path = '/home/azureuser/frappe-bench/sites/erp.turacoz.com/public/files/'
 		new_path = self.department
 		if self.category:
 			dataCategory = frappe.db.sql("""select category from `tabDMS Category` where name='{0}'""".format(self.category),as_dict=True)
@@ -54,7 +65,7 @@ class DocumentManagementSystem(Document):
 		if not os.path.exists(path):
 			os.makedirs(path,mode)
 		os.chmod(path,mode)
-		source = '/home/ubuntu/frappe-bench/sites/erp.turacoz.com/public' + self.document_attachment
+		source = '/home/azureuser/frappe-bench/sites/erp.turacoz.com/public' + self.document_attachment
 		path = path + '/' + self.document_title + '_' + self.document_type +'_'+ str(self.version) + '.' + self.file_type 
   # shutil.copy2(source,path)
 		shutil.move(source,path)

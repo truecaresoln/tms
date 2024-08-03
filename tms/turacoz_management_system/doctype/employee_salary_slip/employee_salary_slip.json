@@ -8,7 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_1",
-  "owner",
+  "salary_slip_to",
   "employee_name",
   "status",
   "column_break_4",
@@ -19,15 +19,7 @@
  ],
  "fields": [
   {
-   "fieldname": "owner",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Employee",
-   "options": "User",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "owner.full_name",
+   "fetch_from": "salary_slip_to.full_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
    "label": "Employee Full Name",
@@ -82,14 +74,22 @@
    "hidden": 1,
    "label": "Email Sent",
    "read_only": 1
+  },
+  {
+   "fieldname": "salary_slip_to",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "User",
+   "reqd": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-16 17:05:38.752999",
+ "modified": "2024-05-27 14:43:53.919319",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Employee Salary Slip",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -107,6 +107,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

@@ -32,8 +32,25 @@ def approve_record(document, document_name):
 		doc.status = "Requested"
 	elif document == "Timesheet":
 		doc.status = "Submitted"	
+	elif document == "Contract":
+		doc.workflow_state = "Approved by Contract Approver"	
+	elif document == "Leave Application":
+		doc.workflow_state = "Approved"
+		doc.status = "Approved"	
+	elif document == "Sales Order":
+		doc.workflow_state = "Approved by Sales Order Approver"	
 	else:
-		doc.status = "Approved"
+		doc.workflow_state = "Approved"	
+		
+
+#	elif document == "Project":
+#		doc.workflow_state = "Approved"	
+#	elif document == "Project":
+#		doc.workflow_state = "Approved"	
+#	elif document == "Contract":
+#		doc.workflow_state = "Approved by Contract Approver"	
+	
+
 #	doc.workflow_state = "Approved
 
 	doc.docstatus = 1

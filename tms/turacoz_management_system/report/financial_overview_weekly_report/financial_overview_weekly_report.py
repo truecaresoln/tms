@@ -109,7 +109,7 @@ def get_data():
 		ter.rate_in_inr * sum(tpf.amount) as total_inr
 		from `tabProject Final Over Hubspots` tpf
 		left join `tabCurrency Exchange Rate` ter on tpf.currency = ter.name WHERE popcd_status = 'Not Received'
-		and tpf.close_date BETWEEN '2023-04-01' and '{0}'
+		and tpf.close_date BETWEEN '2024-04-01' and '{0}'
 		group by tpf.currency""".format(todays_date), as_dict=True)
 	
 	final_total_amount_inr_new_pending_po = float()	
@@ -123,7 +123,7 @@ def get_data():
 		from `tabProject Final Over Hubspots` tpf
 		left join `tabCurrency Exchange Rate` ter on tpf.currency = ter.name WHERE popcd_status = 'Not Received'
 		and tpf.company = 'Turacoz Healthcare Solutions Pvt Ltd'
-		and tpf.close_date BETWEEN '2023-04-01' and '{0}'
+		and tpf.close_date BETWEEN '2024-04-01' and '{0}'
 		group by tpf.currency""".format(todays_date),as_dict=True)
 	
 	final_total_amount_inr_new_pending_poTHS = float()	
@@ -137,7 +137,7 @@ def get_data():
 		from `tabProject Final Over Hubspots` tpf
 		left join `tabCurrency Exchange Rate` ter on tpf.currency = ter.name WHERE popcd_status = 'Not Received'
 		and tpf.company = 'Turacoz Solutions PTE Ltd.'
-		and tpf.close_date BETWEEN '2023-04-01' and '{0}'
+		and tpf.close_date BETWEEN '2024-04-01' and '{0}'
 		group by tpf.currency""".format(todays_date),as_dict=True)
 	
 	final_total_amount_inr_new_pending_poTSPL = float()	
@@ -151,7 +151,7 @@ def get_data():
 		from `tabProject Final Over Hubspots` tpf
 		left join `tabCurrency Exchange Rate` ter on tpf.currency = ter.name WHERE popcd_status = 'Not Received'
 		and tpf.company = 'Turacoz B.V.'
-		and tpf.close_date BETWEEN '2023-04-01' and '{0}'
+		and tpf.close_date BETWEEN '2024-04-01' and '{0}'
 		group by tpf.currency""".format(todays_date),as_dict=True)
 	
 	final_total_amount_inr_new_pending_poTBV = float()	
@@ -743,15 +743,15 @@ def get_data():
 	
 	
 	row8 = {}
-	row8["particular"] = "Payment Received YTD (Total Revenue)" + "(1 April 2023 to "+ month_name + " " + str(year) +")"
+	row8["particular"] = "Payment Received YTD (Total Revenue)" + "(1 April 2024 to "+ month_name + " " + str(year) +")"
 	
 	actualReceived = frappe.db.sql("""select sum(tpr.grand_total) as total_amount,
 		tpr.invoice_currency, ter.rate_in_inr * sum(tpr.grand_total) as total_inr  
 		from `tabPayment Request` tpr
 		left join `tabCurrency Exchange Rate` ter on tpr.invoice_currency = ter.name
 		WHERE tpr.payment_status in ('Paid') and tpr.due_date is not NULL and
-		tpr.party not in ('Viatris Centre of Excellence','Turacoz Solutions LLC','Turacoz Solutions PTE Ltd','Turacoz Healthcare Solution Pvt Ltd') and
-		tpr.payment_date BETWEEN '2023-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
+		tpr.party not in ('Turacoz Solutions LLC','Turacoz Solutions PTE Ltd','Turacoz Healthcare Solution Pvt Ltd') and
+		tpr.payment_date BETWEEN '2024-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
 	
 	final_total_amount_inr_received_actual = float()
 	for actualReceived in actualReceived:
@@ -766,7 +766,7 @@ def get_data():
 	   	WHERE tpr.payment_status in ('Paid') and tpr.due_date is not NULL 
 	   	and tpr.company = 'Turacoz Healthcare Solutions Pvt Ltd'
 	   	and tpr.party not in ('Viatris Centre of Excellence','Turacoz Solutions LLC','Turacoz Solutions PTE Ltd','Turacoz Healthcare Solution Pvt Ltd') and
-	   	tpr.payment_date BETWEEN '2023-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
+	   	tpr.payment_date BETWEEN '2024-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
 	
 	final_total_amount_inr_received_actualTHS = float()
 	for actualReceivedTHS in actualReceivedTHS:
@@ -781,7 +781,7 @@ def get_data():
 	   	WHERE tpr.payment_status in ('Paid') and tpr.due_date is not NULL 
 	   	and tpr.company = 'Turacoz Solutions PTE Ltd.'
 	   	and tpr.party not in ('Viatris Centre of Excellence','Turacoz Solutions LLC','Turacoz Solutions PTE Ltd','Turacoz Healthcare Solution Pvt Ltd') and
-	   	tpr.payment_date BETWEEN '2023-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
+	   	tpr.payment_date BETWEEN '2024-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
 	
 	final_total_amount_inr_received_actualTSPL = float()
 	for actualReceivedTSPL in actualReceivedTSPL:
@@ -796,7 +796,7 @@ def get_data():
 	   	WHERE tpr.payment_status in ('Paid') and tpr.due_date is not NULL 
 	   	and tpr.company = 'Turacoz B.V.'
 	   	and tpr.party not in ('Viatris Centre of Excellence','Turacoz Solutions LLC','Turacoz Solutions PTE Ltd','Turacoz Healthcare Solution Pvt Ltd') and
-	   	tpr.payment_date BETWEEN '2023-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
+	   	tpr.payment_date BETWEEN '2024-04-01' and '{0}' GROUP by tpr.invoice_currency""".format(todays_date), as_dict=True)
 	
 	final_total_amount_inr_received_actualTBV = float()
 	for actualReceivedTBV in actualReceivedTBV:
@@ -806,7 +806,7 @@ def get_data():
 	
 	dataViatrisReceivedYTD = frappe.db.sql("""select sum(grand_total) as total_received_amount from `tabPayment Request` 
 		where customer_name in ('Viatris Centre of Excellence') and payment_status in ('Paid')
-		and status not in ('Cancelled') and invoice_date BETWEEN '2023-04-01' and '{0}';""".format(todays_date), as_dict = True)
+		and status not in ('Cancelled') and payment_date BETWEEN '2024-04-01' and '{0}';""".format(todays_date), as_dict = True)
 	if dataViatrisReceivedYTD:
 		row8["viatris"] = dataViatrisReceivedYTD[0]['total_received_amount']
 	else:

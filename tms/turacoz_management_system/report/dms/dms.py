@@ -17,7 +17,7 @@ def get_data(filters):
 	search_string = filters.get("search_string")
 	session = filters.get("session")
 	company = filters.get("company")
-	dtype = filters.get("dtype")
+	dtype = filters.get("document_type")
 	department = filters.get("department")
 	category = filters.get("category")
 	sub_category = filters.get("sub_category")
@@ -45,12 +45,12 @@ def get_data(filters):
 		new_company=''
 		
 	if dtype:
-		new_dtype = " and dtype='%s'" %dtype
+		new_dtype = " and tdms.document_type='%s'" %dtype
 	else:
 		new_dtype=''
 		
-	if department:
-		new_department = " and tdms.department='%s'" %department
+	if session:
+		new_session = " and tdms.session='%s'" %session
 	else:
 		new_department=''
 		
@@ -74,7 +74,7 @@ def get_data(filters):
 					,tdc.category,tsdc.sub_category,tdms.file_link,project_code,services,region,therapeutic_area,customer,client_poc,project_manager,bd_poc,viatris_region,project_category,project_brands 
 					from `tabDocument Management System` tdms 
 					left join `tabDMS Category` tdc on tdms.category = tdc.name 
-					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where session='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(session,new_search_string,new_company,new_dtype,new_department,new_category,new_sub_category,new_project_code),as_dict=True)
+					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where tdms.department='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(department,new_search_string,new_company,new_dtype,new_session,new_category,new_sub_category,new_project_code),as_dict=True)
 		
 		for ds1 in data2:
 			row={}
@@ -99,14 +99,14 @@ def get_data(filters):
 			row['viatris_region'] = ds1.viatris_region
 			row['project_category'] = ds1.project_category
 			row['project_brands'] = ds1.project_brands
-			row['file_link'] = "<a href='%s' target='_blank'>Click Me to download</a>" %ds1.file_link
+			row['file_link'] = ds1.file_link
 			data.append(row)
 	elif((department == 'Training and Developments') or (department == 'Turacoz Events')):
 		data3 = frappe.db.sql("""select tdms.name,tdms.`session`,tdms.company,tdms.document_title,tdms.document_type,tdms.version,tdms.classification,tdms.department
 					,tdc.category,tsdc.sub_category,tdms.file_link,event_name,location,coordinator,trainers_or_speakers,date_from,date_to 
 					from `tabDocument Management System` tdms 
 					left join `tabDMS Category` tdc on tdms.category = tdc.name 
-					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where session='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(session,new_search_string,new_company,new_dtype,new_department,new_category,new_sub_category,new_project_code),as_dict=True)
+					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where tdms.department='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(department,new_search_string,new_company,new_dtype,new_session,new_category,new_sub_category,new_project_code),as_dict=True)
 		
 		for ds1 in data3:
 			row={}
@@ -126,14 +126,14 @@ def get_data(filters):
 			row['trainers_or_speakers'] = ds1.trainers_or_speakers
 			row['date_from'] = ds1.date_from
 			row['date_to'] = ds1.date_to
-			row['file_link'] = "<a href='%s' target='_blank'>Click Me to download</a>" %ds1.file_link
+			row['file_link'] = ds1.file_link
 			data.append(row)
 	else:
 		data1 = frappe.db.sql("""select tdms.name,tdms.`session`,tdms.company,tdms.document_title,tdms.document_type,tdms.version,tdms.classification,tdms.department
 					,tdc.category,tsdc.sub_category,tdms.file_link 
 					from `tabDocument Management System` tdms 
 					left join `tabDMS Category` tdc on tdms.category = tdc.name 
-					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where session='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(session,new_search_string,new_company,new_dtype,new_department,new_category,new_sub_category,new_project_code),as_dict=True)
+					left join `tabDMS Sub Category` tsdc on tdms.sub_category = tsdc.name  where tdms.department='{0}' {1} {2} {3} {4} {5} {6} {7}""".format(department,new_search_string,new_company,new_dtype,new_session,new_category,new_sub_category,new_project_code),as_dict=True)
 		
 		for ds1 in data1:
 			row={}
@@ -147,7 +147,7 @@ def get_data(filters):
 			row['department'] = ds1.department
 			row['category'] = ds1.category
 			row['sub_category'] = ds1.sub_category
-			row['file_link'] = "<a href='%s' target='_blank'>Click Me to download</a>" %ds1.file_link
+			row['file_link'] = ds1.file_link
 			data.append(row)
 		
 	return data

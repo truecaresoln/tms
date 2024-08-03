@@ -7,6 +7,7 @@ import frappe
 from frappe.model.document import Document
 from frappe import msgprint
 from importlib import reload
+from tms.utils.approvals import insert_approvals
 
 class ProjectDetailTemplate(Document):
 	def validate(self):
@@ -14,23 +15,42 @@ class ProjectDetailTemplate(Document):
 		self.update_approval()
 	
 	def update_approval(self):
-		name1 = "Project Detail Template - %s" %self.name
-		approver = frappe.db.sql("""select thr.parent,thr.role,tu.full_name from `tabHas Role` thr
+		document = "Project Detail Template"
+		if(self.workflow_state == 'Draft'):
+			approver = frappe.db.sql("""select thr.parent,thr.role,tu.full_name from `tabHas Role` thr
 					left join `tabUser` tu on thr.parent=tu.name
-					where thr.role='Technical Project Head'""",as_dict = True)
-		employee = frappe.db.sql("""select full_name from `tabUser` where name='{0}'""".format(frappe.session.user),as_dict = True)
+					where thr.role='Team Lead Allocator'""",as_dict = True)
+			employee = frappe.db.sql("""select full_name from `tabUser` where name='{0}'""".format(frappe.session.user),as_dict = True)
+			reporting_manager_id = approver[0]['parent']
+			full_name = approver[0]['full_name']
+			insert_approvals(document,self.name,reporting_manager_id,full_name,frappe.session.user,employee[0]["full_name"],self.workflow_state)
+		elif(self.workflow_state == 'Technically Verified'):
+			approver = frappe.db.sql("""select thr.parent,thr.role,tu.full_name from `tabHas Role` thr
+					left join `tabUser` tu on thr.parent=tu.name
+					where thr.role='PM Allocator'""",as_dict = True)
+			employee = frappe.db.sql("""select full_name from `tabUser` where name='{0}'""".format(frappe.session.user),as_dict = True)
+			reporting_manager_id = approver[0]['parent']
+			full_name = approver[0]['full_name']
+			insert_approvals(document,self.name,reporting_manager_id,full_name,frappe.session.user,employee[0]["full_name"],self.workflow_state)
+	
+	# def update_approval(self):
+	# 	name1 = "Project Detail Template - %s" %self.name
+	# 	approver = frappe.db.sql("""select thr.parent,thr.role,tu.full_name from `tabHas Role` thr
+	# 				left join `tabUser` tu on thr.parent=tu.name
+	# 				where thr.role='Technical Project Head'""",as_dict = True)
+	# 	employee = frappe.db.sql("""select full_name from `tabUser` where name='{0}'""".format(frappe.session.user),as_dict = True)
 		 
-		check_approval = frappe.get_value('Approvals',name1,'name')
-		if (check_approval):
-			if self.workflow_state == 'Rejected':
-				update_approval = frappe.db.sql("""update `tabApprovals` set status='Rejected' where name='{0}'
-					""".format(name1), as_dict = True)
-			else:
-				update_approval = frappe.db.sql("""update `tabApprovals` set status='Approved' where name='{0}'
-					""".format(name1), as_dict = True)
-		else:
-			insert_approval = frappe.db.sql("""insert into `tabApprovals`(name,document,document_name,status,owner,owner_name,employee,employee_name) values('{0}','Project Detail Template','{1}','Draft','{2}','{3}','{4}','{5}')
-			""".format(name1,self.name,approver[0]['parent'],approver[0]['full_name'],frappe.session.user,employee[0]['full_name']), as_dict = True)
+	# 	check_approval = frappe.get_value('Approvals',name1,'name')
+	# 	if (check_approval):
+	# 		if self.workflow_state == 'Rejected':
+	# 			update_approval = frappe.db.sql("""update `tabApprovals` set status='Rejected' where name='{0}'
+	# 				""".format(name1), as_dict = True)
+	# 		else:
+	# 			update_approval = frappe.db.sql("""update `tabApprovals` set status='Approved' where name='{0}'
+	# 				""".format(name1), as_dict = True)
+	# 	else:
+	# 		insert_approval = frappe.db.sql("""insert into `tabApprovals`(name,document,document_name,status,owner,owner_name,employee,employee_name) values('{0}','Project Detail Template','{1}','Draft','{2}','{3}','{4}','{5}')
+	# 		""".format(name1,self.name,approver[0]['parent'],approver[0]['full_name'],frappe.session.user,employee[0]['full_name']), as_dict = True)
 	
 	def set_project_coordinators(self):
 		record_name = self.name
@@ -58,26 +78,26 @@ class ProjectDetailTemplate(Document):
 
 @frappe.whitelist(allow_guest=True)
 def update_project_coordinators(self,method=None):
-	 record_name = self.name
-	 project_manager = self.project_manager
-	 team_lead_medical_writer = self.team_lead_medical_writer
-	 if(project_manager):
-			check_coordinators = frappe.db.get_value('Project Coordinators', record_name, 'name')
-			if(check_coordinators):
-# 				print('welcome')
-# 				doc = frappe.get_doc("Project Coordinators", record_name)
-# 				doc.project_manager = project_manager
-# 				doc.team_leader = team_lead_medical_writer
-# 				doc.save()
-				update_coordinators = frappe.db.sql("""Update `tabProject Coordinators` set project_manager='{0}',
-				team_leader='{1}' where name='{2}'""".format(project_manager,team_lead_medical_writer,record_name), as_dict = True)
+	record_name = self.name
+	project_manager = self.project_manager
+	team_lead_medical_writer = self.team_lead_medical_writer
+	if(project_manager):
+		check_coordinators = frappe.db.get_value('Project Coordinators', record_name, 'name')
+		if(check_coordinators):
+# 			print('welcome')
+# 			doc = frappe.get_doc("Project Coordinators", record_name)
+# 			doc.project_manager = project_manager
+# 			doc.team_leader = team_lead_medical_writer
+# 			doc.save()
+			update_coordinators = frappe.db.sql("""Update `tabProject Coordinators` set project_manager='{0}',
+			team_leader='{1}' where name='{2}'""".format(project_manager,team_lead_medical_writer,record_name), as_dict = True)
  				
-			else:	
+		else:	
  				
-				insert_coordinators = frappe.db.sql("""insert into `tabProject Coordinators` (name,project_detail_template,
-				project_manager,team_leader) 
-				values('{0}','{1}','{2}','{3}')""".format(record_name,record_name,project_manager,team_lead_medical_writer), as_dict = True)
-	 frappe.msgprint(record_name)
+			insert_coordinators = frappe.db.sql("""insert into `tabProject Coordinators` (name,project_detail_template,
+			project_manager,team_leader) 
+			values('{0}','{1}','{2}','{3}')""".format(record_name,record_name,project_manager,team_lead_medical_writer), as_dict = True)
+	frappe.msgprint(record_name)
 
 @frappe.whitelist(allow_guest=True)
 def setUser(doctype, txt, searchfield, start, pagelen, filters):
@@ -118,16 +138,16 @@ def setUser(doctype, txt, searchfield, start, pagelen, filters):
 # 
 @frappe.whitelist(allow_guest=True)	
 def update_coordinators_in_project(self,method=None):
- 	 record_name = self.name
- 	 project_manager = self.project_manager
- 	 team_lead_medical_writer = self.team_lead_medical_writer
- 	 if(record_name):
- 	 	check_project = frappe.db.sql("""select project from `tabProject Coordinators` where name='{0}';""".format(record_name),as_dict=True)
- 	 	if check_project:
- 	 		for rec in check_project:
- 	 			project=rec.project
- 	 			if project:
- 	 				update_coordinators = frappe.db.sql("""Update `tabProject` set project_manager='{0}',
+	record_name = self.name
+	project_manager = self.project_manager
+	team_lead_medical_writer = self.team_lead_medical_writer
+	if(record_name):
+		check_project = frappe.db.sql("""select project from `tabProject Coordinators` where name='{0}';""".format(record_name),as_dict=True)
+		if check_project:
+			for rec in check_project:
+				project=rec.project
+				if project:
+					update_coordinators = frappe.db.sql("""Update `tabProject` set project_manager='{0}',
  	 				team_leader_medical_writer='{1}' where name='{2}'""".format(project_manager,team_lead_medical_writer,project), as_dict = True)
 
 @frappe.whitelist(allow_guest=True)	

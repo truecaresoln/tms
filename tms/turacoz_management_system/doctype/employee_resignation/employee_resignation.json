@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "field:owner",
+ "autoname": "field:employee_user_id",
  "beta": 1,
  "creation": "2022-03-08 12:28:09.844375",
  "doctype": "DocType",
@@ -9,7 +9,7 @@
  "field_order": [
   "section_break_1",
   "employee",
-  "owner",
+  "employee_user_id",
   "employee_name",
   "status",
   "designation",
@@ -19,6 +19,7 @@
   "reporting_manager_name",
   "relieving_date",
   "notice_number_of_days",
+  "dm_relieving_date",
   "section_break_8",
   "resignation_letter",
   "email_sent",
@@ -34,17 +35,6 @@
    "options": "Employee",
    "reqd": 1,
    "set_only_once": 1
-  },
-  {
-   "fetch_from": "employee.user_id",
-   "fieldname": "owner",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
-   "label": "Employee",
-   "options": "User",
-   "reqd": 1,
-   "set_only_once": 1,
-   "unique": 1
   },
   {
    "fetch_from": "employee.employee_name",
@@ -73,6 +63,7 @@
    "read_only": 1
   },
   {
+   "fetch_from": "employee.reporting_manager_id",
    "fieldname": "reporting_manager",
    "fieldtype": "Link",
    "label": "Reporting Manager",
@@ -81,7 +72,7 @@
    "set_only_once": 1
   },
   {
-   "fetch_from": "reporting_manager.full_name",
+   "fetch_from": "employee.employee_name",
    "fieldname": "reporting_manager_name",
    "fieldtype": "Read Only",
    "label": "Reporting Manager Name",
@@ -123,6 +114,7 @@
    "mandatory_depends_on": "eval:doc.status == \"Approved\""
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "email_sent",
    "fieldtype": "Int",
@@ -137,6 +129,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "employee.designation",
    "fieldname": "designation",
    "fieldtype": "Link",
    "label": "Designation",
@@ -157,14 +150,33 @@
    "fieldtype": "Int",
    "hidden": 1,
    "label": "Approved Email to Employee"
+  },
+  {
+   "fetch_from": "employee.user_id",
+   "fieldname": "employee_user_id",
+   "fieldtype": "Link",
+   "label": "Employee User ID",
+   "options": "User",
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "dm_relieving_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Approx Relieving Date",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-04-01 13:08:08.933921",
+ "modified": "2024-07-02 10:24:16.355707",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Employee Resignation",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -196,6 +208,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1

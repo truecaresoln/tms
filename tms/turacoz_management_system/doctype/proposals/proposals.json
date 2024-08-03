@@ -1,0 +1,309 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-06-13 16:07:24.634226",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bdq_info_tab",
+  "bdq_filled_date",
+  "column_break_qmmkr",
+  "naming_series",
+  "section_break_cvu3q",
+  "bd_questionnaire",
+  "client",
+  "client_poc",
+  "column_break_zcfds",
+  "service",
+  "deliverable",
+  "status",
+  "proposal_without_price_tab",
+  "proposal_without_price_section",
+  "date",
+  "column_break_o6pxs",
+  "proposal_without_price",
+  "proposal_with_price_tab",
+  "proposal_with_price_section",
+  "proposal_with_price_date",
+  "proposal_approved_date",
+  "column_break_lwwhp",
+  "proposal_with_price",
+  "reminder_tab",
+  "reminders",
+  "section_break_v1rex",
+  "clouser_status",
+  "section_break_5fdcv",
+  "remark",
+  "bd_info_tab",
+  "bd_person",
+  "column_break_f4fn9",
+  "bd_person_name",
+  "column_break_n6bri",
+  "next_follow_up_date",
+  "column_break_kz2nm",
+  "email_to_bd",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "bdq_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "BDQ Info"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "PROPOSAL-.####"
+  },
+  {
+   "fieldname": "bd_questionnaire",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "BD Questionnaire",
+   "options": "BD questionnaire",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_cvu3q",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "bd_questionnaire.client",
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bd_questionnaire.client_poc",
+   "fieldname": "client_poc",
+   "fieldtype": "Data",
+   "label": "Client PoC",
+   "read_only": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive\nClosed"
+  },
+  {
+   "fieldname": "column_break_zcfds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bd_questionnaire.service",
+   "fieldname": "service",
+   "fieldtype": "Data",
+   "label": "Service",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bd_questionnaire.deliverable",
+   "fieldname": "deliverable",
+   "fieldtype": "Data",
+   "label": "Deliverable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "proposal_without_price_tab",
+   "fieldtype": "Tab Break",
+   "label": "Proposal without price"
+  },
+  {
+   "fieldname": "proposal_without_price_section",
+   "fieldtype": "Section Break",
+   "label": "Proposal without price"
+  },
+  {
+   "fieldname": "proposal_without_price",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "proposal_with_price_tab",
+   "fieldtype": "Tab Break",
+   "label": "Proposal with price"
+  },
+  {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Business Development Associate\") || frappe.user.has_role(\"Proposal Approver\")",
+   "fieldname": "proposal_with_price_section",
+   "fieldtype": "Section Break",
+   "label": "Proposal with price"
+  },
+  {
+   "fieldname": "proposal_with_price",
+   "fieldtype": "Attach",
+   "label": "Attachment",
+   "mandatory_depends_on": "eval:frappe.user.has_role(\"Business Development Associate\")"
+  },
+  {
+   "fieldname": "reminder_tab",
+   "fieldtype": "Tab Break",
+   "label": "Reminder"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Business Development Associate\") || frappe.user.has_role(\"Proposal Approver\")",
+   "fieldname": "clouser_status",
+   "fieldtype": "Select",
+   "label": "Clouser Status",
+   "options": "\nSuccessful\nUnsuccessful"
+  },
+  {
+   "fieldname": "section_break_5fdcv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.clouser_status==\"Unsuccessful\"",
+   "description": "Please enter remark in case of Unsuccessful Clouser",
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark",
+   "mandatory_depends_on": "eval:doc.clouser_status==\"Unsuccessful\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Business Development Associate\") || frappe.user.has_role(\"Proposal Approver\")",
+   "fieldname": "reminders",
+   "fieldtype": "Table",
+   "label": "Reminders",
+   "options": "Proposal Reminders"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Proposals",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Proposal Without Price Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qmmkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bd_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "BD Info"
+  },
+  {
+   "fetch_from": "bd_questionnaire.bd_person",
+   "fieldname": "bd_person",
+   "fieldtype": "Link",
+   "label": "BD Person",
+   "options": "User",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_f4fn9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bd_questionnaire.bd_person_name",
+   "fieldname": "bd_person_name",
+   "fieldtype": "Data",
+   "label": "BD Person Name",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "email_to_bd",
+   "fieldtype": "Check",
+   "label": "Email to BD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_v1rex",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_n6bri",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kz2nm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "next_follow_up_date",
+   "fieldtype": "Date",
+   "label": "Next Follow Up Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bd_questionnaire.date",
+   "fieldname": "bdq_filled_date",
+   "fieldtype": "Date",
+   "label": "BDQ Filled Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_o6pxs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "proposal_with_price_date",
+   "fieldtype": "Date",
+   "label": "Proposal With Price Date"
+  },
+  {
+   "fieldname": "column_break_lwwhp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "proposal_approved_date",
+   "fieldtype": "Date",
+   "label": "Proposal Approved Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-06-28 17:18:18.177071",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Proposals",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,316 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-05-20 16:57:09.799359",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_tab",
+  "date",
+  "column_break_y0ek3",
+  "naming_series",
+  "section_break_j0enx",
+  "client",
+  "column_break_tcdch",
+  "client_poc",
+  "choice1_tab",
+  "service",
+  "column_break_hr8ps",
+  "deliverable",
+  "section_break_6swzi",
+  "question_and_answer",
+  "choice2_tab",
+  "service2",
+  "column_break_zywki",
+  "deliverable_2",
+  "section_break_othle",
+  "question_and_answer_2",
+  "choice_3_tab",
+  "service3",
+  "column_break_tyka4",
+  "deliverable_3",
+  "section_break_1yokp",
+  "question_and_answer_3",
+  "choice_4_tab",
+  "service4",
+  "column_break_f1evq",
+  "deliverable_4",
+  "section_break_mwqww",
+  "question_and_answer_4",
+  "client_brief_info_tab",
+  "attach_document",
+  "user_info_tab",
+  "bd_person",
+  "column_break_tolgf",
+  "bd_person_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_poc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client PoC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Service-1",
+   "options": "\nScientific and Medical Communication\nContent Lab Management /Veeva Vault PromoMats (VVPM)\nReal- World Evidence\nQC Review and Copy Editing\nJournal Publication and Conference Presentation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deliverable",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Deliverable Template-1",
+   "options": "BD questionnaire Template"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "BD questionnaire",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_tcdch",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hr8ps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6swzi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_and_answer",
+   "fieldtype": "Table",
+   "label": "Question and Answer (Choice-1)",
+   "options": "BD questionnaires Answers"
+  },
+  {
+   "fieldname": "client_brief_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Client Brief Info"
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "You can attach Client brief/ Client Email/ Mom ",
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document "
+  },
+  {
+   "fieldname": "user_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "User Info"
+  },
+  {
+   "fieldname": "bd_person",
+   "fieldtype": "Link",
+   "label": "BD Person",
+   "options": "User",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_tolgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "bd_person.full_name",
+   "fetch_if_empty": 1,
+   "fieldname": "bd_person_name",
+   "fieldtype": "Data",
+   "label": "BD Person Name",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "BDQ-.MM.-.YYYY.-.####"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_j0enx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_y0ek3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "choice1_tab",
+   "fieldtype": "Tab Break",
+   "label": "Choice-1"
+  },
+  {
+   "fieldname": "choice2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Choice-2"
+  },
+  {
+   "fieldname": "service2",
+   "fieldtype": "Select",
+   "label": "Service-2",
+   "options": "\nScientific and Medical Communication\nContent Lab Management /Veeva Vault PromoMats (VVPM)\nReal- World Evidence\nQC Review and Copy Editing\nJournal Publication and Conference Presentation"
+  },
+  {
+   "fieldname": "column_break_zywki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deliverable_2",
+   "fieldtype": "Link",
+   "label": "Deliverable Template-2",
+   "options": "BD questionnaire Template"
+  },
+  {
+   "fieldname": "section_break_othle",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_and_answer_2",
+   "fieldtype": "Table",
+   "label": "Question and Answer (Choice-2)",
+   "options": "BD questionnaires Answers2"
+  },
+  {
+   "fieldname": "choice_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Choice-3"
+  },
+  {
+   "fieldname": "service3",
+   "fieldtype": "Select",
+   "label": "Service-3",
+   "options": "\nScientific and Medical Communication\nContent Lab Management /Veeva Vault PromoMats (VVPM)\nReal- World Evidence\nQC Review and Copy Editing\nJournal Publication and Conference Presentation"
+  },
+  {
+   "fieldname": "column_break_tyka4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deliverable_3",
+   "fieldtype": "Link",
+   "label": "Deliverable Template-3",
+   "options": "BD questionnaire Template"
+  },
+  {
+   "fieldname": "section_break_1yokp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_and_answer_3",
+   "fieldtype": "Table",
+   "label": "Question and Answer (Choice-3)",
+   "options": "BD questionnaires Answers3"
+  },
+  {
+   "fieldname": "choice_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Choice 4"
+  },
+  {
+   "fieldname": "service4",
+   "fieldtype": "Select",
+   "label": "Service-4",
+   "options": "\nScientific and Medical Communication\nContent Lab Management /Veeva Vault PromoMats (VVPM)\nReal- World Evidence\nQC Review and Copy Editing\nJournal Publication and Conference Presentation"
+  },
+  {
+   "fieldname": "column_break_f1evq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deliverable_4",
+   "fieldtype": "Link",
+   "label": "Deliverable Template-4",
+   "options": "BD questionnaire Template"
+  },
+  {
+   "fieldname": "section_break_mwqww",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "question_and_answer_4",
+   "fieldtype": "Table",
+   "label": "Question and Answer (Choice-4)",
+   "options": "BD questionnaires Answers4"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-05 13:57:21.198569",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "BD questionnaire",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "client,service,deliverable",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

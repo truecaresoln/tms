@@ -26,7 +26,7 @@ frappe.query_reports["DMS"] = {
 			"reqd": 0
 		},
 		{
-			"fieldname":"dtype",
+			"fieldname":"document_type",
 			"label": __("Document Type"),
 			"fieldtype": "Link",
 			"options": "DMS Document Type",

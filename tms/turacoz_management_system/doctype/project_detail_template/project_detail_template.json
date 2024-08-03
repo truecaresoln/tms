@@ -15,6 +15,7 @@
   "bd_person",
   "bd_person_name",
   "region",
+  "tl_allocator",
   "column_break_4",
   "customer",
   "contact_person",
@@ -47,11 +48,11 @@
   "total_planned_hours",
   "column_break_32",
   "expected_end_date",
-  "po_number",
   "profitability_hours",
   "documents_tab",
   "related_documents_section",
   "popcd_status",
+  "po_number",
   "source_document",
   "client_brief",
   "vendor_registration_form",
@@ -62,6 +63,7 @@
   "call_recordings_if_any",
   "column_break_27",
   "po_pcd_attachment",
+  "popcd_date",
   "source_document_attachment",
   "client_brief_attachment",
   "vendor_registration_attachment",
@@ -72,11 +74,11 @@
   "call_recording_attachment",
   "project_manager_and_team_lead",
   "project_manager_and_team_lead_medical_writer_alignment_section",
-  "project_manager",
   "team_lead_medical_writer",
+  "project_manager",
   "column_break_63",
-  "pms_ongoing_project_list",
   "get_tls_ongoing_projects_list",
+  "pms_ongoing_project_list",
   "project_cost_and_payment_detail_tab",
   "project_cost_and_payment_detail_section",
   "project_cost",
@@ -88,9 +90,9 @@
   "remark_tab",
   "remark_section",
   "additional_information_from_client",
+  "approver",
   "email_sent",
   "amended_from",
-  "approver",
   "email_sent_2",
   "email_sent_3",
   "email_sent_4",
@@ -218,8 +220,7 @@
    "allow_on_submit": 1,
    "fieldname": "hours",
    "fieldtype": "Int",
-   "label": "Number of hours for project completion communicated to clients",
-   "reqd": 1
+   "label": "Number of hours for project completion communicated to clients"
   },
   {
    "allow_on_submit": 1,
@@ -258,13 +259,14 @@
    "fieldtype": "Column Break"
   },
   {
-   "collapsible": 1,
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Business Development Associate\") || frappe.user.has_role(\"Project Management Associate\")",
    "fieldname": "project_cost_and_payment_detail_section",
    "fieldtype": "Section Break",
    "label": "Project Cost and Payment Detail"
   },
   {
    "allow_on_submit": 1,
+   "description": "Please enter the project cost excluding Tax",
    "fetch_from": "sales_order.net_total",
    "fieldname": "project_cost",
    "fieldtype": "Currency",
@@ -310,6 +312,7 @@
    "allow_on_submit": 1,
    "fieldname": "sales_order",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_standard_filter": 1,
    "label": "Sales Order",
    "options": "Sales Order"
@@ -330,10 +333,12 @@
   },
   {
    "allow_on_submit": 1,
+   "depends_on": "eval:doc.popcd_status == 'Received'",
    "fetch_from": "sales_order.po_no",
    "fieldname": "po_number",
    "fieldtype": "Data",
-   "label": "PO/PCD number"
+   "label": "PO/PCD number",
+   "mandatory_depends_on": "eval:doc.popcd_status == 'Received' && doc.is_new"
   },
   {
    "fieldname": "services",
@@ -514,32 +519,37 @@
    "label": "Call Recording Attachment"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Team Lead Allocator\") || frappe.user.has_role(\"PM Allocator\")",
    "fieldname": "project_manager_and_team_lead_medical_writer_alignment_section",
    "fieldtype": "Section Break",
-   "hidden": 1,
    "label": "Project Manager and Team Lead (Medical Writer) Alignment"
   },
   {
    "allow_on_submit": 1,
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"PM Allocator\")",
    "fieldname": "project_manager",
    "fieldtype": "Link",
    "label": "Project Manager",
+   "mandatory_depends_on": "eval:frappe.user.has_role(\"PM Allocator\")",
    "options": "User",
    "remember_last_selected_value": 1
   },
   {
    "allow_on_submit": 1,
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Team Lead Allocator\")",
    "fieldname": "team_lead_medical_writer",
    "fieldtype": "Link",
    "label": "Team Lead (Technical Team)",
+   "mandatory_depends_on": "eval:frappe.user.has_role(\"Team Lead Allocator\")",
    "options": "User"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "email_sent",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent"
+   "label": "Email Sent",
+   "read_only": 1
   },
   {
    "default": "shruti.shah@turacoz.com",
@@ -562,8 +572,8 @@
    "default": "0",
    "fieldname": "email_sent_2",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent 2"
+   "label": "Email Sent 2",
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
@@ -598,36 +608,38 @@
    "default": "0",
    "fieldname": "email_sent_3",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent 3"
+   "label": "Email Sent 3",
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
    "default": "0",
    "fieldname": "email_sent_4",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent 4"
+   "label": "Email Sent 4",
+   "read_only": 1
   },
   {
    "allow_on_submit": 1,
    "default": "0",
    "fieldname": "email_sent_5",
    "fieldtype": "Int",
-   "hidden": 1,
-   "label": "Email Sent 5"
+   "label": "Email Sent 5",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_63",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"PM Allocator\")",
    "description": "Click to get suggestion of PMs ongoing projects",
    "fieldname": "pms_ongoing_project_list",
    "fieldtype": "Button",
    "label": "Get PMs ongoing projects list"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\") || frappe.user.has_role(\"Team Lead Allocator\")",
    "fieldname": "get_tls_ongoing_projects_list",
    "fieldtype": "Button",
    "label": "Get TLs ongoing projects list"
@@ -673,11 +685,26 @@
    "fieldname": "remark_tab",
    "fieldtype": "Tab Break",
    "label": "Remark"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "tl_allocator",
+   "fieldtype": "Link",
+   "label": "Technical Approver",
+   "options": "User"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.popcd_status == 'Received'",
+   "fieldname": "popcd_date",
+   "fieldtype": "Date",
+   "label": "PO/PCD Date",
+   "mandatory_depends_on": "eval:doc.popcd_status == 'Received' && doc.is_new"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-03 13:01:28.757768",
+ "modified": "2024-07-31 13:22:54.420200",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Project Detail Template",

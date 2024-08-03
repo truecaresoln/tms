@@ -25,9 +25,7 @@ frappe.ui.form.on('Project Detail Template', {
 		}
 
 		var user_id = frappe.session.user;
-		if(user_id){
-			set_record_section_hide_show(frm,user_id);
-		}
+		
 		if(frm.is_new()){
 			frm.set_value("project",'');
 		}
@@ -85,10 +83,6 @@ frappe.ui.form.on('Project Detail Template', {
         	});
 
 		var hours = frm.doc.hours;
-		
-		if(hours){
-			frm.toggle_display("hours", false);
-		}
 		
 		
 		/*var a = "Business Development - THS";
@@ -335,62 +329,7 @@ frappe.ui.form.on('Project Detail Template', {
 
 
 
-// set information hide and show section
-const set_record_section_hide_show = function(frm,user_id) {
-	//let today = new Date().toISOString().slice(0, 10);
-	//let role = 'Technical Project Head';
 
-	const options = {user: user_id};
-	const fields = ['is_financially_active','is_pm_allocator','is_teamlead_allocator','total_planned_hour','budgeted_hour'];
-	frappe.db.get_value('Financially Active', options, fields).then(({ message }) => {
-		if (message) {
-			//frm.set_value("project_title", message.project_title);
-			if(message.is_financially_active==0){
-				frm.toggle_display("project_cost_and_payment_detail_section", false);
-				frm.toggle_display("project_manager_and_team_lead_medical_writer_alignment_section", true);
-			}
-			else
-			{
-				frm.toggle_display("project_cost_and_payment_detail_section", true);
-				frm.toggle_display("project_manager_and_team_lead_medical_writer_alignment_section", true);
-			}
-			
-			if(message.is_pm_allocator==1)
-			{
-				frm.set_df_property("project_manager", "reqd", 1);
-				frm.toggle_display("project_manager", true);
-				
-				frm.set_df_property("team_lead_medical_writer", "reqd", 0);
-				frm.toggle_display("team_lead_medical_writer", true);
-				
-				frm.toggle_display("total_planned_hours",true); 
-				frm.set_df_property("total_planned_hours", "reqd", 1);
-				frm.toggle_display("hours",true); 
-				
-			}
-			
-			if(message.is_teamlead_allocator==1)
-			{
-				
-				frm.set_df_property("team_lead_medical_writer", "reqd", 1);
-				frm.toggle_display("team_lead_medical_writer", true);
-				
-				
-				frm.set_df_property("project_manager", "read_only", 1);
-				
-				frm.toggle_display("total_planned_hours",true);
-				frm.set_df_property("total_planned_hours", "read_only", 1);
-			}
-			
-			if(message.total_planned_hour==1)
-			{
-				frm.toggle_display("total_planned_hours",true);
-				frm.set_df_property("total_planned_hours", "reqd", 1);
-			}
-		}
-	});
-
-};
 
 
 

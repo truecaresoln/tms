@@ -45,7 +45,7 @@ const set_employee_related_details = function(frm,employee_id) {
 	const fields = ['user_id','reporting_manager_id','notice_number_of_days','designation'];
 	frappe.db.get_value('Employee', options, fields).then(({ message }) => {
 		if (message) {
-			frm.set_value("owner", message.user_id);
+			frm.set_value("employee_user_id", message.user_id);
 			frm.set_value("reporting_manager", message.reporting_manager_id);
 			frm.set_value("notice_number_of_days", message.notice_number_of_days);
 			frm.set_value("designation", message.designation);

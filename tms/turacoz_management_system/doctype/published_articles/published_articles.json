@@ -8,9 +8,10 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_1",
+  "naming_series",
   "project",
   "column_break_3",
-  "naming_series",
+  "client",
   "section_break_5",
   "project_manager",
   "column_break_7",
@@ -128,15 +129,22 @@
    "label": "Article Status",
    "options": "\nIn Submission\nIn Acceptance\nPublished\nRejected",
    "reqd": 1
+  },
+  {
+   "fetch_from": "project.customer",
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-13 11:12:51.499780",
+ "modified": "2024-06-27 11:41:04.626338",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Published Articles",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -153,5 +161,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

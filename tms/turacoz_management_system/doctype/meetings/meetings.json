@@ -335,10 +335,11 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2022-08-05 13:09:23.844153",
+ "modified": "2024-05-20 17:36:14.471884",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Meetings",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -356,5 +357,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1
 }

@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-07-12 11:28:33.284612",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "class",
+  "education_type",
+  "attach_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "class",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Class",
+   "options": "\nGraduation\nMaster's\nProfessional Certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "education_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Education Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Attach Document",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-07-12 11:28:33.284612",
+ "modified_by": "Administrator",
+ "module": "Turacoz Management System",
+ "name": "Highest Education",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -56,7 +56,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-08-02 18:19:34.116058",
+ "modified": "2024-08-02 12:37:43.940125",
  "modified_by": "Administrator",
  "module": "Turacoz Management System",
  "name": "Project Work Process Log",
@@ -76,5 +76,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }
